@@ -3,8 +3,11 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 import numpy as np
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
+from keras import backend as K
 from transformers import TFBertForSequenceClassification, BertTokenizer
-from tensorflow.keras.callbacks import EarlyStopping
+from keras.callbacks import EarlyStopping
+
+from sabitler import *
 
 # TensorFlow için uyumlu model ve tokenizer yükleme
 model_name = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract"
@@ -48,8 +51,7 @@ val_dataset = tf.data.Dataset.from_tensor_slices((
 )).batch(batch_size)
 
 # EarlyStopping geri arama işlevini tanımlayın
-early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
-
+early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
 # Modeli derleme
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=5e-5), 
@@ -78,5 +80,5 @@ f1 = f1_score(y_true_labels, y_pred_labels, average='weighted')
 # Sonuçları yazdırın
 print(f"Precision: {precision}, Recall: {recall}, F1 Score: {f1}")
 """
-model.save_pretrained("CustomModel")
-tokenizer.save_pretrained("CustomModel")
+model.save_pretrained(model_adi)
+tokenizer.save_pretrained(model_adi)

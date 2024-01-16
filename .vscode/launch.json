@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: model_egit",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/model_egit.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: model_test_et",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/model_test_et.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
+    }
+  ]
+}

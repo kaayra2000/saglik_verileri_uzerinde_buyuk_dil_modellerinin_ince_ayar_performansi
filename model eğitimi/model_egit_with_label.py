@@ -61,12 +61,27 @@ class CustomMetricsCallback(Callback):
             file.write(f"Validation Loss: {logs.get('val_loss')}, Validation Accuracy: {logs.get('val_accuracy')}\n")
             file.write(f"Validation Precision: {logs.get('val_precision')}, Validation Recall: {logs.get('val_recall')}\n")
             file.write(f"Validation F1 Score: {logs.get('val_F1Score')}\n\n")      
+def plot_and_save_metric(history, metric_name, file_name, gorsel_yolu):
+    epochs = range(1, len(history) + 1)
+    train_values = [log.get(metric_name) for log in history]
+    val_values = [log.get('val_' + metric_name) for log in history]
+
+    plt.figure()
+    plt.plot(epochs, train_values, 'bo-', label=f'Training {metric_name}')
+    plt.plot(epochs, val_values, 'r*-', label=f'Validation {metric_name}')
+    plt.title(f'Training and Validation {metric_name}')
+    plt.xlabel('Epoch')
+    plt.ylabel(metric_name.capitalize())
+    plt.legend()
+    plt.savefig(os.path.join(gorsel_yolu, file_name))
+    plt.close()
 best_accuracy = 0
 best_params = {}
 best_model = None
 for params in ParameterGrid(param_grid):
     lr = params['learning_rate']
     batch_size = params['batch_size']
+    batch_dosya_adi = f"batch_size={batch_size},learning_rate={lr}" 
     # TensorFlow Dataset oluşturma
     test_dataset = tf.data.Dataset.from_tensor_slices((
         dict(X_test_tokenized),
@@ -83,7 +98,7 @@ for params in ParameterGrid(param_grid):
         y_val
     )).batch(batch_size)
     model_checkpoint_callback = ModelCheckpoint(
-    filepath=os.path.join(check_point_path,f"batch_size={batch_size},learning_rate={lr}",'model_epoch_{epoch:02d}'),
+    filepath=os.path.join(check_point_path,batch_dosya_adi,'model_epoch_{epoch:02d}'),
     save_freq='epoch',
     save_weights_only=False,
     save_format='tf',  # SavedModel formatında kaydet
@@ -96,11 +111,20 @@ for params in ParameterGrid(param_grid):
         metrics=['accuracy', precision_metric, recall_metric, f1_score_metric]
     )
     # Özel callback oluşturun
-    history_file_path = os.path.join(sonuclar_dosyasi,f"batch_size={batch_size},learning_rate={lr}"  ,model_degerlendirme_sonuclari)
+    history_file_path = os.path.join(sonuclar_dosyasi,batch_dosya_adi ,model_degerlendirme_sonuclari)
+    gorsel_yolu = os.path.join(sonuclar_dosyasi,batch_dosya_adi ,gorsel_klasor_adi)
     custom_metrics_callback = CustomMetricsCallback(history_file_path)
     # Modeli eğitme
     history = model.fit(train_dataset, epochs=epoch_sayisi, validation_data=val_dataset, callbacks=[early_stopping, custom_metrics_callback, model_checkpoint_callback])
     accuracy = history.history['val_accuracy'][-1]
+    # Metrikleri Görselleştirme ve Kaydetme
+    os.makedirs(gorsel_yolu, exist_ok=True)
+    # Her bir metrik için görselleştirme ve kaydetme işlemini yapın
+    plot_and_save_metric(custom_metrics_callback.history, 'accuracy', 'accuracy_plot.png', gorsel_yolu)
+    plot_and_save_metric(custom_metrics_callback.history, 'loss', 'loss_plot.png', gorsel_yolu)
+    plot_and_save_metric(custom_metrics_callback.history, 'precision', 'precision_plot.png',gorsel_yolu)
+    plot_and_save_metric(custom_metrics_callback.history, 'recall', 'recall_plot.png', gorsel_yolu)
+    plot_and_save_metric(custom_metrics_callback.history, 'F1Score', 'F1Score_plot.png', gorsel_yolu)
     if accuracy > best_accuracy:
         best_accuracy = accuracy
         best_params = params
@@ -140,26 +164,3 @@ sonuclar = f"TEST\nPrecision: {precision}, Recall: {recall}, F1 Score: {f1}, Acc
 # Sonuçları bir dosyaya yazdırın
 with open(os.path.join(history_file_path), 'a') as file:
     file.write(sonuclar)
-
-# Metrikleri Görselleştirme ve Kaydetme
-def plot_and_save_metric(history, metric_name, file_name, gorsel_yolu):
-    epochs = range(1, len(history) + 1)
-    train_values = [log.get(metric_name) for log in history]
-    val_values = [log.get('val_' + metric_name) for log in history]
-
-    plt.figure()
-    plt.plot(epochs, train_values, 'bo-', label=f'Training {metric_name}')
-    plt.plot(epochs, val_values, 'r*-', label=f'Validation {metric_name}')
-    plt.title(f'Training and Validation {metric_name}')
-    plt.xlabel('Epoch')
-    plt.ylabel(metric_name.capitalize())
-    plt.legend()
-    plt.savefig(os.path.join(gorsel_yolu, file_name))
-    plt.close()
-os.makedirs(gorsel_yolu, exist_ok=True)
-# Her bir metrik için görselleştirme ve kaydetme işlemini yapın
-plot_and_save_metric(custom_metrics_callback.history, 'accuracy', 'accuracy_plot.png', gorsel_yolu)
-plot_and_save_metric(custom_metrics_callback.history, 'loss', 'loss_plot.png', gorsel_yolu)
-plot_and_save_metric(custom_metrics_callback.history, 'precision', 'precision_plot.png',gorsel_yolu)
-plot_and_save_metric(custom_metrics_callback.history, 'recall', 'recall_plot.png', gorsel_yolu)
-plot_and_save_metric(custom_metrics_callback.history, 'F1Score', 'F1Score_plot.png', gorsel_yolu)

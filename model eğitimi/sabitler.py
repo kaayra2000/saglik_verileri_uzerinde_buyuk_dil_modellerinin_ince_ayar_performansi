@@ -15,5 +15,4 @@ anlik_saat = datetime.datetime.now()
 # Assuming 'anlik_saat' is a datetime object
 anlik_saat_str = anlik_saat.strftime("%Y-%m-%d %H:%M:%S")  # Format as desired
 sonuclar_dosyasi = os.path.join("sonuclar",anlik_saat_str)
-gorsel_yolu = os.path.join(sonuclar_dosyasi,gorsel_klasor_adi)
 model_degerlendirme_sonuclari = 'model_degerlendirme_sonuclari.txt'

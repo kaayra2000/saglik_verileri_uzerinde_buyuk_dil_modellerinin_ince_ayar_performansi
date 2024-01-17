@@ -1,11 +1,14 @@
 import os
 import datetime
 num_labels = 2
-batch_size = 32
-epoch_sayisi = 2
+param_grid = {
+    'learning_rate': [0.01, 0.001, 0.0001],
+    'batch_size': [16, 32, 64]
+}
+epoch_sayisi = 3
 
 # Dosya adları
-model_adi = "CustomModel"
+model_adi = "BestModelParameters"
 gorsel_klasor_adi = "gorseller"
 check_point_path = "checkpoints"
 anlik_saat = datetime.datetime.now()
@@ -13,4 +16,4 @@ anlik_saat = datetime.datetime.now()
 anlik_saat_str = anlik_saat.strftime("%Y-%m-%d %H:%M:%S")  # Format as desired
 sonuclar_dosyasi = os.path.join("sonuclar",anlik_saat_str)
 gorsel_yolu = os.path.join(sonuclar_dosyasi,gorsel_klasor_adi)
-history_file_path = os.path.join(sonuclar_dosyasi,'model_degerlendirme_sonuclari.txt')
+model_degerlendirme_sonuclari = 'model_degerlendirme_sonuclari.txt'

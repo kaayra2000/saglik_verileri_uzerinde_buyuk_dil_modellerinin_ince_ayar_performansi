@@ -10,8 +10,8 @@ import os
 from sabitler import *
 import matplotlib.pyplot as plt
 from keras.callbacks import Callback
+from sklearn.model_selection import ParameterGrid
 from keras.callbacks import ModelCheckpoint
-import datetime
 from keras.utils import to_categorical
 # TensorFlow için uyumlu model ve tokenizer yükleme
 model_name = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract"
@@ -36,21 +36,6 @@ X_train_tokenized = tokenizer(X_train, padding=True, truncation=True, max_length
 X_val_tokenized = tokenizer(X_val, padding=True, truncation=True, max_length=512, return_tensors="tf")
 # Test verilerinin tokenleştirilmesi
 X_test_tokenized = tokenizer(X_test, padding=True, truncation=True, max_length=512, return_tensors="tf")
-# TensorFlow Dataset oluşturma
-test_dataset = tf.data.Dataset.from_tensor_slices((
-    dict(X_test_tokenized),
-    y_test
-)).batch(batch_size)
-# TensorFlow Dataset oluşturma
-train_dataset = tf.data.Dataset.from_tensor_slices((
-    dict(X_train_tokenized),
-    y_train
-)).shuffle(1000).batch(batch_size)
-
-val_dataset = tf.data.Dataset.from_tensor_slices((
-    dict(X_val_tokenized),
-    y_val
-)).batch(batch_size)
 # Precision ve Recall metriklerini tanımlama
 precision_metric = metrics.Precision(name='precision')
 recall_metric = metrics.Recall(name='recall')
@@ -59,13 +44,6 @@ epsilon = tf.keras.backend.epsilon()
 
 # EarlyStopping geri arama işlevini tanımlayın
 early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
-
-# Modeli derleme
-model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=5e-5),
-    loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
-    metrics=['accuracy', precision_metric, recall_metric, f1_score_metric]
-)
 class CustomMetricsCallback(Callback):
     def __init__(self, file_path):
         super(CustomMetricsCallback, self).__init__()
@@ -74,29 +52,69 @@ class CustomMetricsCallback(Callback):
 
     def on_epoch_end(self, epoch, logs=None):
         self.history.append(logs)
-        with open(self.file_path, 'w') as file:
+        os.makedirs(os.path.dirname(self.file_path), exist_ok=True)
+        with open(self.file_path, 'a') as file:
             file.write(f"Epoch {epoch + 1}\n")
             file.write(f"Train Loss: {logs.get('loss')}, Train Accuracy: {logs.get('accuracy')}\n")
             file.write(f"Train Precision: {logs.get('precision')}, Train Recall: {logs.get('recall')}\n")
             file.write(f"Train F1 Score: {logs.get('F1Score')}\n")
             file.write(f"Validation Loss: {logs.get('val_loss')}, Validation Accuracy: {logs.get('val_accuracy')}\n")
             file.write(f"Validation Precision: {logs.get('val_precision')}, Validation Recall: {logs.get('val_recall')}\n")
-            file.write(f"Validation F1 Score: {logs.get('val_F1Score')}\n\n")
-# Özel callback oluşturun
-custom_metrics_callback = CustomMetricsCallback(history_file_path)
-os.makedirs(sonuclar_dosyasi, exist_ok=True)
-os.makedirs(check_point_path, exist_ok=True)
-# ModelCheckpoint callback'ini ayarlayın
-model_checkpoint_callback = ModelCheckpoint(
-    filepath=os.path.join(check_point_path, 'model_epoch_{epoch:02d}'),
+            file.write(f"Validation F1 Score: {logs.get('val_F1Score')}\n\n")      
+best_accuracy = 0
+best_params = {}
+best_model = None
+for params in ParameterGrid(param_grid):
+    lr = params['learning_rate']
+    batch_size = params['batch_size']
+    # TensorFlow Dataset oluşturma
+    test_dataset = tf.data.Dataset.from_tensor_slices((
+        dict(X_test_tokenized),
+        y_test
+    )).batch(batch_size)
+    # TensorFlow Dataset oluşturma
+    train_dataset = tf.data.Dataset.from_tensor_slices((
+        dict(X_train_tokenized),
+        y_train
+    )).shuffle(1000).batch(batch_size)
+
+    val_dataset = tf.data.Dataset.from_tensor_slices((
+        dict(X_val_tokenized),
+        y_val
+    )).batch(batch_size)
+    model_checkpoint_callback = ModelCheckpoint(
+    filepath=os.path.join(check_point_path,f"batch_size={batch_size},learning_rate={lr}",'model_epoch_{epoch:02d}'),
     save_freq='epoch',
     save_weights_only=False,
     save_format='tf',  # SavedModel formatında kaydet
     verbose=1
-)
-# Modeli eğitme
-history = model.fit(train_dataset, epochs=epoch_sayisi, validation_data=val_dataset, callbacks=[early_stopping, custom_metrics_callback, model_checkpoint_callback])
-model.save_pretrained(model_adi)
+    )
+    # Modeli derleme
+    model.compile(
+        optimizer=tf.keras.optimizers.Adam(lr),
+        loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
+        metrics=['accuracy', precision_metric, recall_metric, f1_score_metric]
+    )
+    # Özel callback oluşturun
+    history_file_path = os.path.join(sonuclar_dosyasi,f"batch_size={batch_size},learning_rate={lr}"  ,model_degerlendirme_sonuclari)
+    custom_metrics_callback = CustomMetricsCallback(history_file_path)
+    # Modeli eğitme
+    history = model.fit(train_dataset, epochs=epoch_sayisi, validation_data=val_dataset, callbacks=[early_stopping, custom_metrics_callback, model_checkpoint_callback])
+    accuracy = history.history['val_accuracy'][-1]
+    if accuracy > best_accuracy:
+        best_accuracy = accuracy
+        best_params = params
+        best_model = model
+
+print("En iyi parametreler:", best_params)
+with open(os.path.joint(check_point_path, "best_params.txt"), 'w') as file:
+    file.write(f"En iyi parametreler: {best_params}\n")
+
+os.makedirs(sonuclar_dosyasi, exist_ok=True)
+os.makedirs(check_point_path, exist_ok=True)
+# ModelCheckpoint callback'ini ayarlayın
+
+best_model.save_pretrained(model_adi)
 tokenizer.save_pretrained(model_adi)
 
 # Modelin test verileri üzerinde değerlendirilmesi

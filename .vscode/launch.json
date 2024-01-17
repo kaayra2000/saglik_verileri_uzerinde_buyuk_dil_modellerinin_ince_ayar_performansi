@@ -2,18 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: model_egit",
+      "name": "Python: model_egit_with_label",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_egit.py",
+      "program": "${workspaceFolder}/model eğitimi/model_egit_with_label.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
     },
     {
-      "name": "Python: model_test_et",
+      "name": "Python: model_test_et_with_label",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_test_et.py",
+      "program": "${workspaceFolder}/model eğitimi/model_test_et_with_label.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
     }

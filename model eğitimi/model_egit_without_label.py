@@ -68,7 +68,7 @@ val_dataset = test_val_dataset.skip(test_size)
 # EarlyStopping geri arama işlevini tanımlayın
 early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
-best_accuracy = 0
+best_loss = float('inf')
 best_params = {}
 best_model = None
 best_history_file_path = None
@@ -100,8 +100,13 @@ for params in ParameterGrid(param_grid):
 
     # Modeli eğit
     history = model.fit(train_dataset_batched, epochs=epoch_sayisi, validation_data=val_dataset_batched, callbacks = [custom_metrics_callback,model_checkpoint_callback, early_stopping])
-    plot_and_save_metric(history, 'loss', 'loss_plot.png', gorsel_yolu)
-    val_loss = history.history['val_loss'][-1]
+    new_format_data = []
+    original_data = history.history
+    for i in range(len(original_data['loss'])):
+        new_entry = {'loss': original_data['loss'][i], 'val_loss': original_data['val_loss'][i]}
+        new_format_data.append(new_entry)
+    plot_and_save_metric(new_format_data, 'loss', 'loss_plot.png', gorsel_yolu)
+    val_loss = original_data['val_loss'][-1]
     # En iyi modeli ve parametreleri kaydet
     if val_loss < best_loss:  # Düşük kayıp daha iyidir
         best_loss = val_loss

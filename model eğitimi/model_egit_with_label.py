@@ -123,9 +123,6 @@ with open(os.path.join(check_point_path, "best_params.txt"), 'w') as file:
     file.write(f"En iyi parametreler: {best_params}\n")
 
 os.makedirs(sonuclar_dosyasi, exist_ok=True)
-os.makedirs(check_point_path, exist_ok=True)
-# ModelCheckpoint callback'ini ayarlayın
-
 best_model.save_pretrained(model_adi)
 tokenizer.save_pretrained(model_adi)
 

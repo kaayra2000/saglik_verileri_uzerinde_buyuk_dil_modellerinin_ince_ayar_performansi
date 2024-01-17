@@ -19,8 +19,8 @@ data_filepath = os.path.join("../ana_veri_seti", veri_seti_adi)
 # Dosya adları
 model_adi = "BestModelParameters"
 model_path = model_name.replace("/", "_").replace("-", "_")
-model_path_with_label = os.path.join(model_path, label_yolu)
-model_path_without_label = os.path.join(model_path, labelsiz_yolu)
+model_path_with_label = os.path.join(label_yolu, model_path)
+model_path_without_label = os.path.join(labelsiz_yolu, model_path)
 gorsel_klasor_adi = "gorseller"
 check_point_path = "checkpoints"
 anlik_saat = datetime.datetime.now()

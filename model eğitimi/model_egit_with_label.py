@@ -82,12 +82,12 @@ for params in ParameterGrid(param_grid):
         y_val
     )).batch(batch_size)
     model_checkpoint_callback = ModelCheckpoint(
-    filepath=os.path.join(check_point_path,batch_dosya_adi,'model_epoch_{epoch:02d}'),
-    save_freq='epoch',
-    save_weights_only=False,
-    save_format='tf',  # SavedModel formatında kaydet
-    verbose=1
-    )
+        filepath=os.path.join(check_point_path,batch_dosya_adi,'model_epoch_{epoch:02d}'),
+        save_freq='epoch',
+        save_weights_only=False,
+        save_format='tf',  # SavedModel formatında kaydet
+        verbose=1
+        )
     # Modeli derleme
     model.compile(
         optimizer=tf.keras.optimizers.Adam(lr),

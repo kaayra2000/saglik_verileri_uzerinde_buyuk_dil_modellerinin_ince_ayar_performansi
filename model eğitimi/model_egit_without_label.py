@@ -96,7 +96,7 @@ for params in ParameterGrid(param_grid):
 
     # Modeli derle
     optimizer = tf.keras.optimizers.Adam(learning_rate=lr)
-    model.compile(optimizer=optimizer, loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
+    model.compile(optimizer=optimizer, loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
 
     # Modeli eğit
     history = model.fit(train_dataset_batched, epochs=epoch_sayisi, validation_data=val_dataset_batched, callbacks = [custom_metrics_callback,model_checkpoint_callback, early_stopping])

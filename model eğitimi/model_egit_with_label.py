@@ -64,17 +64,13 @@ class CustomMetricsCallback(Callback):
 best_accuracy = 0
 best_params = {}
 best_model = None
+best_history_file_path = None
 for params in ParameterGrid(param_grid):
     lr = params['learning_rate']
     batch_size = params['batch_size']
     batch_dosya_adi = f"batch_size={batch_size},learning_rate={lr}" 
     # Modeli yükleme
     model = TFBertForSequenceClassification.from_pretrained(model_name, from_pt=True, num_labels=num_labels)
-    # TensorFlow Dataset oluşturma
-    test_dataset = tf.data.Dataset.from_tensor_slices((
-        dict(X_test_tokenized),
-        y_test
-    )).batch(batch_size)
     # TensorFlow Dataset oluşturma
     train_dataset = tf.data.Dataset.from_tensor_slices((
         dict(X_train_tokenized),
@@ -117,6 +113,7 @@ for params in ParameterGrid(param_grid):
         best_accuracy = accuracy
         best_params = params
         best_model = model
+        best_history_file_path = history_file_path
 
 print("En iyi parametreler:", best_params)
 with open(os.path.join(check_point_path, "best_params.txt"), 'w') as file:
@@ -125,6 +122,12 @@ with open(os.path.join(check_point_path, "best_params.txt"), 'w') as file:
 os.makedirs(sonuclar_dosyasi, exist_ok=True)
 best_model.save_pretrained(model_adi)
 tokenizer.save_pretrained(model_adi)
+
+# TensorFlow Dataset oluşturma
+test_dataset = tf.data.Dataset.from_tensor_slices((
+    dict(X_test_tokenized),
+    y_test
+)).batch(best_params['batch_size'])
 
 # Modelin test verileri üzerinde değerlendirilmesi
 # Modelin tahminlerini yapın
@@ -147,5 +150,5 @@ loss = tf.keras.losses.CategoricalCrossentropy(from_logits=True)(y_test, y_pred_
 # Sonuçları bir değişkene atayın
 sonuclar = f"TEST\nPrecision: {precision}, Recall: {recall}, F1 Score: {f1}, Accuracy: {accuracy}, Loss: {loss}\n\n"
 # Sonuçları bir dosyaya yazdırın
-with open(os.path.join(history_file_path), 'a') as file:
+with open(best_history_file_path, 'a') as file:
     file.write(sonuclar)

@@ -8,22 +8,22 @@ from transformers import TFBertForSequenceClassification, BertTokenizer
 from keras.callbacks import EarlyStopping
 import os
 from sabitler import *
-import matplotlib.pyplot as plt
 from keras.callbacks import Callback
 from sklearn.model_selection import ParameterGrid
 from keras.callbacks import ModelCheckpoint
 from keras.utils import to_categorical
-# TensorFlow için uyumlu model ve tokenizer yükleme
-model_name = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract"
-tokenizer = BertTokenizer.from_pretrained(model_name)
-model = TFBertForSequenceClassification.from_pretrained(model_name, from_pt=True, num_labels=num_labels)
+from plot_and_save import plot_and_save_metric
 
+# TensorFlow için uyumlu tokenizer yükleme
+tokenizer = BertTokenizer.from_pretrained(model_name)
 # Veri dosyasını oku
-data_filepath = '../ana_veri_seti/islenmis_diabetes_prediction_dataset.csv'
 df = pd.read_csv(data_filepath)
 
-X = list(df["text"])
-y = list(df["diabetes"])
+os.makedirs(model_path_with_label, exist_ok=True)
+os.chdir(model_path_with_label)
+
+X = list(df[metin])
+y = list(df[label])
 y = to_categorical(y)
 # İlk olarak veriyi %80 eğitim, %20 doğrulama/test olarak ayır
 X_train, X_val_test, y_train, y_val_test = train_test_split(X, y, test_size=0.2, stratify=y)
@@ -61,20 +61,6 @@ class CustomMetricsCallback(Callback):
             file.write(f"Validation Loss: {logs.get('val_loss')}, Validation Accuracy: {logs.get('val_accuracy')}\n")
             file.write(f"Validation Precision: {logs.get('val_precision')}, Validation Recall: {logs.get('val_recall')}\n")
             file.write(f"Validation F1 Score: {logs.get('val_F1Score')}\n\n")      
-def plot_and_save_metric(history, metric_name, file_name, gorsel_yolu):
-    epochs = range(1, len(history) + 1)
-    train_values = [log.get(metric_name) for log in history]
-    val_values = [log.get('val_' + metric_name) for log in history]
-
-    plt.figure()
-    plt.plot(epochs, train_values, 'bo-', label=f'Training {metric_name}')
-    plt.plot(epochs, val_values, 'r*-', label=f'Validation {metric_name}')
-    plt.title(f'Training and Validation {metric_name}')
-    plt.xlabel('Epoch')
-    plt.ylabel(metric_name.capitalize())
-    plt.legend()
-    plt.savefig(os.path.join(gorsel_yolu, file_name))
-    plt.close()
 best_accuracy = 0
 best_params = {}
 best_model = None
@@ -82,6 +68,8 @@ for params in ParameterGrid(param_grid):
     lr = params['learning_rate']
     batch_size = params['batch_size']
     batch_dosya_adi = f"batch_size={batch_size},learning_rate={lr}" 
+    # Modeli yükleme
+    model = TFBertForSequenceClassification.from_pretrained(model_name, from_pt=True, num_labels=num_labels)
     # TensorFlow Dataset oluşturma
     test_dataset = tf.data.Dataset.from_tensor_slices((
         dict(X_test_tokenized),
@@ -131,7 +119,7 @@ for params in ParameterGrid(param_grid):
         best_model = model
 
 print("En iyi parametreler:", best_params)
-with open(os.path.joint(check_point_path, "best_params.txt"), 'w') as file:
+with open(os.path.join(check_point_path, "best_params.txt"), 'w') as file:
     file.write(f"En iyi parametreler: {best_params}\n")
 
 os.makedirs(sonuclar_dosyasi, exist_ok=True)

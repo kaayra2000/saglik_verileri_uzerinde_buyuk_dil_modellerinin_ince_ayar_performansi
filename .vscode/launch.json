@@ -16,6 +16,22 @@
       "program": "${workspaceFolder}/model eğitimi/model_test_et_with_label.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: model_egit_without_label",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/model_egit_without_label.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: model_test_et_without_label",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/model_test_et_without_label.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
     }
   ]
 }

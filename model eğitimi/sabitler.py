@@ -2,13 +2,25 @@ import os
 import datetime
 num_labels = 2
 param_grid = {
-    'learning_rate': [0.01, 0.001, 0.0001],
-    'batch_size': [16, 32, 64]
+    'learning_rate': [0.01, 0.001],
+    'batch_size': [16, 32]
 }
-epoch_sayisi = 3
+epoch_sayisi = 2
 
+# anahatlar
+metin = "text"
+label = "diabetes"
+model_name = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract"
+veri_seti_adi = "islenmis_diabetes_prediction_dataset.csv"
+label_yolu = "with_label"
+labelsiz_yolu = "without_label"
+# Veri seti dosya yolu
+data_filepath = os.path.join("../ana_veri_seti", veri_seti_adi)
 # Dosya adları
 model_adi = "BestModelParameters"
+model_path = model_name.replace("/", "_").replace("-", "_")
+model_path_with_label = os.path.join(model_path, label_yolu)
+model_path_without_label = os.path.join(model_path, labelsiz_yolu)
 gorsel_klasor_adi = "gorseller"
 check_point_path = "checkpoints"
 anlik_saat = datetime.datetime.now()

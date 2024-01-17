@@ -3,7 +3,7 @@ from transformers import TFBertForSequenceClassification, BertTokenizer
 from sabitler import *
 
 
-model = TFBertForSequenceClassification.from_pretrained(model_adi, from_pt=True, num_labels=num_labels)
+model = TFBertForSequenceClassification.from_pretrained(model_adi, from_pt=False, num_labels=num_labels)
 tokenizer = BertTokenizer.from_pretrained(model_adi)
 
 text = "The patient is a 50.0 year old Male. The patient has hypertension, does not have heart disease. Smoking history: current. BMI: 27.32. HbA1c level: 5.7. Blood glucose level: 260."

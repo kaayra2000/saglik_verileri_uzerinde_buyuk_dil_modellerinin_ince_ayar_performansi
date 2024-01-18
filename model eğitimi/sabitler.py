@@ -11,7 +11,7 @@ epoch_sayisi = 30
 # anahatlar
 metin = "text"
 label = "diabetes"
-model_name = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract"
+model_name = "dbmdz/bert-base-turkish-uncased"
 veri_seti_adi = "islenmis_diabetes_prediction_dataset.csv"
 label_yolu = "with_label"
 labelsiz_yolu = "without_label"

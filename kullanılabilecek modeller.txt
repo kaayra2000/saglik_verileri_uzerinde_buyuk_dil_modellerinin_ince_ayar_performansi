@@ -1,1 +1,2 @@
-https://huggingface.co/dbmdz/bert-base-turkish-uncased
+https://huggingface.co/malhajar/Mistral-7B-v0.2-meditron-turkish
+https://huggingface.co/malhajar/phi-2-chat-turkish

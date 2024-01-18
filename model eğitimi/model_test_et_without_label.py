@@ -1,24 +1,31 @@
-import tensorflow as tf
-from transformers import TFAutoModelForMaskedLM, AutoTokenizer
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from sabitler import *
 
+os.makedirs(model_path_without_label, exist_ok=True)
 os.chdir(model_path_without_label)
-model = TFAutoModelForMaskedLM.from_pretrained(model_adi, from_pt=False)
-tokenizer = AutoTokenizer.from_pretrained(model_adi, from_pt=False)
+model = AutoModelForCausalLM.from_pretrained(model_name,
+                                             device_map="auto",
+                                             torch_dtype=torch.float16,
+                                             revision="main")
 
-text = "The patient is a 50.0 year old Male. The patient has hypertension, does not have heart disease. Smoking history: current. BMI: 27.32. HbA1c level: 5.7. Blood glucose level: 260."
-inputs = tokenizer(text, padding=True, truncation=True, return_tensors='tf')  # 'tf' tensörlerini kullan
-outputs = model(**inputs)
-# Modelin logit çıktılarını al
-logits = outputs.logits
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-# Softmax fonksiyonu uygula
-softmax_logits = tf.nn.softmax(logits, axis=-1)
+def cikti_olustur(text):
+    text = f'''
+        ### Kullancı:
+        {text} 
+        '''
+    input_ids = tokenizer(text, return_tensors="pt").input_ids
+    output = model.generate(inputs=input_ids,max_new_tokens=512,pad_token_id=tokenizer.eos_token_id,top_k=50, do_sample=True,
+            top_p=0.95)
+    response = tokenizer.decode(output[0])
 
-# Her token pozisyonu için en yüksek olasılığa sahip token'in ID'sini bul
-predicted_token_ids = tf.argmax(softmax_logits, axis=-1)
+    print(response)
 
-# Token ID'lerini gerçek kelimelere çevir
-predicted_tokens = [tokenizer.convert_ids_to_tokens(id) for id in predicted_token_ids.numpy()]
+while True:
+    metin = input("Lütfen bir metin girin (çıkmak için 'exit' yazın): ")
+    if metin.lower() == 'exit':
+        break
+    cikti_olustur(metin.replace("I","ı").replace("İ","i").lower())
 
-print(predicted_tokens)

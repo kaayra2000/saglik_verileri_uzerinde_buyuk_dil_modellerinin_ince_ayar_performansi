@@ -5,7 +5,7 @@ os.makedirs(model_path_without_label, exist_ok=True)
 os.chdir(model_path_without_label)
 model = AutoModelForCausalLM.from_pretrained(model_name,
                                              device_map="auto",
-                                             torch_dtype=torch.float16,
+                                             torch_dtype=torch.float32,
                                              revision="main",
                                              trust_remote_code=True)
 

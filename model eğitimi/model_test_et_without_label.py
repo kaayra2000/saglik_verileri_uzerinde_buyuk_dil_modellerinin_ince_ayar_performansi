@@ -1,20 +1,19 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from sabitler import *
-
 os.makedirs(model_path_without_label, exist_ok=True)
 os.chdir(model_path_without_label)
 model = AutoModelForCausalLM.from_pretrained(model_name,
                                              device_map="auto",
                                              torch_dtype=torch.float16,
-                                             revision="main")
+                                             revision="main",
+                                             trust_remote_code=True)
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 def cikti_olustur(text):
     text = f'''
-        ### Kullancı:
-        {text} 
+        ### Instruction:  {text} ### Response:
         '''
     input_ids = tokenizer(text, return_tensors="pt").input_ids
     output = model.generate(inputs=input_ids,max_new_tokens=512,pad_token_id=tokenizer.eos_token_id,top_k=50, do_sample=True,

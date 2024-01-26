@@ -2,22 +2,6 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Python: model_egit_with_label",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_egit_with_label.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: model_test_et_with_label",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_test_et_with_label.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
       "name": "Python: model_egit_without_label",
       "type": "python",
       "request": "launch",
@@ -32,22 +16,6 @@
       "program": "${workspaceFolder}/model eğitimi/model_test_et_without_label.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: modeli_test_et gguf",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/model_egitimi_gguf/modeli_test_et.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model_egitimi_gguf"
-    },
-    {
-      "name": "Python: model_egitimi_gguf",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/model_egitimi_gguf/modeli_egit.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model_egitimi_gguf"
     }
   ]
 }

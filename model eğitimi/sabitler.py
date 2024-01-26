@@ -2,21 +2,21 @@ import os
 import datetime
 num_labels = 2
 param_grid = {
-    'learning_rate': [0.01, 0.001, 0.1, 0.0001],  # 4 farklı öğrenme oranı
-    'batch_size': [16, 32, 64, 128],  # 4 farklı batch boyutu
+    'learning_rate': [0.01],  # 4 farklı öğrenme oranı
+    'batch_size': [16],  # 4 farklı batch boyutu
 }
 
-epoch_sayisi = 30
+epoch_sayisi = 3
 
 # anahatlar
 metin = "text"
 label = "diabetes"
-model_name = "malhajar/Mistral-7B-v0.2-meditron-turkish"
-veri_seti_adi = "islenmis_diabetes_prediction_dataset.csv"
+model_name = "distilgpt2"
+veri_seti_adi = "ana_veri_seti.csv"
 label_yolu = "with_label"
 labelsiz_yolu = "without_label"
 # Veri seti dosya yolu
-data_filepath = os.path.join("../ana_veri_seti", veri_seti_adi)
+data_filepath = os.path.join("..", veri_seti_adi)
 # Dosya adları
 model_adi = "BestModelParameters"
 model_path = model_name.replace("/", "_").replace("-", "_")

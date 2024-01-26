@@ -1,25 +1,15 @@
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import TFGPT2LMHeadModel, AutoTokenizer
 from sabitler import *
-os.makedirs(model_path_without_label, exist_ok=True)
-os.chdir(model_path_without_label)
-model = AutoModelForCausalLM.from_pretrained(model_name,
-                                             device_map="auto",
-                                             revision="main",
-                                             trust_remote_code=True)
+model_path_without_label = os.path.join(model_path_without_label, model_adi)
+model = TFGPT2LMHeadModel.from_pretrained(model_path_without_label)
 
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_path_without_label)
 
 def cikti_olustur(text):
-    text = f'''
-        ### Instruction:  {text} ### Response:
-        '''
-    input_ids = tokenizer(text, return_tensors="pt").input_ids
-    output = model.generate(inputs=input_ids,max_new_tokens=512,pad_token_id=tokenizer.eos_token_id,top_k=50, do_sample=True,
-            top_p=0.95)
-    response = tokenizer.decode(output[0])
-
-    print(response)
+    inputs = tokenizer(text, return_tensors="tf")  # Metni tokenleştirin
+    output = model.generate(inputs["input_ids"])  # Modelden metin üretin
+    generated_text = tokenizer.decode(output[0], skip_special_tokens=True)  # Tokenları metne geri dönüştürün
+    print(generated_text)
 
 while True:
     metin = input("Lütfen bir metin girin (çıkmak için 'exit' yazın): ")

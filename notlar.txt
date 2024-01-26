@@ -1,2 +1,3 @@
 AutoModelForCausalLM -> Cümlenin başını veriyoruz devamını getiriyor
 AutoModelForQuestionAnswering -> Soru cevaplama için
+AutoModelWithLMHead -> Bağlama göre soru cevaplamak için

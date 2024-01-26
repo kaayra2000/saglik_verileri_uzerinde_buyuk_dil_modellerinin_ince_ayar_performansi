@@ -32,6 +32,14 @@
       "program": "${workspaceFolder}/model eğitimi/model_elle_test_gguf.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: model_elle_test_head",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/model_elle_test_head.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
     }
   ]
 }

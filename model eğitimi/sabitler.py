@@ -11,7 +11,8 @@ epoch_sayisi = 3
 # anahatlar
 metin = "text"
 label = "diabetes"
-model_name = "distilgpt2"
+model_name = "TheBloke/OpenHermes-2.5-Mistral-7B-GGUF"
+model_file = "openhermes-2.5-mistral-7b.Q4_K_M.gguf"
 veri_seti_adi = "ana_veri_seti.csv"
 label_yolu = "with_label"
 labelsiz_yolu = "without_label"

@@ -16,6 +16,22 @@
       "program": "${workspaceFolder}/model eğitimi/model_test_et_without_label.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: gpt2_train",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/gpt2_train.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: gpt2_test",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/gpt2_test.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
     }
   ]
 }

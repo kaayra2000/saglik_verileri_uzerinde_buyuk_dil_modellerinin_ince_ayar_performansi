@@ -10,14 +10,6 @@
       "cwd": "${workspaceFolder}/model eğitimi"
     },
     {
-      "name": "Python: model_test_et_without_label",
-      "type": "python",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_test_et_without_label.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
       "name": "Python: gpt2_train",
       "type": "python",
       "request": "launch",
@@ -26,10 +18,10 @@
       "cwd": "${workspaceFolder}/model eğitimi"
     },
     {
-      "name": "Python: gpt2_test",
+      "name": "Python: model elle test",
       "type": "python",
       "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/gpt2_test.py",
+      "program": "${workspaceFolder}/model eğitimi/model_elle_test.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
     }

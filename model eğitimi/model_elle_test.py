@@ -1,4 +1,4 @@
-from transformers import pipeline, set_seed
+from transformers import pipeline
 from sabitler import model_name
 generator = pipeline('text-generation', model=model_name)
 
@@ -11,4 +11,4 @@ while True:
     if metin.lower() == 'exit':
         break
     # Girdiyi modelden geçir
-    print(generator(metin, max_length=20, num_return_sequences=3))
+    print(generator(metin, max_length=20, num_return_sequences=1))

@@ -1,9 +1,10 @@
 import os
 import datetime
+
 num_labels = 2
 param_grid = {
-    'learning_rate': [0.01],  # 4 farklı öğrenme oranı
-    'batch_size': [8],  # 4 farklı batch boyutu
+    "learning_rate": [0.01],  # 4 farklı öğrenme oranı
+    "batch_size": [8],  # 4 farklı batch boyutu
 }
 
 epoch_sayisi = 1
@@ -27,6 +28,6 @@ gorsel_klasor_adi = "gorseller"
 check_point_path = "checkpoints"
 anlik_saat = datetime.datetime.now()
 # Assuming 'anlik_saat' is a datetime object
-anlik_saat_str = anlik_saat.strftime("%Y-%m-%d %H:%M:%S")  # Format as desired
-sonuclar_dosyasi = os.path.join("sonuclar",anlik_saat_str)
-model_degerlendirme_sonuclari = 'model_degerlendirme_sonuclari.txt'
+anlik_saat_str = anlik_saat.strftime("%Y-%m-%d %H_%M_%S")  # Format as desired
+sonuclar_dosyasi = os.path.join("sonuclar", anlik_saat_str)
+model_degerlendirme_sonuclari = "model_degerlendirme_sonuclari.txt"

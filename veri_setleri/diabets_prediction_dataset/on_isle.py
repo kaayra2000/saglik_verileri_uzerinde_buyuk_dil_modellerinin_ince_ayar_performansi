@@ -28,7 +28,7 @@ def tanimlayici_cumle_olustur(row):
     )
     diyabet_durumu_secenekleri = diyabet_var if row["diabetes"] == 1 else diyabet_yok
     kalp_hastaligi_cumle = rastgele_cumle_sec(kalp_hastaligi_secenekleri)
-    diyabet_durumu_cumle = rastgele_cumle_sec(diyabet_durumu_secenekleri)
+    diyabet_durumu_cumle = CEVAP + rastgele_cumle_sec(diyabet_durumu_secenekleri)
     hiper_tansiyon_cumle = rastgele_cumle_sec(hipertansiyon_secenekleri)
     cumleler = [
         kalp_hastaligi_cumle,

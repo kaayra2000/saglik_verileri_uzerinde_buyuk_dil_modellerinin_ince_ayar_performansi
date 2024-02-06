@@ -1,6 +1,8 @@
 import random
 import pandas as pd
 import os
+CEVAP = "Cevap: "
+SORU = "Soru: "
 yuksek_alternatifler = [
     "oldukça yüksek",
     "hayli yüksek",
@@ -50,4 +52,11 @@ class OnIsle():
         cumleler = self.cumle_olustur_fun(row)
         # rastgele sıralama
         random.shuffle(cumleler)
+        for i,cumle in enumerate(cumleler):
+            if CEVAP in cumle:
+                tmp = cumle
+                cumleler[i] = cumleler[-1]
+                cumleler[-1] = tmp
+                break
+        cumleler[0] = SORU + cumleler[0]
         return ' '.join(cumleler)

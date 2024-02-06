@@ -1,7 +1,8 @@
 import torch
 import os
 from torch.utils.data import DataLoader, Dataset
-from transformers import AutoModelForCausalLM, AutoTokenizer, AdamW
+from torch.optim import AdamW
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from sabitler import *
 from torch.nn.utils.rnn import pad_sequence
 from collections import Counter
@@ -15,22 +16,44 @@ df = pd.read_csv(data_filepath)
 os.makedirs(model_path_without_label, exist_ok=True)
 os.chdir(model_path_without_label)
 
-class TextDataset(Dataset):
-    def __init__(self, texts, tokenizer):
+class QADataset(Dataset):
+    def __init__(self, dataframe, tokenizer):
         self.tokenizer = tokenizer
+        self.data = dataframe
+
         # Tokenizer için bir padding token'ı atayın, eğer yoksa
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
-        self.inputs = [self.tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512) for text in texts]
+
+        self.questions = self.data['text'].apply(lambda x: x.split("Cevap:")[0].strip())
+        self.answers = self.data['text'].apply(lambda x: x.split("Cevap:")[1].strip())
+
+        self.inputs = []
+        self.attention_masks = []
+
+        for question, answer in zip(self.questions, self.answers):
+            # Soru ve cevabı tokenizer ile encode edin
+            encoded_pair = self.tokenizer.encode_plus(question, answer, 
+                                                      add_special_tokens=True,
+                                                      max_length=512,
+                                                      padding='max_length',
+                                                      truncation=True,
+                                                      return_tensors="pt")
+            self.inputs.append(encoded_pair['input_ids'])
+            self.attention_masks.append(encoded_pair['attention_mask'])
 
     def __len__(self):
-        return len(self.inputs)
+        return len(self.questions)
 
     def __getitem__(self, idx):
-        return self.inputs[idx]
+        return {
+            'input_ids': self.inputs[idx].squeeze(),  # Batch boyutunu kaldır
+            'attention_mask': self.attention_masks[idx].squeeze()  # Batch boyutunu kaldır
+        }
 
 def calculate_perplexity(loss):
-    return torch.exp(loss).item()
+    return np.exp(loss)
+
 # Özel collate_fn fonksiyonu
 def collate_fn(batch):
     # Tokenizer'ın pad_token_id'sini kullanarak padding yapın
@@ -124,8 +147,8 @@ def train(dataset, device, new_tokens):
                 best_loss = epoch_losses[-1]
                 best_model_params = {'lr': lr, 'bs': bs}
                 best_model = model
-                torch.save(model.state_dict(), 'best_model.pth')
                 print(f"New best model saved with loss {best_loss}")
+            model = None
 
     return best_model_params, best_model
 
@@ -145,7 +168,7 @@ unique_words = find_unique_words(texts)
 # Tokenizer'da olmayan kelimeleri tespit et
 new_tokens = [word for word in unique_words if tokenizer.convert_tokens_to_ids(word) == tokenizer.unk_token_id]
 
-dataset = TextDataset(texts, tokenizer=tokenizer)
+dataset = QADataset(dataframe=df, tokenizer=tokenizer)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 best_params, model = train(dataset, device, new_tokens)

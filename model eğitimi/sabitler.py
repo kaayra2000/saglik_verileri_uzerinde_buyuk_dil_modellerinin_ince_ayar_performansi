@@ -3,10 +3,10 @@ import datetime
 num_labels = 2
 param_grid = {
     'learning_rate': [0.01],  # 4 farklı öğrenme oranı
-    'batch_size': [16],  # 4 farklı batch boyutu
+    'batch_size': [8],  # 4 farklı batch boyutu
 }
 
-epoch_sayisi = 3
+epoch_sayisi = 1
 
 # anahatlar
 metin = "text"

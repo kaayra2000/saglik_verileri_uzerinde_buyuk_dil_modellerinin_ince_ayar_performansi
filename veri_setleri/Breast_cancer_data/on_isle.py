@@ -26,7 +26,7 @@ def tanimlayici_cumle_olustur(row):
     cumleler.append(rastgele_cumle_sec(duzgunluk_secenekleri).format(smoothness_kategori_belirle(row['mean_smoothness'])))
     
     # Tanı için cümle ekleyin
-    cumleler.append(rastgele_cumle_sec(tani_secenekleri[row['diagnosis']]))
+    cumleler.append(CEVAP + rastgele_cumle_sec(tani_secenekleri[row['diagnosis']]))
     
     return cumleler
 

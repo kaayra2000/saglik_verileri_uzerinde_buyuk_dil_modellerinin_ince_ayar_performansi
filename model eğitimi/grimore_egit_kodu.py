@@ -25,7 +25,7 @@ class QADataset(Dataset):
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 
-        self.questions = self.data['text'].apply(lambda x: x.split("Cevap:")[0].strip())
+        self.questions = self.data['text'].apply(lambda x: x.split("Cevap:")[0].strip().replace("Soru:",""))
         self.answers = self.data['text'].apply(lambda x: x.split("Cevap:")[1].strip())
 
         self.inputs = []

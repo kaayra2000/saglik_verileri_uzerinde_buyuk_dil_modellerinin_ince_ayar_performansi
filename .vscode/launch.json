@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Python: model_egit_without_label",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/model eğitimi/model_egit_without_label.py",
       "console": "integratedTerminal",
@@ -11,7 +11,7 @@
     },
     {
       "name": "Python: gpt2_train",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/model eğitimi/gpt2_train.py",
       "console": "integratedTerminal",
@@ -19,7 +19,7 @@
     },
     {
       "name": "Python: model elle test",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/model eğitimi/model_elle_test.py",
       "console": "integratedTerminal",
@@ -27,7 +27,7 @@
     },
     {
       "name": "Python: model elle test gguf",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/model eğitimi/model_elle_test_gguf.py",
       "console": "integratedTerminal",
@@ -35,9 +35,25 @@
     },
     {
       "name": "Python: model_elle_test_head",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/model eğitimi/model_elle_test_head.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: grimore_egit_kodu",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/grimore_egit_kodu.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: grimore_test_kodu",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/model eğitimi/grimore_test_kodu.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
     }

@@ -1,0 +1,44 @@
+ilk 5'i max_length 50 için olan dönütler
+top_k=200
+top_p=0.5
+1-)
+Soru: Lütfen bir metin girin: Ortalama yarıçapı belirgin derecede düşük olan bir tümör. Dokusu ortalama olarak hayli yüksek. Ortalama çevresi oldukça yüksek olan bir tümör. Ortalama alanı belirgin derecede yüksek olan bir tümör. Ortalama düzgünlüğü belirgin derecede düşük olan bir tümör.
+Modelin ürettiği metin: hba1c verisine göre Hasta, diyabet öncesi durumda kadındır Kan şekeri değerler temiz bulunmuştur Ergin bir birey
+2-)
+Lütfen bir metin girin: Yarıçapı ortalama çok yüksek ölçülen tümör. Dokusu ortalama olarak çok yüksek. Çevresi ortalama anormal derecede yüksek olarak ölçülmüştür. Ortalama alanı oldukça yüksek olan bir tümör. Ortalama düzgünlüğü çok düşük olan bir tümör.
+Modelin ürettiği metin: hba1c verisine göre Hasta için kritik HbA prediyabet durumunda Tetkler, hastanın diyabet hastası olmadığına sahiptir
+3-)
+Lütfen bir metin girin: naber
+Modelin ürettiği metin: i bulunmamaktadır Hastanın kalp rahatsızlığı olmadığı anlaşılmiştir hba1c verisine göre Hasta
+4-)
+Lütfen bir metin girin: ben hasta mıyım
+Modelin ürettiği metin: amaktadır Hastanın kalp rahatsızlığı bulunmalı. hba1c verisine göre Hasta, diyabet öncesi durumda erke
+5-)
+Lütfen bir metin girin: hastanın yarıçapı normal olarak çlçülen tümör, doku ortalama olarak yüksek.
+Modelin ürettiği metin: erkektir Hastanın diyabetle ilgili bir sorunu görülmemiştir Kişinin kan şekerler temiz bulmamaktif yaş grubundaki
+
+max_length 500 için olan dönütler
+top_k=200
+top_p=0.5
+
+6-)
+Lütfen bir metin girin: hastanın yarıçapı normal olarak çlçülen tümör, doku ortalama olarak yüksek.
+Modelin ürettiği metin: Hasta iyi hipertansiyon alaşırmemiştur erkektir Kiğin kan şekerlery tespit edildik saptandı. Tetkikler, hastanın kalp rahatsızlmadığı olduğunmuştur Olgun yaş grubundaki hastasmiş HbA1c verisine göre Hastada diyabet saptanmıştıra Sigara geye devam et mektedir Gen bir birey Kan basemindeki cidde yörkssekligarayıdır<|endoftext|>
+7-)
+Lütfen bir metin girin: hastanın yarıçapı normal olarak çlçülen tümör, doku ortalama olarak yüksek.
+Modelin ürettiği metin: iştir Hastanın diyabet hastası olmadığı belirlenmiştir hba1c verisine göre Hasta, hafif yörselmamda sigara kullerine sahip erkektikler temiz bulunmuştur Tetkikler, hastanın kan şekertede dengeli ve Normalin biraz Sigarayla hiptansiyon riskini birey Kişinmemek seveki ciddesi uydemindedilimi yaşamaktif olanli standart iyi predeksimu tespit edildig.<|endoftext|>
+8-)
+Lütfen bir metin girin: Ortalama yarıçapı anormal derecede düşük tümör, ortalama DokUsu belirGin derecede yüksek olarak ölçüldü.
+Modelin ürettiği metin: tansiyon riski taşımamaktif yaç grubundaki hasta Hastanın diyabetle ilgili bir sorunu görülmemli dengeli kadındır Kan şekeri sevikte sigara iça yoktur hba1c verisine göre Hastada herhangi saptan temiz bulmuzlalp rahatsığı tespit edilmiş HbA1d kan basildir Tetkikler, hastanın obezite kayda değerkektiri. K çocukluklidde Kişinin normal aralında ahiydemindeki birey<|endoftext|>
+
+
+max_length 500 için olan dönütler
+top_k=50,
+top_p=0.95,
+
+9-)
+Lütfen bir metin girin: Ortalama yarıçapı anormal derecede düşük tümör, ortalama DokUsu belirGin derecede yüksek olarak ölçüldü.
+Modelin ürettiği metin: tansiyon hastası değildir Hastada diyabet saptanmamış tespit edilmiştir Yeti dönemindeki birey kadündır hba1c verisine göre Hasta için kritik HbA şu and sigara baalmadame yoktur Tetkler, hastanın kan bassel olarak tan yaşta Kan Űekeri sevigoda ideal durumda.<|endoftext|>
+10-)
+Lütfen bir metin girin: hastanın yarıçapı normal olarak çlçülen tümör, doku ortalama olarak yüksek.
+Modelin ürettiği metin: tansiyon riski taşımamaktif yaş grubundaki hasta Kişinin kan şekery aktif olarak sigara kullanmiştalama. erkektir Hastada diyabet saptan temiz bulunmu bilgi mevcut değildir hba1c verisine göre Hasta, hafif yardeki bireY Tetkikler, hastanın viddesi predyncede Sigarayla hiçmemektedir<|endoftext|>

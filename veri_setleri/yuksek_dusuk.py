@@ -45,18 +45,24 @@ class OnIsle():
         # Her satır için tanımlayıcı cümleler oluştur
         self.df['text'] = self.df.apply(self.tanimlayici_cumle_olustur, axis=1)
         selected_columns = self.df["text"]
+        selected_columns = selected_columns.explode('text')
         # Sonucu yeni bir dosyaya kaydet
         output_filepath = os.path.join('..', 'labelsiz_' + self.veri_seti_adi)
         selected_columns.to_csv(output_filepath, index=False)
     def tanimlayici_cumle_olustur(self, row):
-        cumleler = self.cumle_olustur_fun(row)
-        # rastgele sıralama
-        random.shuffle(cumleler)
-        for i,cumle in enumerate(cumleler):
-            if CEVAP in cumle:
-                tmp = cumle
-                cumleler[i] = cumleler[-1]
-                cumleler[-1] = tmp
-                break
-        cumleler[0] = SORU + cumleler[0]
-        return ' '.join(cumleler)
+        duzenlenmis_cumleler_matrisi = []
+        cumle_matrisi = self.cumle_olustur_fun(row)
+        for cumleler in cumle_matrisi:
+            tani_indexi = None
+            for i, cumle in enumerate(cumleler):
+                if CEVAP in cumle:
+                    tani_indexi = i
+                    break
+            # Tanıyı sona taşıma
+            if tani_indexi is not None:
+                cumleler.append(cumleler.pop(tani_indexi))
+            # İlk cümleyi soru ifadesi ile değiştirme
+            cumleler[0] = SORU + cumleler[0]
+            cumleler[-1] = CEVAP + cumleler[-1]
+            duzenlenmis_cumleler_matrisi.append(' '.join(cumleler))
+        return duzenlenmis_cumleler_matrisi

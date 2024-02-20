@@ -1,4 +1,4 @@
-import random
+from itertools import product
 import sys
 from degiskenler import *
 import os
@@ -26,22 +26,29 @@ def tanimlayici_cumle_olustur(row):
     kalp_hastaligi_secenekleri = (
         kalp_hastaligi_var if row["heart_disease"] == 1 else kalp_hastaligi_yok
     )
+    
     diyabet_durumu_secenekleri = diyabet_var if row["diabetes"] == 1 else diyabet_yok
-    kalp_hastaligi_cumle = rastgele_cumle_sec(kalp_hastaligi_secenekleri)
-    diyabet_durumu_cumle = CEVAP + rastgele_cumle_sec(diyabet_durumu_secenekleri)
-    hiper_tansiyon_cumle = rastgele_cumle_sec(hipertansiyon_secenekleri)
-    cumleler = [
-        kalp_hastaligi_cumle,
-        diyabet_durumu_cumle,
-        hiper_tansiyon_cumle,
-        yas_getir(row["age"]),
-        cinsiyet_getir(row["gender"]),
-        sigara_kullanimi_cevir(row["smoking_history"]),
-        bmi_hesapla(row["bmi"]),
-        hba1c_hesapla(row["HbA1c_level"]),
-        kan_sekeri_hesapla(row["blood_glucose_level"]),
-    ]
-    return cumleler
+    tum_kombinasyonlar = list(product(hipertansiyon_secenekleri, kalp_hastaligi_secenekleri,
+                                       secenekler_bmi[bmi_hesapla(row["bmi"])], secenekler_yas[yas_getir(row["age"])], [cinsiyet_getir(row["gender"])],
+                                       secenekler_sigara_kullanimi[sigara_kullanimi_cevir(row["smoking_history"])],
+                                        secenekler_hba1c[hba1c_hesapla(row["HbA1c_level"])],secenekler_kan_sekeri[kan_sekeri_hesapla(row["blood_glucose_level"])],
+                                       diyabet_durumu_secenekleri))
+    tum_cumleler = []
+    for kombinasyon in tum_kombinasyonlar:
+        cumleler = [
+            f'{kombinasyon[0]} ',
+            f'{kombinasyon[1]} ',
+            f'{kombinasyon[2]} ',
+            f'{kombinasyon[3]} ',
+            f'{kombinasyon[4]} ',
+            f'{kombinasyon[5]} ',
+            f'{kombinasyon[6]} ',
+            f'{kombinasyon[7]} ',
+            f'{kombinasyon[8]} ',
+
+        ] 
+        tum_cumleler.append(cumleler)
+    return tum_cumleler
 on_isleyici = OnIsle(veri_seti_adi, tanimlayici_cumle_olustur)
 
 on_isleyici.isle_kaydet()

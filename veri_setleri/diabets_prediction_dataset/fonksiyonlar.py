@@ -8,7 +8,7 @@ def yas_getir(age):
     else:
         durum = "yaşlı"
 
-    return random.choice(secenekler_yas[durum])
+    return durum
 
 
 def cinsiyet_getir(cinsiyet):
@@ -28,7 +28,7 @@ def bmi_hesapla(bmi):
     else:
         durum = "Obez"
 
-    return random.choice(secenekler_bmi[durum])
+    return durum
 
 
 def hba1c_hesapla(hba1c_seviyesi):
@@ -39,7 +39,7 @@ def hba1c_hesapla(hba1c_seviyesi):
     else:
         durum = "Diyabet"
 
-    return "hba1c verisine göre " + random.choice(secenekler_hba1c[durum])
+    return durum
 
 
 def kan_sekeri_hesapla(kan_sekeri_seviyesi):
@@ -52,11 +52,11 @@ def kan_sekeri_hesapla(kan_sekeri_seviyesi):
     else:
         durum = "Çok Yüksek"
 
-    return random.choice(secenekler_kan_sekeri[durum])
+    return durum
 
 
 def sigara_kullanimi_cevir(sigara_kullanimi):
     if sigara_kullanimi in secenekler_sigara_kullanimi:
-        return random.choice(secenekler_sigara_kullanimi[sigara_kullanimi])
+        return sigara_kullanimi
     else:
-        return "Tanımsız"
+        return "No Info"

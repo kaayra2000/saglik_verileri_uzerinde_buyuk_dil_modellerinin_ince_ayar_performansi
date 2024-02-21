@@ -48,24 +48,23 @@ secenekler_yas = {
 
 secenekler_bmi = {
     "Düşük": [
-        "Hastanın BMI değeri düşük",
-        "Hasta, vücut kitle indeksi düşük seviyede",
-        "Hasta, alt kilo sınırında",
+        "Hastanın vücut kitle endeksi değeri düşük",
+        "Hastanın kilosu, vücut kitle endeksine göre düşük seviyede",
+        "Hasta, vücut kitle endeksine göre alt kilo sınırında",
         "Hastada kilo eksikliği var",
-        "Hastanın vücut kitle indeksi zayıf",
+        "Hasta vücut kitle endeksine göre zayıf",
     ],
     "Normal": [
-        "Hastanın BMI değeri normal",
-        "Hasta, sağlıklı vücut kitle indeksine sahip",
-        "Hastanın BMI değerleri normal aralıkta",
+        "Hastanın vücut kitle endeksi değeri normal",
+        "Hasta, sağlıklı vücut kitle endeksine sahip",
+        "Hastanın vücut kitle endeksi değerleri normal aralıkta",
         "Hasta, ideal kiloda",
-        "Hastanın vücut kitle indeksi dengeli",
+        "Hastanın vücut kitle endeksi iyi",
     ],
     "Fazla Kilolu": [
         "Hasta fazla kilolu",
-        "Hastanın vücut kitle indeksi yüksek",
+        "Hasta vücut kitle endeksine göre aşırı şişman",
         "Hasta, aşırı kilolu",
-        "Hastada kilo fazlalığı var",
         "Hastanın BMI değeri, normalin üstünde",
     ],
     "Obez": [

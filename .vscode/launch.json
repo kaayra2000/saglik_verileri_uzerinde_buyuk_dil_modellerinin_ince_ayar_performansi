@@ -56,6 +56,14 @@
       "program": "${workspaceFolder}/model eğitimi/grimore_test_kodu.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/model eğitimi"
+    },
+    {
+      "name": "Python: Breast cancer",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/veri_setleri/Breast_cancer_data/on_isle.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/veri_setleri/Breast_cancer_data"
     }
   ]
 }

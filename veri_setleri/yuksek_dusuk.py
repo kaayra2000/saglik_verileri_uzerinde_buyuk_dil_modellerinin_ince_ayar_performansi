@@ -1,8 +1,8 @@
 import random
 import pandas as pd
 import os
-CEVAP = "Cevap: "
-SORU = "Soru: "
+DURUM = "Durum: "
+BILGI = "Bilgi: "
 yuksek_alternatifler = [
     "oldukça yüksek",
     "hayli yüksek",
@@ -31,7 +31,7 @@ class OnIsle():
         self.df = pd.read_csv(self.veri_seti_adi)
     def isle_kaydet(self):
         # Dosya yolu oluştur
-        output_filepath = os.path.join('..', 'labelsiz_' + self.veri_seti_adi)
+        output_filepath = os.path.join('..', 'ana_veri_seti.csv')
 
         # Dosyayı yazmak için aç, başlık ekleyerek
         with open(output_filepath, 'w') as file:
@@ -49,14 +49,14 @@ class OnIsle():
         for cumleler in cumle_matrisi:
             tani_indexi = None
             for i, cumle in enumerate(cumleler):
-                if CEVAP in cumle:
+                if BILGI in cumle:
                     tani_indexi = i
                     break
             # Tanıyı sona taşıma
             if tani_indexi is not None:
                 cumleler.append(cumleler.pop(tani_indexi))
             # İlk cümleyi soru ifadesi ile değiştirme
-            cumleler[0] = SORU + cumleler[0]
-            cumleler[-1] = CEVAP + cumleler[-1]
+            cumleler[0] = DURUM + cumleler[0]
+            cumleler[-1] = BILGI + cumleler[-1]
             duzenlenmis_cumleler_matrisi.append(' '.join(cumleler))
         return duzenlenmis_cumleler_matrisi

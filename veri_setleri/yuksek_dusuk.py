@@ -1,6 +1,7 @@
 import random
 import pandas as pd
 import os
+from degiskenler import ANA_VERI_SETI
 DURUM = "Durum: "
 BILGI = "Bilgi: "
 yuksek_alternatifler = [
@@ -31,7 +32,7 @@ class OnIsle():
         self.df = pd.read_csv(self.veri_seti_adi)
     def isle_kaydet(self):
         # Dosya yolu oluştur
-        output_filepath = os.path.join('..', 'ana_veri_seti.csv')
+        output_filepath = os.path.join('..', ANA_VERI_SETI)
 
         # Dosyayı yazmak için aç, başlık ekleyerek
         with open(output_filepath, 'w') as file:

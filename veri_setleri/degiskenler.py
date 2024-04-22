@@ -124,3 +124,7 @@ diyabet_yok = [
     "Ben diyabet hastası değilim.",
     "Bende diyabet hastalığı mevcut değil."
 ]
+
+
+
+ANA_VERI_SETI = "ana_veri_seti.csv"

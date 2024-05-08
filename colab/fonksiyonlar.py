@@ -116,30 +116,29 @@ def evaluate_model(model, dataloader, device, tokenizer):
             inputs = {k: v.to(device) for k, v in batch.items()}
             # Decode inputs to text to split based on special token
             decoded_inputs = [tokenizer.decode(inp, skip_special_tokens=False) for inp in inputs['input_ids']]
-            processed_inputs = []
+            # Yeni metin üretimi ve işleme
+            predicted_texts = []
+            answers = []
             for text in decoded_inputs:
-                # Split the input at the second special token and use only the first part for prediction
-                part_to_use = text.split(special_tokens[1])[0] + special_tokens[1]
-                processed_inputs.append(part_to_use)
-            # Re-encode the processed inputs for the model
-            processed_input_ids = [tokenizer.encode(pi, return_tensors='pt', max_length=512, truncation=True).to(device) for pi in processed_inputs]
-            processed_inputs = {'input_ids': torch.cat(processed_input_ids)}
-
-            # Make predictions using only the required part of the inputs
-            outputs = model(**processed_inputs)
-            predictions = outputs[0].argmax(dim=-1)
-
-            predicted_texts = [tokenizer.decode(pred, skip_special_tokens=False) for pred in predictions]
-            answers = [text.split(special_tokens[1])[1].strip() for text in decoded_inputs]
+                # Metni special_tokens[1] ile böl ve öncesini kullan
+                if special_tokens[1] in text:
+                    parts = text.split(special_tokens[1])
+                else:
+                    parts = [text, text]
+                full_prompt_text = prompt_part + special_tokens[1]
+                prompt_part = clean_special_tokens(parts[0])
+                generated_text = generate_eval_text(full_prompt_text, prompt_part, tokenizer, model, device)
+                predicted_texts.append(generated_text)
+                answers.append(parts[1].strip())
+            
             answers = [clean_special_tokens(answer) for answer in answers]
-            predicted_texts = [text.split(special_tokens[1])[1].strip() if special_tokens[1] in text else text for text in predicted_texts]
-            predicted_texts = [clean_special_tokens(text) for text in predicted_texts]
-            # F1 score and exact match calculation
+            
+            # F1 skoru ve tam eşleşme hesaplaması
             for pred_text, true_answer in zip(predicted_texts, answers):
                 total_f1 += compute_f1(pred_text, true_answer)
                 total_exact_match += compute_exact_match(pred_text, true_answer)
 
-            total_count += len(processed_input_ids)
+            total_count += len(inputs['input_ids'])
         print(predicted_texts[0])
         print(answers[0])
     average_f1 = total_f1 / total_count
@@ -287,6 +286,24 @@ def generate_text(full_prompt_text, prompt_text, tokenizer, model, device, max_l
     )
     generated_text = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
     return generated_text.replace(prompt_text,"")
+
+def generate_eval_text(full_prompt_text, prompt_text, tokenizer, model, device, max_length=100):
+    # Girdi metnini tokenize et ve attention mask oluştur
+    encoded_input = tokenizer.encode(full_prompt_text, return_tensors='pt', padding=True, truncation=True, max_length=max_length).to(device)
+
+    # Metin üretimi - Rastgelelik olmadan ve her zaman en yüksek skorlu sonuçları döndürmek için ayarlar
+    output_sequences = model.generate(
+        input_ids=encoded_input,
+        max_length=max_length + 20,  # Cevap için ekstra uzunluk
+        temperature=1.0,  # Etkisiz hale getirmek için 1 olarak bırakılabilir
+        top_k=0,          # Top-k örnekleme devre dışı
+        top_p=1.0,        # Nükleer örnekleme devre dışı, 1.0 tüm dağılımı kapsar
+        repetition_penalty=1.2,
+        do_sample=False,  # Rastgele örnekleme yapma, en yüksek olasılıklı tokenları seç
+        num_return_sequences=1
+    )
+    generated_text = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
+    return generated_text.replace(prompt_text, "")
 
 
 def test_et(additional_special_tokens, tokenizer, model, device):

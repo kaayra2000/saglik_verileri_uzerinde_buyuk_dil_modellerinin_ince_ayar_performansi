@@ -125,8 +125,9 @@ def evaluate_model(model, dataloader, device, tokenizer):
                     parts = text.split(special_tokens[1])
                 else:
                     parts = [text, text]
+                prompt_part = parts[0]
                 full_prompt_text = prompt_part + special_tokens[1]
-                prompt_part = clean_special_tokens(parts[0])
+                prompt_part = clean_special_tokens(prompt_part)
                 generated_text = generate_eval_text(full_prompt_text, prompt_part, tokenizer, model, device)
                 predicted_texts.append(generated_text)
                 answers.append(parts[1].strip())

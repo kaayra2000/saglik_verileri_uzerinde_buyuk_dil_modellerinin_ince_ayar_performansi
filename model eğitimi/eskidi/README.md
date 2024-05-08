@@ -1,1 +1,0 @@
-buradaki dosyaları banu hoca labelsız isteyince iptal ettim ve bu dizine taşıdım eğer çalışmasını istiyorsanız bir üst dizine taşımanız lazım değişkenleri de sabitler.py'den alıyor

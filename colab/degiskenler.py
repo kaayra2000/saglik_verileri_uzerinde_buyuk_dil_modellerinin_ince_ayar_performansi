@@ -1,0 +1,28 @@
+import os
+base_path = "/content/drive/My Drive/yl_tez"
+lr = 6e-4
+bs = 1
+
+epoch_sayisi = 20
+max_len = 128
+# anahatlar
+metin = "text"
+label = "diabetes"
+model_name = "ytu-ce-cosmos/turkish-gpt2-medium"
+veri_seti_adi = "ana_veri_seti.csv"
+veri_seti_adi =  "ana_veri_seti_deneme.csv"
+# Veri seti dosya yolu
+data_filepath = os.path.join(base_path, veri_seti_adi)
+# Dosya adları
+model_adi = "BestModelParameters"
+checkpoint_path_name = "checkpoint"
+checkpoint_name = 'checkpoint.pth'
+best_checkpoint_name = 'best_checkpoint.pth'
+checkpoint_pth = os.path.join(base_path, checkpoint_path_name)
+model_yolu = os.path.join(base_path, model_adi)
+model_path = model_name.replace("/", "_").replace("-", "_")
+model_path_without_label = os.path.join(base_path, model_path)
+gorsel_klasor_adi = "gorseller"
+gorsel_yolu = os.path.join(base_path, gorsel_klasor_adi)
+SORU_TOKEN ="<|soru|>"
+CEVAP_TOKEN ="<|cevap|>"

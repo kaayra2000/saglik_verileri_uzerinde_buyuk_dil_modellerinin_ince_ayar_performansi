@@ -240,7 +240,6 @@ def train(model, optimizer, start_epoch, start_batch_index,
     train_dataloader_len_5 = len(train_dataloader) / 5
     for epoch in range(start_epoch, epoch_sayisi):
         print(f"Epoch {epoch} başlıyor...")
-        model.train()
         data_iter = iter(train_dataloader)
 
         # İlk epoch için başlangıç batch'ine kadar olan batch'leri atla
@@ -251,6 +250,7 @@ def train(model, optimizer, start_epoch, start_batch_index,
         for batch_index, batch in tqdm(enumerate(data_iter, start=start_batch_index),
                                        total=len(train_dataloader) - start_batch_index,
                                        desc=f"Processing {epoch}"):
+            model.train()
             optimizer.zero_grad()
             inputs = {key: value.to(device) for key, value in batch.items()}
             outputs = model(**inputs, labels=inputs["input_ids"])

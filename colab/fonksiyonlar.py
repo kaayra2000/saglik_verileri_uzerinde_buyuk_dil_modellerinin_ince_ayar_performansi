@@ -130,9 +130,8 @@ def evaluate_model(model, dataloader, device, tokenizer):
                 prompt_part = clean_special_tokens(prompt_part)
                 generated_text = generate_eval_text(full_prompt_text, prompt_part, tokenizer, model, device)
                 predicted_texts.append(generated_text)
-                answers.append(parts[1].strip())
+                answers.append(clean_special_tokens(parts[1].strip()))
             
-            answers = [clean_special_tokens(answer) for answer in answers]
             
             # F1 skoru ve tam eşleşme hesaplaması
             for pred_text, true_answer in zip(predicted_texts, answers):

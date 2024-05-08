@@ -289,7 +289,7 @@ def generate_text(full_prompt_text, prompt_text, tokenizer, model, device, max_l
     return generated_text.replace(prompt_text,"")
 
 
-def test_et(additional_special_tokens):
+def test_et(additional_special_tokens, tokenizer, model, device):
     while True:
         # Kullanıcıdan soru girdisi alma
         prompt_text = input("Soru: ")
@@ -299,5 +299,5 @@ def test_et(additional_special_tokens):
         full_prompt_text = f"{additional_special_tokens[0]} {prompt_text} {additional_special_tokens[1]}"
 
         # Metin üretimi ve çıktının gösterilmesi
-        generated_text = generate_text(full_prompt_text, prompt_text)
+        generated_text = generate_text(full_prompt_text, prompt_text, tokenizer, model, device)
         print("Modelin ürettiği cevap:", generated_text)

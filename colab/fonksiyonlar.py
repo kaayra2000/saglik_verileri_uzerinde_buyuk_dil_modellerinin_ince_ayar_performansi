@@ -296,10 +296,6 @@ def generate_eval_text(full_prompt_text, prompt_text, tokenizer, model, device, 
     output_sequences = model.generate(
         input_ids=encoded_input,
         max_length=max_length + 20,  # Cevap için ekstra uzunluk
-        temperature=1.0,  # Etkisiz hale getirmek için 1 olarak bırakılabilir
-        top_k=0,          # Top-k örnekleme devre dışı
-        top_p=1.0,        # Nükleer örnekleme devre dışı, 1.0 tüm dağılımı kapsar
-        repetition_penalty=1.2,
         do_sample=False,  # Rastgele örnekleme yapma, en yüksek olasılıklı tokenları seç
         num_return_sequences=1
     )

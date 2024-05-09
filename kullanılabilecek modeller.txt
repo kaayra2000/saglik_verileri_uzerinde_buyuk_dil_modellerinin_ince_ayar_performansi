@@ -1,3 +1,0 @@
-https://huggingface.co/malhajar/Mistral-7B-v0.2-meditron-turkish
-https://huggingface.co/malhajar/phi-2-chat-turkish
-https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF

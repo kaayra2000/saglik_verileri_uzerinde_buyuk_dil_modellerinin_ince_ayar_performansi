@@ -1,8 +1,0 @@
-https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset
-https://www.kaggle.com/datasets/merishnasuwal/breast-cancer-prediction-dataset
-https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset
-https://www.kaggle.com/datasets/meirnizri/covid19-dataset
-https://www.kaggle.com/datasets/mysarahmadbhat/lung-cancer
-https://www.kaggle.com/datasets/jillanisofttech/lung-cancer-detection
-https://www.kaggle.com/datasets/tanshihje
-https://www.kaggle.com/datasets/thedevastator/childhood-allergies-prevalence-diagnosis-and-tren/aids-clinical-trials

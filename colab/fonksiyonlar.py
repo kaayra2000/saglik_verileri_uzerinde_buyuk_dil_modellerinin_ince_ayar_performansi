@@ -6,6 +6,9 @@ import os
 import re
 from tqdm import tqdm
 
+VERI_BASLANGIC = "Soru:"
+VERI_BITIS = "Cevap:"
+
 class QADataset(Dataset):
     def __init__(self, dataframe, tokenizer, SORU_TOKEN, CEVAP_TOKEN, max_len):
         self.tokenizer = tokenizer
@@ -15,8 +18,8 @@ class QADataset(Dataset):
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 
-        self.questions = self.data['text'].apply(lambda  x: SORU_TOKEN + " " + normalize_answer(x.split("Cevap:")[0].strip().replace("Soru:","")) + " ")
-        self.answers = self.data['text'].apply(lambda  x: CEVAP_TOKEN + " " + normalize_answer(x.split("Cevap:")[1].strip()) + " ")
+        self.questions = self.data['text'].apply(lambda  x: SORU_TOKEN + " " + normalize_answer(x.split(VERI_BITIS)[0].strip().replace(VERI_BASLANGIC,"")) + " ")
+        self.answers = self.data['text'].apply(lambda  x: CEVAP_TOKEN + " " + normalize_answer(x.split(VERI_BITIS)[1].strip()) + " ")
 
         self.inputs = []
         self.attention_masks = []

@@ -1,3 +1,10 @@
 # yl_tez
 
-bash veri_seti_olustur.sh ile veri seti baştan sona oluşturulup test.csv ve train.csv dosyalarına kaydedilir
+## veri seti hazırlama
+```bash
+cd veri_setleri
+python3 on_isle.py
+cd ..
+python3 icerik_hesaplayici.py
+python3 train_test_bolustur.py
+```

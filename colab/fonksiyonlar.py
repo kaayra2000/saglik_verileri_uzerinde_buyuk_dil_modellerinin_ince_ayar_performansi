@@ -299,7 +299,7 @@ def generate_eval_text(full_prompt_text, prompt_text, tokenizer, model, device, 
         num_return_sequences=1
     )
     generated_text = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
-    return generated_text[len(prompt_text):]
+    return generated_text.replace(prompt_text,"")
 
 
 def test_et(additional_special_tokens, tokenizer, model, device):

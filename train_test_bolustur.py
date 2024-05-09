@@ -6,7 +6,7 @@ import os
 
 def shuffle_and_save(filename):
     # Dosyayı DataFrame olarak yükle
-    df = pd.read_csv(filename, on_bad_lines='warn')
+    df = pd.read_csv(filename)
     
     # DataFrame'in satırlarını karıştır
     shuffled_df = df.sample(frac=1).reset_index(drop=True)
@@ -33,9 +33,6 @@ train_var_count = 0
 train_yok_count = 0
 test_var_count = 0
 test_yok_count = 0
-shuffle_and_save('test.csv')
-shuffle_and_save('train.csv')
-exit()
 # CSV dosyalarını oku ve yaz
 try:
     with open(ANA_VERI_SETI, 'r', encoding='utf-8') as csvfile, \
@@ -43,23 +40,23 @@ try:
          open('test.csv', 'w', newline='', encoding='utf-8') as testfile:
         
         reader = csv.reader(csvfile)
-        train_writer = csv.writer(trainfile)
+        train_writer = csv.writer(trainfile, quoting=csv.QUOTE_ALL)
         train_writer.writerow(["text"])
-        test_writer = csv.writer(testfile)
+        test_writer = csv.writer(testfile, quoting=csv.QUOTE_ALL)
         test_writer.writerow(["text"])
         for row in reader:
             row_text = ' '.join(row)
             if train_var_count < train_limit and any(phrase in row_text for phrase in diyabet_var):
-                train_writer.writerow(row)
+                train_writer.writerow([row_text])
                 train_var_count += 1
             elif train_yok_count < train_limit and any(phrase in row_text for phrase in diyabet_yok):
-                train_writer.writerow(row)
+                train_writer.writerow([row_text])
                 train_yok_count += 1
             elif test_var_count < test_limit and any(phrase in row_text for phrase in diyabet_var):
-                test_writer.writerow(row)
+                test_writer.writerow([row_text])
                 test_var_count += 1
             elif test_yok_count < test_limit and any(phrase in row_text for phrase in diyabet_yok):
-                test_writer.writerow(row)
+                test_writer.writerow([row_text])
                 test_yok_count += 1
 
             # Eğer her kategoriden yeterli veri toplandıysa döngüden çık
@@ -71,3 +68,7 @@ except Exception as e:
     print(f"Bir hata oluştu: {str(e)}")
     exit()
 
+
+
+shuffle_and_save('test.csv')
+shuffle_and_save('train.csv')

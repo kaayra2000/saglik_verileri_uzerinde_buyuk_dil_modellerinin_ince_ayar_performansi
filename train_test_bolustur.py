@@ -1,6 +1,19 @@
 import csv
 import json
 from veri_setleri.degiskenler import diyabet_var, diyabet_yok, ANA_VERI_SETI
+import pandas as pd
+import os
+
+def shuffle_and_save(filename):
+    # Dosyayı DataFrame olarak yükle
+    df = pd.read_csv(filename, on_bad_lines='warn')
+    
+    # DataFrame'in satırlarını karıştır
+    shuffled_df = df.sample(frac=1).reset_index(drop=True)
+    shuffled_filename = f'shuffled_{filename}'
+    # Karıştırılmış verileri dosyaya geri yaz
+    shuffled_df.to_csv(shuffled_filename, index=False)
+
 # JSON dosyasını oku
 try:
     with open('ana_veri_seti_icerik.json', 'r', encoding='utf-8') as jsonfile:
@@ -20,7 +33,9 @@ train_var_count = 0
 train_yok_count = 0
 test_var_count = 0
 test_yok_count = 0
-
+shuffle_and_save('test.csv')
+shuffle_and_save('train.csv')
+exit()
 # CSV dosyalarını oku ve yaz
 try:
     with open(ANA_VERI_SETI, 'r', encoding='utf-8') as csvfile, \
@@ -29,9 +44,9 @@ try:
         
         reader = csv.reader(csvfile)
         train_writer = csv.writer(trainfile)
-        train_writer.writerow("text")
+        train_writer.writerow(["text"])
         test_writer = csv.writer(testfile)
-        test_writer.writerow("text")
+        test_writer.writerow(["text"])
         for row in reader:
             row_text = ' '.join(row)
             if train_var_count < train_limit and any(phrase in row_text for phrase in diyabet_var):
@@ -54,3 +69,5 @@ try:
 
 except Exception as e:
     print(f"Bir hata oluştu: {str(e)}")
+    exit()
+

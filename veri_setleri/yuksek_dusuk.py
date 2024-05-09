@@ -27,23 +27,23 @@ class OnIsle():
     def __init__(self, veri_seti_adi, tanimlayici_cumle_olustur):
         self.veri_seti_adi = veri_seti_adi
         self.cumle_olustur_fun = tanimlayici_cumle_olustur
-        self.init()
-    def init(self):
-        self.df = pd.read_csv(self.veri_seti_adi)
+
     def isle_kaydet(self):
-        # Dosya yolu oluştur
-        output_filepath = os.path.join('..', ANA_VERI_SETI)
+        chunk_size = 1000  # İhtiyaca göre bu değer ayarlanabilir
+        output_filepath = os.path.join('..', ANA_VERI_SETI)  # 'ANA_VERI_SETI' yerine gerçek dosya adı
 
         # Dosyayı yazmak için aç, başlık ekleyerek
         with open(output_filepath, 'w') as file:
             file.write("text\n")  # Sütun başlığı
 
-            for index, row in self.df.iterrows():
-                # Her satır için tanımlayıcı cümleleri oluştur
-                cumleler = self.tanimlayici_cumle_olustur(row)
-                for cumle in cumleler:
-                    # Dosyaya yaz
-                    file.write(f"{cumle}\n")
+            # Dosyayı parçalar halinde oku ve işle
+            for chunk in pd.read_csv(self.veri_seti_adi, chunksize=chunk_size):
+                for index, row in chunk.iterrows():
+                    # Her satır için tanımlayıcı cümleleri oluştur
+                    cumleler = self.tanimlayici_cumle_olustur(row)
+                    for cumle in cumleler:
+                        # Dosyaya yaz
+                        file.write(f"{cumle}\n")
     def tanimlayici_cumle_olustur(self, row):
         duzenlenmis_cumleler_matrisi = []
         cumle_matrisi = self.cumle_olustur_fun(row)

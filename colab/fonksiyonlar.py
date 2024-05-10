@@ -420,38 +420,25 @@ def evaluate_model(model, dataloader, device, tokenizer):
     average_lcs = total_lcs / total_count
     f1_score = compute_f1_score(total_tp, total_fp, total_fn)
     average_exact_match = total_exact_match / total_count
+    accuracy = (total_tp + total_tn) / total_count 
+    return accuracy, average_exact_match, f1_score, average_lcs 
 
-    return average_lcs, average_exact_match, f1_score
-
-def plot_metrics(val_f1_list, val_exact_match_list, lr, bs, epochs, gorsel_yolu, gorsel_adi = "Validation"):
+def plot_metrics(plot_list, lr, bs, epochs:int, gorsel_yolu:str, y_label:str, gorsel_adi = "Validation"):
     os.makedirs(gorsel_yolu, exist_ok=True)  # Klasör yoksa
     # Kayıp grafiğini kaydetme yolu
-    loss_graph_path = os.path.join(gorsel_yolu, f"{gorsel_adi}_lr_{lr}_bs_{bs}_loss.png")
-    # Perplexity grafiğini kaydetme yolu
-    perplexity_graph_path = os.path.join(gorsel_yolu, f"{gorsel_adi}_lr_{lr}_bs_{bs}_perplexity.png")
+    loss_graph_path = os.path.join(gorsel_yolu, f"{gorsel_adi}_lr_{lr}_bs_{bs}_{y_label}.png")
 
     epochs_range = range(1, epochs + 1)
 
     # Kayıp grafiği
     plt.figure(figsize=(6, 4))
-    plt.plot(epochs_range, val_f1_list, label='F1')
+    plt.plot(epochs_range, plot_list, label='F1')
     plt.title(f'{gorsel_adi} F1 with lr={lr}, bs={bs}')
     plt.xlabel('Epoch')
-    plt.ylabel('F1')
+    plt.ylabel(y_label)
     plt.legend()
     plt.tight_layout()
     plt.savefig(loss_graph_path)
-    plt.close()  # Aktif figürü kapat
-
-    # Perplexity grafiği
-    plt.figure(figsize=(6, 4))
-    plt.plot(epochs_range, val_exact_match_list, label='Exact Match')
-    plt.title(f'{gorsel_adi} Exact Match with lr={lr}, bs={bs}')
-    plt.xlabel('Epoch')
-    plt.ylabel('Exact Match')
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(perplexity_graph_path)
     plt.close()  # Aktif figürü kapat
 
 
@@ -460,9 +447,14 @@ def find_unique_words(texts):
     words = Counter(re.findall(r'\w+', ' '.join(texts)))
     return list(words.keys())
 
-
-def save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index, val_exact_match_list, val_f1_list,
-                    checkpoint_name, is_print = False):
+def print_metric(metric_list:list, title:str):
+    print(f"{title} Scores:")
+    for score in metric_list:
+        print(score)
+def save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index,
+                    checkpoint_name,val_accuracy_list:list, val_exact_match_list:list,
+                    val_f1_score_list:list, var_lcs_list:list,
+                    is_print = False):
     if not os.path.exists(checkpoint_path):
         os.makedirs(checkpoint_path)
     batch_index = batch_index + 1
@@ -471,8 +463,11 @@ def save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index, val_e
         'model_state_dict': model.state_dict(),
         'optimizer_state_dict': optimizer.state_dict(),
         'batch_index': batch_index,
+        'val_accuracy_list':val_accuracy_list,
         'val_exact_match_list': val_exact_match_list,
-        'val_f1_list': val_f1_list
+        'val_f1_score_list': val_f1_score_list,
+        'var_lcs_list':var_lcs_list
+        
     }
     tmp_checkpoint_path = os.path.join(checkpoint_path, f"tmp_{checkpoint_name}")
     final_checkpoint_path = os.path.join(checkpoint_path, checkpoint_name)
@@ -480,12 +475,12 @@ def save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index, val_e
     os.replace(tmp_checkpoint_path, final_checkpoint_path)
     if is_print:
       print(f"Checkpoint şuraya kaydedildi -> {checkpoint_path} epoch: {epoch}, batch: {batch_index}")
+      print_metric(val_accuracy_list, "Accuracy")
+      print_metric(val_exact_match_list, "EM")
+      print_metric(val_f1_score_list, "F1")
+      print_metric(var_lcs_list, "LCS")
       print("EM Scores:")
-      for em_score in val_exact_match_list:
-          print(em_score)
-      print("F1 Scores:")
-      for f1_score in val_f1_list:
-          print(f1_score)
+
 def load_checkpoint(model, checkpoint_path, checkpoint_name, device):
     checkpoint_filepath = os.path.join(checkpoint_path, checkpoint_name)
     # Checkpoint dosyasının varlığını kontrol et
@@ -502,17 +497,21 @@ def load_checkpoint(model, checkpoint_path, checkpoint_name, device):
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     epoch = checkpoint['epoch']
     batch_index = checkpoint.get('batch_index', 0)
+    val_accuracy_list = checkpoint.get('val_accuracy_list', [])
     val_exact_match_list = checkpoint.get('val_exact_match_list', [])
-    val_f1_list = checkpoint.get('val_f1_list', [])
+    val_f1_score_list = checkpoint.get('val_f1_score_list', [])
+    var_lcs_list = checkpoint.get('var_lcs_list', [])
+
 
     print(f"Checkpoint başarıyla yüklendi: {checkpoint_path} (Epoch: {epoch}, Batch: {batch_index})")
 
-    return model, optimizer, epoch, batch_index, val_exact_match_list, val_f1_list
+    return model, optimizer, epoch, batch_index, val_accuracy_list, val_exact_match_list, val_f1_score_list, var_lcs_list
 
 
 def train(model, optimizer, start_epoch, start_batch_index,
-          device, train_dataloader, validation_dataloader, val_exact_match_list, val_f1_list,
-          tokenizer, checkpoint_path, epoch_sayisi, checkpoint_name, lr, bs, gorsel_yolu):
+          device, train_dataloader, validation_dataloader,
+          tokenizer, checkpoint_path, epoch_sayisi, checkpoint_name, lr, bs, gorsel_yolu,
+          val_accuracy_list:list, val_exact_match_list:list, val_f1_score_list:list, var_lcs_list:list):
     train_dataloader_len_5 = len(train_dataloader) / 5
     for epoch in range(start_epoch, epoch_sayisi):
         print(f"Epoch {epoch} başlıyor...")
@@ -533,16 +532,25 @@ def train(model, optimizer, start_epoch, start_batch_index,
             loss = outputs.loss
             loss.backward()
             optimizer.step()
-            save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index, val_exact_match_list, val_f1_list,
-                            checkpoint_name, batch_index % train_dataloader_len_5 == train_dataloader_len_5 - 1)
-        val_f1, val_exact_match = evaluate_model(model, validation_dataloader, device, tokenizer)
-        print(f"Epoch {epoch} tamamlandı. F1: {val_f1}, Exact Match: {val_exact_match}")
+            save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index,
+                            checkpoint_name,
+                            val_accuracy_list, val_exact_match_list, val_f1_score, var_lcs_list,
+                            batch_index % train_dataloader_len_5 == train_dataloader_len_5 - 1)
+        val_accuracy, val_exact_match, val_f1_score, val_lcs = evaluate_model(model, validation_dataloader, device, tokenizer)
+        print(f"\nEpoch {epoch} tamamlandı. F1: {val_f1_score_list}, Exact Match: {val_exact_match}")
+        print(f"Accuracy: {val_accuracy}. LCS: {val_lcs}")
+        val_accuracy_list.append(val_accuracy)
         val_exact_match_list.append(val_exact_match)
-        val_f1_list.append(val_f1)
-        save_checkpoint(model, optimizer, epoch + 1, checkpoint_path, -1, val_exact_match_list, val_f1_list,
-                    checkpoint_name, True)
+        val_f1_score_list.append(val_f1_score)
+        var_lcs_list.append(val_lcs)
+        save_checkpoint(model, optimizer, epoch + 1, checkpoint_path, -1, 
+                        val_accuracy_list, val_exact_match_list, val_f1_score, var_lcs_list,
+                        checkpoint_name, True)
         start_batch_index = 0
-    plot_metrics(val_f1_list, val_exact_match_list, lr, bs, epoch_sayisi, gorsel_yolu)
+    plot_metrics(val_accuracy_list, lr, bs, epoch_sayisi, gorsel_yolu, "Accuracy")
+    plot_metrics(val_exact_match_list, lr, bs, epoch_sayisi, gorsel_yolu, "Exact Match")
+    plot_metrics(val_f1_score_list, lr, bs, epoch_sayisi, gorsel_yolu, "F1 Score")
+    plot_metrics(var_lcs_list, lr, bs, epoch_sayisi, gorsel_yolu, "LCS")
     return model
 
 

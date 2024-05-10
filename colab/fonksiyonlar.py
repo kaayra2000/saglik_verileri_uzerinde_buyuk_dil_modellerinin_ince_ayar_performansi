@@ -487,7 +487,6 @@ def save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index,
       print_metric(val_exact_match_list, "EM")
       print_metric(val_f1_score_list, "F1")
       print_metric(var_lcs_list, "LCS")
-      print("EM Scores:")
 
 def load_checkpoint(model, checkpoint_path, checkpoint_name, device):
     checkpoint_filepath = os.path.join(checkpoint_path, checkpoint_name)
@@ -553,7 +552,7 @@ def train(model, optimizer, start_epoch, start_batch_index,
         var_lcs_list.append(val_lcs)
         save_checkpoint(model, optimizer, epoch + 1, checkpoint_path, -1, 
                         checkpoint_name,
-                        val_accuracy_list, val_exact_match_list, val_f1_score, var_lcs_list,
+                        val_accuracy_list, val_exact_match_list, val_f1_score_list, var_lcs_list,
                         True)
         start_batch_index = 0
     plot_metrics(val_accuracy_list, lr, bs, epoch_sayisi, gorsel_yolu, "Accuracy")

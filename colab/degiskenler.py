@@ -1,7 +1,7 @@
 import os
 base_path = "/content/drive/My Drive/yl_tez"
-lr = 6e-4
-bs = 1
+lr = 0.001
+bs = 32
 
 epoch_sayisi = 20
 max_len = 128
@@ -10,7 +10,7 @@ metin = "text"
 label = "diabetes"
 model_name = "ytu-ce-cosmos/turkish-gpt2-medium"
 veri_seti_adi = "ana_veri_seti.csv"
-veri_seti_adi =  "ana_veri_seti_deneme.csv"
+#veri_seti_adi =  "ana_veri_seti_deneme.csv"
 # Veri seti dosya yolu
 data_filepath = os.path.join(base_path, veri_seti_adi)
 # Dosya adları

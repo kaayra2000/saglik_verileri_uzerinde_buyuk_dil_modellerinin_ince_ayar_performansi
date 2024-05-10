@@ -334,6 +334,7 @@ def f1_metrikleri_guncelle(disease_durumu:int, total_tp:int, total_fp:int, total
     Returns:
         tuple: Güncellenmiş (total_tp, total_fp, total_fn, total_tn) değerlerini içeren bir dörtli (tuple).
     """
+    print(f"Durum: {disease_durumu}")
     if disease_durumu == TP:
         total_tp += 1
     elif disease_durumu == FP:
@@ -342,6 +343,7 @@ def f1_metrikleri_guncelle(disease_durumu:int, total_tp:int, total_fp:int, total
         total_fn += 1
     else:
         total_tn += 1
+    print(f"TP: {total_tp}, FP: {total_fp}, FN: {total_fn}, TN: {total_tn}")
     return total_tp, total_fp, total_fn, total_tn
 
 def clean_special_tokens(text):
@@ -370,13 +372,11 @@ def compute_f1_score(tp:int, fp:int, fn:int):
         recall = 0
     else:
         recall = tp / (tp + fn)
-    
     # F1 skorunu hesapla
     if precision + recall == 0:
         f1_score = 0
     else:
         f1_score = 2 * (precision * recall) / (precision + recall)
-    
     return f1_score
 
 
@@ -425,6 +425,7 @@ def evaluate_model(model, dataloader, device, tokenizer):
             total_count += len(inputs['input_ids'])
         print(predicted_texts[0])
         print(answers[0])
+        exit()
     average_lcs = total_lcs / total_count
     f1_score = compute_f1_score(total_tp, total_fp, total_fn)
     average_exact_match = total_exact_match / total_count

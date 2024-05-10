@@ -496,7 +496,7 @@ def load_checkpoint(model, checkpoint_path, checkpoint_name, device):
         print("Checkpoint bulunamadı")
         model.to(device)
         optimizer = torch.optim.Adam(model.parameters(), lr=0.001)  # optimizer başlatma
-        return model, optimizer, 0, 0, [], []
+        return model, optimizer, 0, 0, [], [], [], []
     print(f"Checkpoint şu konumdan yükleniyor ->  {checkpoint_filepath}")
     checkpoint = torch.load(checkpoint_filepath, map_location=torch.device(device))
     model.load_state_dict(checkpoint['model_state_dict'])

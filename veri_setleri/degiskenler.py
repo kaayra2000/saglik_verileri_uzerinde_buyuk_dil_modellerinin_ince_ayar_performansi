@@ -116,13 +116,13 @@ kalp_hastaligi_yok = [
 
 
 diyabet_var = [
-    "Ben diyabet hastasıyım.",
-    "Bende diyabet hastalığı mevcut."
+    "Sen diyabet hastasısın.",
+    "Sende diyabet hastalığı mevcut."
 ]
 
 diyabet_yok = [
-    "Ben diyabet hastası değilim.",
-    "Bende diyabet hastalığı mevcut değil."
+    "Sen diyabet hastası değilsin.",
+    "Sende diyabet hastalığı mevcut değil."
 ]
 
 

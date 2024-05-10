@@ -1,5 +1,4 @@
 train.csv filter=lfs diff=lfs merge=lfs -text
-ana_veri_seti.csv filter=lfs diff=lfs merge=lfs -text
 shuffled_test.csv filter=lfs diff=lfs merge=lfs -text
 shuffled_train.csv filter=lfs diff=lfs merge=lfs -text
 test.csv filter=lfs diff=lfs merge=lfs -text

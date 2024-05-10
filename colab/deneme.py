@@ -1,7 +1,7 @@
 import fonksiyonlar
 
-metin_a = "hastanın diyabet hastası olmadığı anlaşılmıştır"
-metin_x = "hasta için diyabet tanısı konulmamıştır"
+metin_a = "bende diyabet hastalığı mevcut"
+metin_x = "ben diyabet hastasıyım"
 metin_b = "sasasasa"
 metin_c = "asasasas"
 metin_d = "sasasaassa"

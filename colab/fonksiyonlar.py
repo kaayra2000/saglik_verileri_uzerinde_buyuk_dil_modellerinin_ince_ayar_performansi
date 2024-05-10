@@ -14,7 +14,6 @@ diyabet_yok = [
     "Ben diyabet hastası değilim.",
     "Bende diyabet hastalığı mevcut değil."
 ]
-
 VERI_BASLANGIC = "Durum:"
 VERI_BITIS = "Bilgi:"
 TP = 0
@@ -181,11 +180,11 @@ def compute_exact_match_words(prediction:str, truth:str):
     truth_total_count = sum(truth_words.values())
 
     # Minimum toplam kelime sayısı
-    min_total_count = min(pred_total_count, truth_total_count)
+    avg_total_count = (pred_total_count + truth_total_count) / 2
 
     # Ortak kelimelerin minimum tekrar sayısının, en az kelime sayısına oranını hesapla
-    if min_total_count > 0:
-        score = common_min_counts / min_total_count
+    if avg_total_count > 0:
+        score = common_min_counts / avg_total_count
     else:
         score = 0  # Eğer metinlerden biri boş ise skor 0 olur
 

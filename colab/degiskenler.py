@@ -10,7 +10,7 @@ metin = "text"
 label = "diabetes"
 model_name = "ytu-ce-cosmos/turkish-gpt2-medium"
 veri_seti_adi = "ana_veri_seti.csv"
-#veri_seti_adi =  "ana_veri_seti_deneme.csv"
+veri_seti_adi =  "ana_veri_seti_deneme.csv"
 # Veri seti dosya yolu
 data_filepath = os.path.join(base_path, veri_seti_adi)
 # Dosya adları

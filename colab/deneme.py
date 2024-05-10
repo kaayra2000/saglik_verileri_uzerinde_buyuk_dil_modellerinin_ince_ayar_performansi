@@ -1,7 +1,8 @@
 import fonksiyonlar
 
-metin_a = "asasadsa kaytra kaytra sd dasda sda sdas sasa"
-metin_x = "asasasas sdadas kaytra kaytra kaytra asd da ssda ad saasasasasa"
+metin_a = "hastanın diyabet hastası olmadığı anlaşılmıştır"
+metin_x = "hasta için diyabet tanısı konulmamıştır"
 metin_b = "sasasasa"
 metin_c = "asasasas"
 metin_d = "sasasaassa"
+print(fonksiyonlar.compute_disease(metin_a, metin_x))

@@ -15,8 +15,8 @@ diyabet_yok = [
     "Bende diyabet hastalığı mevcut değil."
 ]
 
-VERI_BASLANGIC = "Soru:"
-VERI_BITIS = "Cevap:"
+VERI_BASLANGIC = "Durum:"
+VERI_BITIS = "Bilgi:"
 TP = 0
 FP = 1
 FN = 2

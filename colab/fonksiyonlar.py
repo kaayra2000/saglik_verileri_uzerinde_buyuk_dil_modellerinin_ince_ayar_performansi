@@ -483,10 +483,6 @@ def save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index,
     os.replace(tmp_checkpoint_path, final_checkpoint_path)
     if is_print:
       print(f"Checkpoint şuraya kaydedildi -> {checkpoint_path} epoch: {epoch}, batch: {batch_index}")
-      print_metric(val_accuracy_list, "Accuracy")
-      print_metric(val_exact_match_list, "EM")
-      print_metric(val_f1_score_list, "F1")
-      print_metric(var_lcs_list, "LCS")
 
 def load_checkpoint(model, checkpoint_path, checkpoint_name, device):
     checkpoint_filepath = os.path.join(checkpoint_path, checkpoint_name)
@@ -514,7 +510,11 @@ def load_checkpoint(model, checkpoint_path, checkpoint_name, device):
 
     return model, optimizer, epoch, batch_index, val_accuracy_list, val_exact_match_list, val_f1_score_list, var_lcs_list
 
-
+def print_all_metrics(val_accuracy_list:list, val_exact_match_list:list, val_f1_score_list:list, var_lcs_list:list):
+    print_metric(val_accuracy_list, "Accuracy")
+    print_metric(val_exact_match_list, "EM")
+    print_metric(val_f1_score_list, "F1")
+    print_metric(var_lcs_list, "LCS")
 def train(model, optimizer, start_epoch, start_batch_index,
           device, train_dataloader, validation_dataloader,
           tokenizer, checkpoint_path, epoch_sayisi, checkpoint_name, lr, bs, gorsel_yolu,
@@ -555,6 +555,7 @@ def train(model, optimizer, start_epoch, start_batch_index,
                         val_accuracy_list, val_exact_match_list, val_f1_score_list, var_lcs_list,
                         True)
         start_batch_index = 0
+        print_all_metrics(val_accuracy_list, val_exact_match_list, val_f1_score_list, var_lcs_list)
     plot_metrics(val_accuracy_list, lr, bs, epoch_sayisi, gorsel_yolu, "Accuracy")
     plot_metrics(val_exact_match_list, lr, bs, epoch_sayisi, gorsel_yolu, "Exact Match")
     plot_metrics(val_f1_score_list, lr, bs, epoch_sayisi, gorsel_yolu, "F1 Score")

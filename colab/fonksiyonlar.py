@@ -542,7 +542,7 @@ def train(model, optimizer, start_epoch, start_batch_index,
             optimizer.step()
             save_checkpoint(model, optimizer, epoch, checkpoint_path, batch_index,
                             checkpoint_name,
-                            val_accuracy_list, val_exact_match_list, val_f1_score, var_lcs_list,
+                            val_accuracy_list, val_exact_match_list, val_f1_score_list, var_lcs_list,
                             batch_index % train_dataloader_len_5 == train_dataloader_len_5 - 1)
         val_accuracy, val_exact_match, val_f1_score, val_lcs = evaluate_model(model, validation_dataloader, device, tokenizer)
         print(f"\nEpoch {epoch} tamamlandı. F1: {val_f1_score_list}, Exact Match: {val_exact_match}")

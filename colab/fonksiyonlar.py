@@ -5,7 +5,15 @@ import matplotlib.pyplot as plt
 import os
 import re
 from tqdm import tqdm
-from veri_setleri.degiskenler import diyabet_var, diyabet_yok
+diyabet_var = [
+    "Ben diyabet hastasıyım.",
+    "Bende diyabet hastalığı mevcut."
+]
+
+diyabet_yok = [
+    "Ben diyabet hastası değilim.",
+    "Bende diyabet hastalığı mevcut değil."
+]
 
 VERI_BASLANGIC = "Soru:"
 VERI_BITIS = "Cevap:"

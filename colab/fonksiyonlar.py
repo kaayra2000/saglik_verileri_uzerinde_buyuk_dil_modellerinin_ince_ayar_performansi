@@ -552,8 +552,9 @@ def train(model, optimizer, start_epoch, start_batch_index,
         val_f1_score_list.append(val_f1_score)
         var_lcs_list.append(val_lcs)
         save_checkpoint(model, optimizer, epoch + 1, checkpoint_path, -1, 
+                        checkpoint_name,
                         val_accuracy_list, val_exact_match_list, val_f1_score, var_lcs_list,
-                        checkpoint_name, True)
+                        True)
         start_batch_index = 0
     plot_metrics(val_accuracy_list, lr, bs, epoch_sayisi, gorsel_yolu, "Accuracy")
     plot_metrics(val_exact_match_list, lr, bs, epoch_sayisi, gorsel_yolu, "Exact Match")

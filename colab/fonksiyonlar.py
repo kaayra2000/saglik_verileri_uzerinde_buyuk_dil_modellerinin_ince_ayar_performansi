@@ -441,7 +441,7 @@ def plot_metrics(plot_list, lr, bs, epochs:int, gorsel_yolu:str, y_label:str, go
     # Kayıp grafiği
     plt.figure(figsize=(6, 4))
     plt.plot(epochs_range, plot_list, label='F1')
-    plt.title(f'{gorsel_adi} F1 with lr={lr}, bs={bs}')
+    plt.title(f'{gorsel_adi} {y_label} with lr={lr}, bs={bs}')
     plt.xlabel('Epoch')
     plt.ylabel(y_label)
     plt.legend()

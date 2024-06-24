@@ -1,3 +1,0 @@
-diabetes_prediction_dataset -> https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset
-Breast_cancer_data -> https://www.kaggle.com/datasets/merishnasuwal/breast-cancer-prediction-dataset - 
-https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset

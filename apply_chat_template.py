@@ -13,9 +13,9 @@ def process_csv_in_chunks(input_filepath, output_filepath, chunk_size=1000):
             chunk['text'].to_csv(outfile, index=False, header=False, mode='a')
 
 def apply_chat_template(row):
-    doctor_info = f"<DOCTOR_TITLE> {row['doctor_title']} <SPECIALITY> {row['doctor_speciality']}\n"
-    user_message = f"<USER> {row['question_content']}\n"
-    assistant_message = f"<ASSISTANT> {row['question_answer']} </s>\n"
+    doctor_info = f"<|DOCTOR_TITLE|> {row['doctor_title']} <|SPECIALITY|> {row['doctor_speciality']}\n"
+    user_message = f"<|USER|> {row['question_content']}\n"
+    assistant_message = f"<|ASSISTANT|> {row['question_answer']} </s>\n"
     return f"{doctor_info}\n{user_message}\n{assistant_message}"
 
 # Giriş ve çıkış dosyalarının yollarını belirleyin

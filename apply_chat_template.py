@@ -1,5 +1,5 @@
 import pandas as pd
-
+import argparse
 # CSV dosyasını parça parça okuyacak bir fonksiyon tanımlayın
 def process_csv_in_chunks(input_filepath, output_filepath, chunk_size=1000):
     # Çıktı dosyasını aç
@@ -13,14 +13,23 @@ def process_csv_in_chunks(input_filepath, output_filepath, chunk_size=1000):
             chunk['text'].to_csv(outfile, index=False, header=False, mode='a')
 
 def apply_chat_template(row):
-    doctor_info = f"<|DOCTOR_TITLE|> {row['doctor_title']} <|SPECIALITY|> {row['doctor_speciality']}\n"
     user_message = f"<|USER|> {row['question_content']}\n"
+    doctor_info = f"<|DOCTOR_TITLE|> {row['doctor_title']} <|SPECIALITY|> {row['doctor_speciality']}\n"
     assistant_message = f"<|ASSISTANT|> {row['question_answer']} </s>\n"
-    return f"{doctor_info}\n{user_message}\n{assistant_message}"
+    return f"{user_message}\n{doctor_info}\n{assistant_message}"
 
-# Giriş ve çıkış dosyalarının yollarını belirleyin
-input_filepath = 'sohbetler20000.csv'
-output_filepath = "templated_" + input_filepath
 
-# CSV dosyasını parça parça işleyin
-process_csv_in_chunks(input_filepath, output_filepath)
+if __name__ == "__main__":
+    # Argümanları ayarlayın
+    parser = argparse.ArgumentParser(description="CSV dosyasını parça parça işleyin.")
+    parser.add_argument('input_filepath', type=str, help='Giriş CSV dosyasının yolu', default="sohbetler20000.csv")
+
+    # Argümanları alın
+    args = parser.parse_args()
+
+    # Giriş ve çıkış dosyalarının yollarını alın
+    input_filepath = args.input_filepath
+    output_filepath = "templated_" + input_filepath
+
+    # CSV dosyasını parça parça işleyin
+    process_csv_in_chunks(input_filepath, output_filepath)

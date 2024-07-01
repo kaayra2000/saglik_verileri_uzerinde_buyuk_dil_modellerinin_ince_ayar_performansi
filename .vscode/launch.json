@@ -94,7 +94,8 @@
       "request": "launch",
       "program": "${workspaceFolder}/çeviri/ceviri_google.py",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri/"
+      "cwd": "${workspaceFolder}/çeviri/",
+      "args": ["avaliyev/validation.json"]
     }
   ]
 }

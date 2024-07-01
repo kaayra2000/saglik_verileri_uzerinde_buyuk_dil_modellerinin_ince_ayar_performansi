@@ -1,5 +1,5 @@
 from openai import OpenAI
-from fonksiyonlar import cevir_kaydet, translate_text_openai, veri_yolu_al
+from fonksiyonlar import cevir_kaydet_json, translate_text_openai, veri_yolu_al
 
 veri_yolu = veri_yolu_al()
 with open("../api_key.txt", "r") as file:
@@ -9,4 +9,4 @@ client = OpenAI(
     api_key=api_key,
 )
 
-cevir_kaydet(veri_yolu, translate_text_openai, client)
+cevir_kaydet_json(veri_yolu, translate_text_openai, client)

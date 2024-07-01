@@ -79,6 +79,14 @@
       "program": "${workspaceFolder}/colab/deneme.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/colab/"
+    },
+    {
+      "name": "çeviri",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/çeviri/ceviri.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/çeviri/"
     }
   ]
 }

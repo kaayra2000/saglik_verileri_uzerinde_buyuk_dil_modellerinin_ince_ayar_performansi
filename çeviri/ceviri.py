@@ -20,22 +20,31 @@ def translate_text(text, source_language="en", target_language="tr"):
     )
     return response.choices[0].message.content.strip()
 
-veri_yolu = 'avaliyev/test.json'
+veri_yolu = 'avaliyev/test_translated.json'
 
 # JSON dosyasını okuyun
 with open(veri_yolu, 'r') as file:
     data = json.load(file)
 
-# Her girdiyi çevirin ve sonuçları yeni bir listeye kaydedin
-translated_data = []
-for item in data:
-    translated_item = {
-        "instruction": item["instruction"],
-        "input": translate_text(item["input"]),
-        "output": translate_text(item["output"])
-    }
-    translated_data.append(translated_item)
-sonuc_yolu = veri_yolu.replace('.json', '_translated.json')
-# Çevirilmiş verileri yeni bir JSON dosyasına kaydedin
+sonuc_yolu = veri_yolu.replace('.json', '_tr.json')
+tr_instruction = "Eğer bir doktor iseniz, lütfen hastanın tarifine dayanarak tıbbi soruları cevaplayın."
+# Dosyayı yazma modunda aç ve başlat
 with open(sonuc_yolu, 'w') as file:
-    json.dump(translated_data, file, ensure_ascii=False, indent=4)
+    file.write('[\n')  # JSON dosyasının başını yaz
+
+    for i, item in enumerate(data):
+        translated_item = {
+            "instruction": tr_instruction,
+            "input": translate_text(["input"]),
+            "output": translate_text(item["output"]),
+        }
+        
+        # Öğeyi JSON formatına dönüştür
+        json_item = json.dumps(translated_item, ensure_ascii=False, indent=4)
+        
+        # Dosyaya yaz
+        if i > 0:
+            file.write(',\n')  # Önceki öğelerden sonra virgül ekle
+        file.write(json_item)
+    
+    file.write('\n]')  # JSON dosyasının sonunu yaz

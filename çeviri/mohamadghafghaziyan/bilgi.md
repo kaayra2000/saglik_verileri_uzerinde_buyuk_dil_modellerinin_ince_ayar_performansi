@@ -1,1 +1,0 @@
-https://www.kaggle.com/datasets/mohamadghafghaziyan/persian-medical-qa-dataset

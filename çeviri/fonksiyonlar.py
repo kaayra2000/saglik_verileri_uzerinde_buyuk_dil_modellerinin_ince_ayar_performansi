@@ -47,10 +47,10 @@ def veri_yolu_al():
 
 
 def translate_text_openai(
-    text, client: OpenAI, source_language="en", target_language="tr"
+    text, client: OpenAI, source_language="en", target_language="tr", model = "gpt-3.5-turbo-0125"
 ):
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-0125",
+        model=model,
         messages=[
             {
                 "role": "system",

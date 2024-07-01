@@ -81,10 +81,18 @@
       "cwd": "${workspaceFolder}/colab/"
     },
     {
-      "name": "çeviri",
+      "name": "çeviri openai",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/çeviri/ceviri.py",
+      "program": "${workspaceFolder}/çeviri/ceviri_openai.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/çeviri/"
+    },
+    {
+      "name": "çeviri google",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/çeviri/ceviri_google.py",
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/çeviri/"
     }

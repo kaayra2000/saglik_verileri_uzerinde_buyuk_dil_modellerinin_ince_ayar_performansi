@@ -1,8 +1,11 @@
 from openai import OpenAI
+import sys
+
+sys.path.append("..")
 from fonksiyonlar import cevir_kaydet_json, translate_text_openai, veri_yolu_al
 
 veri_yolu = veri_yolu_al()
-with open("../api_key.txt", "r") as file:
+with open("../../api_key.txt", "r") as file:
     api_key = file.read().strip()
 client = OpenAI(
     # defaults to os.environ.get("OPENAI_API_KEY")

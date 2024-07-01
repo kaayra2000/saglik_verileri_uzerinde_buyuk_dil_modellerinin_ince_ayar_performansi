@@ -96,6 +96,15 @@
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/çeviri/",
       "args": ["avaliyev/validation.json"]
+    },
+    {
+      "name": "çeviri mohamad",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/çeviri/mohamadghafghaziyan/ceviri_google.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/çeviri/",
+      "args": ["mohamadghafghaziyan/final_dataset.csv"]
     }
   ]
 }

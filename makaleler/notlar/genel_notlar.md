@@ -40,6 +40,20 @@ models in question-answering systems, emphasizing
 considerations for specific domain requirements and
 challenges
 
+**Parameter-efficient fine-tuning of large-scale pre-trained language models**
+
+Despite having diferent design elements, PF, LR and AP are
+comparable to each other in performance. Specifcally, each can
+show dominant performance (even better than FT) over others
+on certain tasks. According to the average results, the performances of all the methods are ranked as FT > LR > AP > PF > PT.
+Interestingly, the performance of the delta-tuning methods is
+not consistent with their number of tunable parameters, that is,
+at least on small PLMs, more tunable parameters do not necessarily lead to better performance, and the design of the structure for delta-tuning may play a greater role.
+
+
+The convergence rate of these tuning methods is ranked as:
+FT > AP ≈ LR > PF. Overall, FT converges the fastest.
+
 # Eklenebilecek alt başlıklar
 **TURNA: A Turkish Encoder-Decoder Language Model for Enhanced Understanding and Generation**
 

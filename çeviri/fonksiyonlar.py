@@ -3,6 +3,41 @@ from openai import OpenAI
 from deep_translator import GoogleTranslator
 import argparse
 import os
+import csv
+
+
+def cevir_kaydet_csv(veri_yolu, translator):
+    hedef_yol = veri_yolu.replace(".csv", "_translated.csv")
+
+    # Girdi dosyasını oku
+    with open(veri_yolu, "r", newline="", encoding="utf-8") as infile:
+        reader = csv.DictReader(infile)
+        fieldnames = [field for field in reader.fieldnames if field != "Title"]
+        data = list(reader)
+
+    # Mevcut çevrilmiş dosyanın var olup olmadığını kontrol edin
+    start_index = 0
+    if os.path.exists(hedef_yol):
+        with open(hedef_yol, "r", newline="", encoding="utf-8") as outfile:
+            reader = csv.DictReader(outfile)
+            existing_data = list(reader)
+            start_index = len(existing_data)
+
+    # Çıktı dosyasını oluştur ve başlık satırını yaz (eğer yeni dosya ise)
+    if start_index == 0:
+        with open(hedef_yol, "w", newline="", encoding="utf-8") as outfile:
+            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            writer.writeheader()
+
+    # Satırları teker teker işle ve yaz
+    for i, row in enumerate(data[start_index:], start=start_index):
+        row["Question"] = translate_text_google(row["Question"], translator)
+        row["Answer"] = translate_text_google(row["Answer"], translator)
+        row.pop("Title", None)
+        # Çevrilen satırı yazmak için dosyayı aç, yaz ve kapat
+        with open(hedef_yol, "a", newline="", encoding="utf-8") as outfile:
+            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            writer.writerow(row)
 
 
 def translate_text_google(

@@ -1,6 +1,5 @@
-# MFA Introducing cosmosGPT: Monolingual Training for Turkish Language Models
-
-* Çeviri veri seti oluşturmuşlar ve GPT4'e de veri ürettirmişler.
+# Çeviri veri seti oluşturmuşlar ve GPT4'e de veri ürettirmişler
+**MFA Introducing cosmosGPT: Monolingual Training for Turkish Language Models**
 
 
 CREATING FINETUNE DATASET

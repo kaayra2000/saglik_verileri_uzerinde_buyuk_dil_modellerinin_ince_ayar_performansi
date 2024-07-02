@@ -6,7 +6,7 @@ import os
 
 
 def translate_text_google(
-    text: str, translator: GoogleTranslator, max_length: int = 5000
+    text: str, translator: GoogleTranslator, max_length: int = 4960
 ):
     def split_text(text, max_length):
         words = text.split(" ")
@@ -30,7 +30,11 @@ def translate_text_google(
 
     chunks = split_text(text, max_length)
     translated_chunks = [translator.translate(chunk) for chunk in chunks]
-    return "\n".join(translated_chunks)
+    return (
+        "\n".join(translated_chunks)
+        if len(translated_chunks) == 0 or translated_chunks[0] is not None
+        else "\n".join(chunks)
+    )
 
 
 def veri_yolu_al():
@@ -47,7 +51,11 @@ def veri_yolu_al():
 
 
 def translate_text_openai(
-    text, client: OpenAI, source_language="en", target_language="tr", model = "gpt-3.5-turbo-0125"
+    text,
+    client: OpenAI,
+    source_language="en",
+    target_language="tr",
+    model="gpt-3.5-turbo-0125",
 ):
     response = client.chat.completions.create(
         model=model,

@@ -92,10 +92,10 @@
       "name": "çeviri google",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/çeviri/ceviri_google.py",
+      "program": "${workspaceFolder}/çeviri/avaliyev/ceviri_google.py",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri/",
-      "args": ["avaliyev/validation.json"]
+      "cwd": "${workspaceFolder}/çeviri/avaliyev",
+      "args": ["train.json"]
     },
     {
       "name": "çeviri mohamad",

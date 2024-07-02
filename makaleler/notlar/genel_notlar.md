@@ -24,6 +24,22 @@ et al., 2021) and lag behind monolingual models
 of the same scale (Rust et al., 2021; Nozza et al.,
 2020).
 
+# Neden fine tune'e ihtiyaç var?
+**Comparison_of_Pretrained_Models_for_Optimized_Transformer_Based_Question_Answering_System**
+
+burada fine tune sonrası başarımdan bahsediliyor
+
+The findings underscore the
+influence of model architecture, training strategies, and
+dataset characteristics on overall performance. Future
+research could explore fine-tuning tailored for health
+datasets, advancing question-answering capabilities in the
+medical domain. These insights benefit practitioners and
+researchers navigating the deployment of transformer-based
+models in question-answering systems, emphasizing
+considerations for specific domain requirements and
+challenges
+
 # Eklenebilecek alt başlıklar
 **TURNA: A Turkish Encoder-Decoder Language Model for Enhanced Understanding and Generation**
 

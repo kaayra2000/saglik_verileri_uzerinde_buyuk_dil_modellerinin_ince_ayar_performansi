@@ -12,3 +12,19 @@ including open-source platforms, contributions from individuals, and data genera
 datasets were established. Subsequently, through cleaning and
 various combinations, new datasets have been derived. Here
 are the names and features of the mentioned primary datasets:
+
+
+# Çok dilli modeller varken özel modellere neden ihtiyaç var?
+**TURNA: A Turkish Encoder-Decoder Language Model for Enhanced Understanding and Generation**
+
+However, they often do not perform well in tasks requiring a deep
+understanding of language-specific nuances, such
+as dependency parsing and named entity recognition (Virtanen et al., 2019; Baumann, 2019; Tanvir
+et al., 2021) and lag behind monolingual models
+of the same scale (Rust et al., 2021; Nozza et al.,
+2020).
+
+# Eklenebilecek alt başlıklar
+**TURNA: A Turkish Encoder-Decoder Language Model for Enhanced Understanding and Generation**
+
+* Conclusion kısmına **limitler**

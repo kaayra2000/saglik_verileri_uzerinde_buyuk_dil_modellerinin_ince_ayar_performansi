@@ -2,13 +2,18 @@
 aşağıdaki sayılar hangi metriğin hangi makalede kullanıldığını referans edecek
 ## 1 -> Türkçe Dil Modellerinin Performans Kar¸sıla¸stırması Performance Comparison of Turkish Language Models
 ## 2 -> Introducing cosmosGPT: Monolingual Training for Turkish Language Models
-
+## 3 -> TURNA: A Turkish Encoder-Decoder Language Model for Enhanced Understanding and Generation
 ### Metrikler (Otomatik Değerlendirme)
 
-* ROUGE-1 **-> 1,2**
-* ROUGE2 **-> 1,2**
-* ROUGE-L **-> 1,2** 
-
+* ROUGE-1 **-> 1,2,3**
+* ROUGE2 **-> 1,2,3**
+* ROUGE-L **-> 1,2,3** 
+* Precision **-> 3**
+* Recall **-> 3**
+* F1 **-> 3**
+* Accuracy **-> 3**
+* BLEU **-> 3**
+* METEOR **-> 3**
 ### Metrikler (İnsan değerlendirmesi)
 Oylama işleminde standart sapma ve korelasyon bilgisi verilmiş.
 

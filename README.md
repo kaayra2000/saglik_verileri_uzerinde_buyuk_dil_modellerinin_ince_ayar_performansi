@@ -15,13 +15,14 @@
 * Test verisi boyutu -> 11949
 * Validation verisi boyutu -> 11949
 * [işlenmiş link kaggle](https://www.kaggle.com/datasets/kaayra2000/avaliev-chat-doctor-tr)
-* [işlenmiş link huggingface]()
 
 ## [henry41148](https://www.kaggle.com/datasets/henry41148/icliniq-medical-qa)
 
 *Erişim tarihi 02.07.2024*
 
 * Train verisi boyutu -> 19583
+* [işlenmiş link kaggle](https://www.kaggle.com/datasets/kaayra2000/patient-doctor-qa-dataset-tr)
+* [işlenmiş link huggingface](https://huggingface.co/datasets/kayrab/patient-doctor-qa-tr-19583)
 
 ## [hermanshid](https://huggingface.co/datasets/hermanshid/doctor-id-qa)
 
@@ -29,3 +30,5 @@
 
 * Train verisi boyutu -> 5694
 * Test verisi boyutu -> 633
+* [işlenmiş link kaggle](https://www.kaggle.com/datasets/kaayra2000/patient-doctor-q-and-a-translated-from-id-to-tr)
+* [işlenmiş link huggingface](https://huggingface.co/datasets/kayrab/patient-doctor-qa-tr-5695)

@@ -98,13 +98,13 @@
       "args": ["train.json"]
     },
     {
-      "name": "çeviri mohamad",
+      "name": "çeviri henry",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/çeviri/mohamadghafghaziyan/ceviri_google.py",
+      "program": "${workspaceFolder}/çeviri/henry41148/cevir.py",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri/",
-      "args": ["mohamadghafghaziyan/final_dataset.csv"]
+      "cwd": "${workspaceFolder}/çeviri/henry41148",
+      "args": ["icliniq_medical_qa.csv"]
     }
   ]
 }

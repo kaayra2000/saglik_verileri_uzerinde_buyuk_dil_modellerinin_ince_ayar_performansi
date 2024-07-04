@@ -28,6 +28,7 @@ def clean_openai(
                 "content": text,
             },
         ],
+        n=1,
     )
     return response.choices[0].message.content.strip()
 

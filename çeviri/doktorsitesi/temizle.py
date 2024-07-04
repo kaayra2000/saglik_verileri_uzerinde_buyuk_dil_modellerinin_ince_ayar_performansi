@@ -1,7 +1,7 @@
 import csv
 import sys
 from openai import OpenAI
-import openai
+import concurrent.futures
 import os
 
 sys.path.append("..")
@@ -14,7 +14,7 @@ with open("../../api_key.txt", "r") as file:
 def clean_openai(
     text,
     client: OpenAI,
-    model="ft:gpt-3.5-turbo-0125:personal::9hAp7ta7",
+    model="ft:gpt-3.5-turbo-0125:personal::9hBBDuXX",
 ):
     response = client.chat.completions.create(
         model=model,
@@ -31,6 +31,47 @@ def clean_openai(
         n=1,
     )
     return response.choices[0].message.content.strip()
+
+
+def process_row(row, client, model):
+    row["question_content"] = clean_openai(row["question_content"], client, model)
+    row["question_answer"] = clean_openai(row["question_answer"], client, model)
+    return row
+
+
+def process_and_write_rows(
+    data,
+    start_index,
+    hedef_yol,
+    client,
+    model="ft:gpt-3.5-turbo-0125:personal::9hBBDuXX",
+    chunk_size=50,
+):
+    total_rows = len(data)
+    for chunk_start in range(start_index, total_rows, chunk_size):
+        chunk_end = min(chunk_start + chunk_size, total_rows)
+        chunk_data = data[chunk_start:chunk_end]
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            future_to_index = {
+                executor.submit(process_row, row, client, model): i
+                for i, row in enumerate(chunk_data, start=chunk_start)
+            }
+
+            results = [None] * len(chunk_data)
+
+            for future in concurrent.futures.as_completed(future_to_index):
+                index = future_to_index[future]
+                try:
+                    results[index - chunk_start] = future.result()
+                except Exception as e:
+                    print(f"Row {index} generated an exception: {e}")
+
+        with open(hedef_yol, "a", newline="", encoding="utf-8") as outfile:
+            writer = csv.DictWriter(outfile, fieldnames=data[0].keys())
+            for row in results:
+                if row is not None:
+                    writer.writerow(row)
 
 
 def cevir_kaydet_csv(veri_yolu, translator):
@@ -56,14 +97,7 @@ def cevir_kaydet_csv(veri_yolu, translator):
             writer = csv.DictWriter(outfile, fieldnames=fieldnames)
             writer.writeheader()
 
-    # Satırları teker teker işle ve yaz
-    for i, row in enumerate(data[start_index:], start=start_index):
-        row["question_content"] = clean_openai(row["question_content"], translator)
-        row["question_answer"] = clean_openai(row["question_answer"], translator)
-        # Çevrilen satırı yazmak için dosyayı aç, yaz ve kapat
-        with open(hedef_yol, "a", newline="", encoding="utf-8") as outfile:
-            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
-            writer.writerow(row)
+    process_and_write_rows(data, start_index, hedef_yol, translator)
 
 
 veri_yolu = veri_yolu_al()

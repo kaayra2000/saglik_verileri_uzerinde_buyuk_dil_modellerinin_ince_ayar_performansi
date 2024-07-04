@@ -7,7 +7,7 @@ import os
 sys.path.append("..")
 from fonksiyonlar import veri_yolu_al
 
-with open("../../api_key.txt", "r") as file:
+with open("../../api_key_clone.txt", "r") as file:
     api_key = file.read().strip()
 
 
@@ -62,10 +62,7 @@ def process_and_write_rows(
 
             for future in concurrent.futures.as_completed(future_to_index):
                 index = future_to_index[future]
-                try:
-                    results[index - chunk_start] = future.result()
-                except Exception as e:
-                    print(f"Row {index} generated an exception: {e}")
+                results[index - chunk_start] = future.result()
 
         with open(hedef_yol, "a", newline="", encoding="utf-8") as outfile:
             writer = csv.DictWriter(outfile, fieldnames=data[0].keys())

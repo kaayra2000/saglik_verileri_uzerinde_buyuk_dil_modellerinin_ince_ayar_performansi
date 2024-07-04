@@ -256,8 +256,39 @@
                     "content": "Merhaba, muhtemelen mozaik yapıdasınız. Bazı kromozomlarınız anormal (%3), diğerleri normal (%97). Bu sizin yaşamınızı idame ettirmenizi sağlıyor ancak eşey hücrelerinizde muhtemelen anomali olduğundan PGT yapılarak tüpte döllenen embriyolardan anomalisi olmayanı denemek gerekli. Sağlam olan embriyolardan sağlıklı olanın size yerleştirilmesini sağlayacak bu durum. Bebek istiyorsanız bu işlem gerekli. Çocuk sahibi olma olasılığınız var. Ancak bebek için yumurta vermeden 3 ay önceden sıkı bir folik asit (B6 vitamini) diyetine girmelisiniz. Bu vitamin hücrelerin bölünmesi esnasında mutlaka gerekli olan bir kimyasaldır. Bu diyet için folbiol tablet 3x1 ve B12 vitamini 1x1 almanız gerekir. Ayrıca tarım ilaçlarından gıdalarınızı arındırarak yemelisiniz. Meyve ve sebzelerinizi sirkeli suyla yıkamalı, sonra tüketmelisiniz. Kavrulmamış yer fıstığı (alerjiniz yoksa) folik asitten zengindir, tüketebilirsiniz. Hem siz hem de eşiniz kürü uyguladıktan, sigara ve alkol kullanmayarak geçirdiğiniz 3 aydan sonra tüpte döllemeye hazırsınız demektir. Bütün bu işlemler size bebeği garantilemez, yapısal bozukluğun nerelerde olduğunu bilmiyoruz ancak bebek şansınızı artırır. Hayırlı evlat/evlatlar diliyorum."
                 }
             ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Kullanıcının yazdığı metni temizle ve gereksiz bilgileri kaldır. Sadece gerekli olan ve anlamlı bilgileri bırak. Bu süreçte aşağıdaki kurallara uy:\nAdres cümlelerini, anlamı bozmadan direkt çıkart. Adrese atıf yapma.\nLinkleri doğrudan çıkart, anlamı bozmadan linklere atıf yapma.\nÜnvan ve isimleri doğrudan çıkart. Örneğin, 'Prof. Dr. Ahmet' yerine 'Dr.' ya da 'doktor' yeterli.\nYanlış yazılan kelimeleri düzelt. Örneğin, 'Yadrım edin' yerine 'Yardım edin'.\nTarihleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır.\nBağlam bağımlı cümleleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır. Örneğin, 'geçen gün sizinle görüşmüştük' gibi cümleleri çıkar.\nBu bir doktor-hasta verisi olduğu için, soru cevabı içeren veri seti temizlemesinde kullanılacak ve sonrasında bir chatbot eğitmede kullanılacak. Bu bilgiye göre temizleme yap."
+                },
+                {
+                    "role": "user",
+                    "content": "mrb doktor bey benım adım tuğçağ 28 yasındayım.depresyon tedavısı goruyorum ama ıyı oldugumu dusunup bırakıyorum ve tekrar basa donuyorum maddı durumum ve saglık guvencem yok hayatım cekılmez bır hal aldı bana yardımcı olursanız cok memnunolurum saygılarımla"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Merhaba doktor bey, ben 28 yaşındayım. Depresyon tedavisi görüyorum ama iyi olduğumu düşünüp bırakıyorum ve tekrar başa dönüyorum. Maddi durumum ve sağlık güvencem yok, hayatım çekilmez bir hal aldı. Yardımcı olursanız çok memnun olurum, saygılarımla."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Kullanıcının yazdığı metni temizle ve gereksiz bilgileri kaldır. Sadece gerekli olan ve anlamlı bilgileri bırak. Bu süreçte aşağıdaki kurallara uy:\nAdres cümlelerini, anlamı bozmadan direkt çıkart. Adrese atıf yapma.\nLinkleri doğrudan çıkart, anlamı bozmadan linklere atıf yapma.\nÜnvan ve isimleri doğrudan çıkart. Örneğin, 'Prof. Dr. Ahmet' yerine 'Dr.' ya da 'doktor' yeterli.\nYanlış yazılan kelimeleri düzelt. Örneğin, 'Yadrım edin' yerine 'Yardım edin'.\nTarihleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır.\nBağlam bağımlı cümleleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır. Örneğin, 'geçen gün sizinle görüşmüştük' gibi cümleleri çıkar.\nBu bir doktor-hasta verisi olduğu için, soru cevabı içeren veri seti temizlemesinde kullanılacak ve sonrasında bir chatbot eğitmede kullanılacak. Bu bilgiye göre temizleme yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Sağlık bakanımız herkesin sağlık güvencesi olduğunu söyhlüyor ve hükümet olarak da % 47 oy aldılar. Koca bakan, üstelik profesör de. Ben yalan söyleyeceğini sanmıyorum. Siz kendisine başvurursanız eminim yardımcı olur. Onun yapamadığını bu fakir hiç yapamaz. İyi dileklerimle..."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Sağlık bakanı, herkesin sağlık güvencesi olduğunu söylüyor ve hükümet olarak %47 oy aldılar. Bakan, üstelik profesör de. Ben yalan söyleyeceğini sanmıyorum. Siz kendisine başvurursanız eminim yardımcı olur. Onun yapamadığını bu fakir hiç yapamaz. İyi dileklerimle."
+                }
+            ]
         }
-        
         
     ]
 }

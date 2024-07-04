@@ -7,9 +7,8 @@ client = OpenAI(
     # defaults to os.environ.get("OPENAI_API_KEY")
     api_key=api_key,
 )
-
 completion = client.chat.completions.create(
-    model="ft:gpt-3.5-turbo-0125:personal::9h9ruhq9",
+    model="ft:gpt-3.5-turbo-0125:personal::9hAVgrgc",
     messages=[
         {
             "role": "system",

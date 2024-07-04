@@ -22,7 +22,7 @@ def clean_openai(
             messages=[
                 {
                     "role": "system",
-                    "content": "Kullanıcının yazdığı metni temizle ve gereksiz bilgileri kaldır. Sadece gerekli olan ve anlamlı bilgileri bırak.",
+                    "content": "Kullanıcının yazdığı metni temizle ve gereksiz bilgileri kaldır. Sadece gerekli olan ve anlamlı bilgileri bırak. Bu süreçte aşağıdaki kurallara uy:\nAdres cümlelerini, anlamı bozmadan direkt çıkart. Adrese atıf yapma.\nLinkleri doğrudan çıkart, anlamı bozmadan linklere atıf yapma.\nÜnvan ve isimleri doğrudan çıkart. Örneğin, 'Prof. Dr. Ahmet' yerine 'Dr.' ya da 'doktor' yeterli.\nYanlış yazılan kelimeleri düzelt. Örneğin, 'Yadrım edin' yerine 'Yardım edin'.\nTarihleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır.\nBağlam bağımlı cümleleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır. Örneğin, 'geçen gün sizinle görüşmüştük' gibi cümleleri çıkar.\nBu bir doktor-hasta verisi olduğu için, soru cevabı içeren veri seti temizlemesinde kullanılacak ve sonrasında bir chatbot eğitmede kullanılacak. Bu bilgiye göre temizleme yap.",
                 },
                 {
                     "role": "user",

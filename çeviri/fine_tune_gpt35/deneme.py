@@ -8,7 +8,7 @@ client = OpenAI(
     api_key=api_key,
 )
 completion = client.chat.completions.create(
-    model="ft:gpt-3.5-turbo-0125:personal::9hAVgrgc",
+    model="ft:gpt-3.5-turbo-0125:personal::9hAp7ta7",
     messages=[
         {
             "role": "system",

@@ -98,13 +98,13 @@
       "args": ["train.json"]
     },
     {
-      "name": "çeviri henry",
+      "name": "temizle doktorsitesi",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/çeviri/henry41148/cevir.py",
+      "program": "${workspaceFolder}/çeviri/doktorsitesi/temizle.py",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri/henry41148",
-      "args": ["icliniq_medical_qa.csv"]
+      "cwd": "${workspaceFolder}/çeviri/doktorsitesi",
+      "args": ["sohbetler20000.csv"]
     }
   ]
 }

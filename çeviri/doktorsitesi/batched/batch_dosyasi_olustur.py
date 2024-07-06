@@ -6,9 +6,9 @@ import json
 sys.path.append("../..")
 from fonksiyonlar import veri_yolu_al
 
-def create_batch_request(row, index):
+def create_batch_request(content, index, type):
     return {
-        "custom_id": f"request-{index}",
+        "custom_id": f"request-{index}-{type}",
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
@@ -20,7 +20,7 @@ def create_batch_request(row, index):
                 },
                 {
                     "role": "user",
-                    "content": row["question_content"],
+                    "content": content,
                 }
             ],
             "max_tokens": 4096
@@ -30,7 +30,9 @@ def create_batch_request(row, index):
 def save_batch_requests(data, batch_file_path, start_index):
     with open(batch_file_path, "w", encoding="utf-8") as batch_file:
         for index, row in enumerate(data[start_index:], start=start_index):
-            request = create_batch_request(row, index)
+            request = create_batch_request(row["question_content"], index, "question")
+            batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
+            request = create_batch_request(row["question_answer"], index, "answer")
             batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
 
 def cevir_kaydet_jsonl(veri_yolu):

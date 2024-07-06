@@ -7,14 +7,14 @@ import os
 sys.path.append("..")
 from fonksiyonlar import veri_yolu_al
 
-with open("../../api_key_clone.txt", "r") as file:
+with open("../../api_key.txt", "r") as file:
     api_key = file.read().strip()
 
 
 def clean_openai(
     text,
     client: OpenAI,
-    model="ft:gpt-3.5-turbo-0125:personal::9hBBDuXX",
+    model="ft:gpt-3.5-turbo-0125:kayra::9i7HydFK",
 ):
     response = client.chat.completions.create(
         model=model,
@@ -44,7 +44,7 @@ def process_and_write_rows(
     start_index,
     hedef_yol,
     client,
-    model="ft:gpt-3.5-turbo-0125:personal::9hBBDuXX",
+    model="ft:gpt-3.5-turbo-0125:kayra::9i7HydFK",
     chunk_size=50,
 ):
     total_rows = len(data)

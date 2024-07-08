@@ -29,7 +29,7 @@ for line in file_lines:
             input_file_id=batch_input_file_id,
             endpoint="/v1/chat/completions",
             completion_window="24h",
-            metadata={"description": "20k doktorsitesi"},
+            metadata={"description": "167k doktorsitesi"},
         )
 
         batch_id = sonuc.id
@@ -56,7 +56,7 @@ for line in file_lines:
             elif status == "cancelled":
                 print(f"Batch {batch_id} iptal edildi.")
                 exit(1)  # İşlemi sonlandır
-            time.sleep(60)  # 60 saniye bekle ve tekrar kontrol et
+            time.sleep(20)  # 20 saniye bekle ve tekrar kontrol et
 
         # Batch bilgilerini yaz
         with open("batch_info.txt", "a") as file:

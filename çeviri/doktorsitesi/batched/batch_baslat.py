@@ -48,7 +48,7 @@ for line in file_lines:
             elif status == "in_progress":
                 print(f"Batch {batch_id} devam ediyor.")
             elif status == "finalizing":
-                print(f"Batch {batch_id} zaman aşımına uğradı.")
+                print(f"Batch {batch_id} tamamlanıyor.")
             elif status == "validating":
                 print(f"Batch {batch_id} doğrulanıyor.")
             elif status == "cancelling":

@@ -43,7 +43,7 @@ def cevir_kaydet_jsonl(veri_yolu):
     cleaned_file_path = veri_yolu.replace(".csv", "_cleaned.csv")
     # Girdi dosyasını oku
     with open(veri_yolu, "r", newline="", encoding="utf-8") as infile:
-        reader = csv.DictReader(infile)
+        reader = csv.DictReader((line.replace("\0", "") for line in infile))
         data = list(reader)
 
     # Mevcut çevrilmiş dosyanın var olup olmadığını kontrol edin

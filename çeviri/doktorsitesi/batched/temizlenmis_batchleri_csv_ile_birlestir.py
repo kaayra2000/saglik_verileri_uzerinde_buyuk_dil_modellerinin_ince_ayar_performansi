@@ -3,6 +3,7 @@ import json
 import csv
 import re
 from collections import defaultdict
+import argparse
 
 
 def format_missing_indices(missing_indices):
@@ -92,15 +93,14 @@ def write_combined_csv(prefix, combined_data):
         writer = csv.DictWriter(cleaned_csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
-        last_written_index = 0
-        for i, row in enumerate(existing_cleaned_data, start=1):
+        last_written_index = len(existing_cleaned_data)
+        for i, row in enumerate(existing_cleaned_data):
             if i in combined_data:
                 row["question_content"] = combined_data[i]["question_content"]
                 row["question_answer"] = combined_data[i]["question_answer"]
-                last_written_index = i
             writer.writerow(row)
 
-        for i, row in enumerate(existing_data, start=last_written_index + 1):
+        for i, row in enumerate(existing_data, start=last_written_index):
             if i in combined_data:
                 row["question_content"] = combined_data[i]["question_content"]
                 row["question_answer"] = combined_data[i]["question_answer"]
@@ -124,5 +124,9 @@ def main(folder_path):
 
 
 if __name__ == "__main__":
-    folder_path = input("Klasör yolunu girin: ")
+    # folder path argümanını al
+    parser = argparse.ArgumentParser()
+    parser.add_argument("folder_path", help="Path to the folder containing JSON files")
+    args = parser.parse_args()
+    folder_path = args.folder_path
     main(folder_path)

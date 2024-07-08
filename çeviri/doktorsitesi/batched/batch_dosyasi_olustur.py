@@ -6,6 +6,7 @@ import json
 sys.path.append("../..")
 from fonksiyonlar import veri_yolu_al
 
+
 def create_batch_request(content, index, type):
     return {
         "custom_id": f"request-{index}-{type}",
@@ -16,16 +17,17 @@ def create_batch_request(content, index, type):
             "messages": [
                 {
                     "role": "system",
-                    "content": "Kullanıcının yazdığı metni temizle ve gereksiz bilgileri kaldır. Sadece gerekli olan ve anlamlı bilgileri bırak. Bu süreçte aşağıdaki kurallara uy:\nAdres cümlelerini, anlamı bozmadan direkt çıkart. Adrese atıf yapma.\nLinkleri doğrudan çıkart, anlamı bozmadan linklere atıf yapma.\nÜnvan ve isimleri doğrudan çıkart. Örneğin, 'Prof. Dr. Ahmet' yerine 'Dr.' ya da 'doktor' yeterli.\nYanlış yazılan kelimeleri düzelt. Örneğin, 'Yadrım edin' yerine 'Yardım edin'.\nTarihleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır.\nBağlam bağımlı cümleleri, anlam bütünlüğünü bozmayacak şekilde tamamen kaldır. Örneğin, 'geçen gün sizinle görüşmüştük' gibi cümleleri çıkar.\nBu bir doktor-hasta verisi olduğu için, soru cevabı içeren veri seti temizlemesinde kullanılacak ve sonrasında bir chatbot eğitmede kullanılacak. Bu bilgiye göre temizleme yap.",
+                    "content": "Metni temizle ve gereksiz bilgileri kaldır. Aşağıdaki kurallara uy:\nAdres ve link cümlelerini çıkar.\nÜnvan ve isimleri basitleştir.\nYanlış yazılan kelimeleri düzelt.\nTarihleri kaldır.\nBağlam bağımlı cümleleri çıkar.\nBu, doktor-hasta verisi için chatbot eğitimi içindir.",
                 },
                 {
                     "role": "user",
                     "content": content,
-                }
+                },
             ],
-            "max_tokens": 4096
-        }
+            "max_tokens": 4096,
+        },
     }
+
 
 def save_batch_requests(data, batch_file_path, start_index):
     with open(batch_file_path, "w", encoding="utf-8") as batch_file:
@@ -34,6 +36,7 @@ def save_batch_requests(data, batch_file_path, start_index):
             batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
             request = create_batch_request(row["question_answer"], index, "answer")
             batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
+
 
 def cevir_kaydet_jsonl(veri_yolu):
     batch_file_path = veri_yolu.replace(".csv", "_batch.jsonl")
@@ -52,6 +55,7 @@ def cevir_kaydet_jsonl(veri_yolu):
             start_index = len(existing_data)
 
     save_batch_requests(data, batch_file_path, start_index)
+
 
 veri_yolu = veri_yolu_al()
 cevir_kaydet_jsonl(veri_yolu)

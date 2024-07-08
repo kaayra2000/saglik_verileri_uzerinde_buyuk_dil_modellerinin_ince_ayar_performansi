@@ -36,8 +36,8 @@ for line in file_lines:
         print(f"Batch {batch_id} başlatıldı.")
         # Batch durumunu kontrol et
         while True:
-            batch_status = client.batches.retrieve(batch_id=batch_id)
-            status = batch_status.status
+            sonuc = client.batches.retrieve(batch_id=batch_id)
+            status = sonuc.status
 
             if status == "completed":
                 print(f"Batch {batch_id} başarıyla tamamlandı.")

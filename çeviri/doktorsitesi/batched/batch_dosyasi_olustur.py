@@ -13,7 +13,7 @@ def create_batch_request(content, index, type):
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "ft:gpt-3.5-turbo-0125:kayra::9i7HydFK",
+            "model": "ft:gpt-3.5-turbo-0125:kayra::9iblLubt",
             "messages": [
                 {
                     "role": "system",

@@ -105,6 +105,15 @@
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/çeviri/doktorsitesi",
       "args": ["sohbetler20000.csv"]
+    },
+    {
+      "name": "batch başlat",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/çeviri/doktorsitesi/batched/batch_baslat.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/çeviri/doktorsitesi/batched",
+      "args": []
     }
   ]
 }

@@ -3,3 +3,6 @@ tokens.txt
 api_key.txt
 çeviri/deneme.py
 **/__pycache__/**
+**/*_batch_splitted_files/**
+çeviri/doktorsitesi/batched/batch*_info.txt
+çeviri/doktorsitesi/*batch.jsonl

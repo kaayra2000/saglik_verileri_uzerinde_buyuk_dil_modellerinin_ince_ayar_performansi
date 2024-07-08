@@ -77,7 +77,7 @@ def write_combined_csv(prefix, combined_data):
     existing_data = []
     if os.path.exists(csv_filename):
         with open(csv_filename, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
+            reader = csv.DictReader((line.replace("\0", "") for line in f))
             existing_data = list(reader)
 
     # Yeni verilerle güncellenmiş cleaned csv dosyasını yaz

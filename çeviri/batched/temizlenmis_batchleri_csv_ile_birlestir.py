@@ -44,7 +44,7 @@ def process_json_files(folder_path):
     json_files.sort(key=lambda x: get_numeric_part(x)[0])
     parcalar = json_files[0].split("_")
     csv_file_prefix = parcalar[0]
-    combined_data = defaultdict(lambda: {"question": "", "answer": ""})
+    combined_data = defaultdict(lambda: {"input": "", "instruction": "", "output": ""})
 
     for json_file in json_files:
         with open(os.path.join(folder_path, json_file), "r", encoding="utf-8") as f:
@@ -56,9 +56,9 @@ def process_json_files(folder_path):
                 content = item["response"]["body"]["choices"][0]["message"]["content"]
 
                 if "question" in custom_id:
-                    combined_data[index]["question"] = content
+                    combined_data[index]["input"] = content
                 elif "answer" in custom_id:
-                    combined_data[index]["answer"] = content
+                    combined_data[index]["output"] = content
 
     return combined_data, csv_file_prefix
 
@@ -85,24 +85,27 @@ def write_combined_csv(prefix, combined_data):
     with open(
         cleaned_csv_filename, "w", newline="", encoding="utf-8"
     ) as cleaned_csvfile:
-        fieldnames = [
-            "question",
-            "answer",
-        ]
+        fieldnames = ["input", "instruction", "output"]
         writer = csv.DictWriter(cleaned_csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
         last_written_index = len(existing_cleaned_data)
         for i, row in enumerate(existing_cleaned_data):
             if i in combined_data:
-                row["question"] = combined_data[i]["question"]
-                row["answer"] = combined_data[i]["answer"]
+                row["input"] = combined_data[i]["input"]
+                row["output"] = combined_data[i]["output"]
+                row["instruction"] = (
+                    "Eğer bir doktor iseniz, lütfen hastanın tarifine dayanarak tıbbi soruları cevaplayın."
+                )
             writer.writerow(row)
 
         for i, row in enumerate(existing_data, start=last_written_index):
             if i in combined_data:
-                row["question"] = combined_data[i]["question"]
-                row["answer"] = combined_data[i]["answer"]
+                row["input"] = combined_data[i]["input"]
+                row["output"] = combined_data[i]["output"]
+                row["instruction"] = (
+                    "Eğer bir doktor iseniz, lütfen hastanın tarifine dayanarak tıbbi soruları cevaplayın."
+                )
                 writer.writerow(row)
             else:
                 break

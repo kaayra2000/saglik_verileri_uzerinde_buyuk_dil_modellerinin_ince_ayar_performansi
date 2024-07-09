@@ -1,0 +1,500 @@
+{
+    "data": [
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Cuaca hari ini sangat menyenangkan, bukan?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Bugün hava çok hoş, değil mi?"
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Saya telah membaca buku yang menarik tentang peradaban kuno."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Antik medeniyetler hakkında ilginç bir kitap okuyorum."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Bisakah Anda menjelaskan proses fotosintesis secara rinci?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Fotosentez sürecini ayrıntılı olarak açıklayabilir misiniz?"
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Saya baru-baru ini mengunjungi museum yang memiliki koleksi seni modern yang mengesankan."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yakın zamanda modern sanatın etkileyici bir koleksiyonuna sahip bir müzeyi ziyaret ettim."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Meskipun lalu lintas padat, kami berhasil tiba di pertemuan tepat waktu."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yoğun trafiğe rağmen, toplantıya zamanında varmayı başardık."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Restoran baru di kota ini menawarkan berbagai macam hidangan vegan."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Şehirdeki yeni restoran, çeşitli vegan yemekler sunuyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Dia memutuskan untuk mengambil cuti satu tahun dari pekerjaan untuk berkeliling dunia."
+                },
+                {
+                    "role": "assistant",
+                    "content": "O, dünyayı dolaşmak için işten bir yıl izin almaya karar verdi."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Bisakah Anda percaya betapa cepatnya tahun ini berlalu?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Bu yılın ne kadar hızlı geçtiğine inanabiliyor musun?"
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Konferensi tersebut memberikan wawasan berharga tentang tren industri terbaru."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Konferans, en son endüstri trendleri hakkında değerli bilgiler sağladı."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Saya sangat menantikan konser yang akan datang dari band favorit saya."
+                },
+                {
+                    "role": "assistant",
+                    "content": "En sevdiğim grubun yaklaşan konserini sabırsızlıkla bekliyorum."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Film dokumenter tersebut mengungkapkan efek perubahan iklim terhadap planet kita."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Belgesel, iklim değişikliğinin gezegenimiz üzerindeki etkilerini gözler önüne serdi."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Kita perlu membuat rencana untuk meningkatkan layanan pelanggan kita."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Müşteri hizmetlerimizi iyileştirmek için bir plan oluşturmalıyız."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Dedikasinya terhadap pekerjaannya sangat menginspirasi semua orang di tim."
+                },
+                {
+                    "role": "assistant",
+                    "content": "İşine olan bağlılığı, ekipteki herkesi gerçekten ilham verici."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Kinerja tim telah meningkat secara signifikan selama beberapa bulan terakhir."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Ekibin performansı son birkaç ayda önemli ölçüde iyileşti."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Membaca membantu memperluas pengetahuan dan pemahaman Anda tentang dunia."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Okumak, bilgi ve dünya anlayışınızı genişletmenize yardımcı olur."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Kebijakan baru bertujuan untuk mengurangi limbah dan mendorong daur ulang di kantor."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yeni politika, atıkları azaltmayı ve ofiste geri dönüşümü teşvik etmeyi amaçlıyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Penting untuk beristirahat dan beristirahat untuk menjaga produktivitas sepanjang hari."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Gün boyunca verimliliği korumak için ara vermek ve dinlenmek önemlidir."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Dia mempresentasikan temuan penelitiannya pada konferensi internasional minggu lalu."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Geçen hafta uluslararası konferansta araştırma bulgularını sundu."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Mereka berencana untuk meluncurkan lini produk baru pada akhir tahun."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yıl sonuna kadar yeni bir ürün serisi başlatmayı planlıyorlar."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Profesor tersebut menekankan pentingnya berpikir kritis dalam pemecahan masalah."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Profesör, problem çözmede eleştirel düşünmenin önemini vurguladı."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Teknologi yang mereka kembangkan memiliki potensi untuk merevolusi industri."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Geliştirdikleri teknoloji, endüstriyi kökten değiştirme potansiyeline sahip."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Dia senang menghabiskan akhir pekannya mendaki di pegunungan."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Hafta sonlarını dağlarda yürüyüş yaparak geçirmeyi seviyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Pembaruan perangkat lunak baru termasuk beberapa peningkatan kinerja dan perbaikan bug."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yeni yazılım güncellemesi, birkaç performans iyileştirmesi ve hata düzeltmeleri içeriyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Dia adalah seorang ahli di bidangnya dan sering memberikan kuliah di universitas."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Kendi alanında uzmandır ve sık sık üniversitelerde dersler verir."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Saya sedang mengerjakan proyek yang bertujuan untuk meningkatkan teknik konservasi air."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Şu anda su koruma tekniklerini iyileştirmeyi amaçlayan bir proje üzerinde çalışıyorum."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Pameran museum tentang Mesir kuno sangat mendidik dan menarik."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Müzenin antik Mısır sergisi hem eğitici hem de büyüleyiciydi."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Kita harus mempertimbangkan untuk menerapkan strategi baru untuk meningkatkan penjualan pada kuartal berikutnya."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Gelecek çeyrekte satışları artırmak için yeni bir strateji uygulamayı düşünmeliyiz."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Makalah penelitian tersebut mengeksplorasi dampak media sosial terhadap kesehatan mental."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Araştırma makalesi, sosyal medyanın ruh sağlığı üzerindeki etkisini inceliyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Dia dianugerahi beasiswa untuk belajar di salah satu universitas top di negara ini."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Ülkenin en iyi üniversitelerinden birinde eğitim görmek için burs kazandı."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Dia berencana untuk memulai bisnisnya sendiri setelah mendapatkan pengalaman industri yang cukup."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yeterince endüstri deneyimi kazandıktan sonra kendi işini kurmayı planlıyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "Endonezce'den Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Buku tersebut memberikan gambaran menyeluruh tentang sejarah sains modern."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Kitap, modern bilimin tarihine kapsamlı bir genel bakış sunuyor."
+                }
+            ]
+        }
+    ]
+}

@@ -3,7 +3,7 @@ import sys
 import os
 import json
 
-sys.path.append("../..")
+sys.path.append("..")
 from fonksiyonlar import veri_yolu_al
 
 
@@ -13,11 +13,11 @@ def create_batch_request(content, index, type):
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "ft:gpt-3.5-turbo-0125:kayra::9iblLubt",
+            "model": "ft:gpt-3.5-turbo-0125:kayra::9ixgAbko",
             "messages": [
                 {
                     "role": "system",
-                    "content": "Metni temizle ve gereksiz bilgileri kaldır. Aşağıdaki kurallara uy:\nAdres ve link cümlelerini çıkar.\nÜnvan ve isimleri basitleştir.\nYanlış yazılan kelimeleri düzelt.\nTarihleri kaldır.\nBağlam bağımlı cümleleri çıkar.\nBu, doktor-hasta verisi için chatbot eğitimi içindir.",
+                    "content": "İngilizceden Türkçe'ye çeviri yap.",
                 },
                 {
                     "role": "user",
@@ -32,9 +32,11 @@ def create_batch_request(content, index, type):
 def save_batch_requests(data, batch_file_path, start_index):
     with open(batch_file_path, "w", encoding="utf-8") as batch_file:
         for index, row in enumerate(data[start_index:], start=start_index):
-            request = create_batch_request(row["question_content"], index, "question")
+            request = create_batch_request(row["Question"], index, "question")
             batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
-            request = create_batch_request(row["question_answer"], index, "answer")
+            request = create_batch_request(row["Answer"], index, "answer")
+            batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
+            request = create_batch_request(row["Title"], index, "title")
             batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
 
 

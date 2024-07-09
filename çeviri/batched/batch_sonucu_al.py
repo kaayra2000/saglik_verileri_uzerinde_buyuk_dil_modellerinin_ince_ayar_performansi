@@ -3,7 +3,7 @@ import os
 import sys
 import re
 
-sys.path.append("../..")
+sys.path.append("..")
 from fonksiyonlar import veri_yolu_al
 from openai import OpenAI
 

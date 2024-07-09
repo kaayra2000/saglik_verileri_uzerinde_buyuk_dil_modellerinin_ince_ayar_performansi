@@ -2,7 +2,7 @@ import json
 import sys
 import os
 
-sys.path.append("../..")
+sys.path.append("..")
 from fonksiyonlar import veri_yolu_al
 
 

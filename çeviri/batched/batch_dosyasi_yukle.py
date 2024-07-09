@@ -4,7 +4,7 @@ from datetime import datetime
 from openai import OpenAI
 
 # Dosya yolunu almak için gerekli fonksiyonu içe aktar
-sys.path.append("../..")
+sys.path.append("..")
 from fonksiyonlar import veri_yolu_al
 
 # API anahtarını oku

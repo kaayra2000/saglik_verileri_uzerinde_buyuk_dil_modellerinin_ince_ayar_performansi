@@ -6,3 +6,4 @@ api_key.txt
 **/*_batch_splitted_files/**
 çeviri/doktorsitesi/batched/batch*_info.txt
 çeviri/doktorsitesi/*batch.jsonl
+**/output_chat.jsonl/**

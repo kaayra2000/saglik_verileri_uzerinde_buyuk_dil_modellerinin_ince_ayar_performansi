@@ -1,6 +1,16 @@
 from openai import OpenAI
 import json
 import time
+import argparse
+
+
+argparser = argparse.ArgumentParser()
+argparser.add_argument(
+    "data_path", type=str, help="Fine-tune için kullanılacak veri yolu"
+)
+args = argparser.parse_args()
+data_path = args.data_path
+
 
 with open("../../api_key.txt", "r") as file:
     api_key = file.read().strip()
@@ -10,7 +20,8 @@ client = OpenAI(
     api_key=api_key,
 )
 
-with open("fine_tune_data.json", "r") as file:
+
+with open(data_path, "r") as file:
     data = json.load(file)
 
 # JSONL formatında kaydetme

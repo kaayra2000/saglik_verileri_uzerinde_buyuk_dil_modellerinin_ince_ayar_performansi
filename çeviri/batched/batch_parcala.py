@@ -39,4 +39,4 @@ def split_jsonl(file_path, chunk_size):
 veri_yolu = veri_yolu_al()
 
 # Kullanım
-split_jsonl(veri_yolu, 1200)
+split_jsonl(veri_yolu, 2000)

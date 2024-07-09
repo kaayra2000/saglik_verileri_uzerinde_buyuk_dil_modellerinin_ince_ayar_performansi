@@ -32,11 +32,9 @@ def create_batch_request(content, index, type):
 def save_batch_requests(data, batch_file_path, start_index):
     with open(batch_file_path, "w", encoding="utf-8") as batch_file:
         for index, row in enumerate(data[start_index:], start=start_index):
-            request = create_batch_request(row["Question"], index, "question")
+            request = create_batch_request(row["question"], index, "question")
             batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
-            request = create_batch_request(row["Answer"], index, "answer")
-            batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
-            request = create_batch_request(row["Title"], index, "title")
+            request = create_batch_request(row["answer"], index, "answer")
             batch_file.write(json.dumps(request, ensure_ascii=False) + "\n")
 
 

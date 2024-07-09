@@ -1,0 +1,2 @@
+temizleme -> ft:gpt-3.5-turbo-0125:kayra::9iblLubt
+ingilizce türkçe çeviri -> ft:gpt-3.5-turbo-0125:kayra::9ixgAbko

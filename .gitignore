@@ -4,6 +4,6 @@ api_key.txt
 çeviri/deneme.py
 **/__pycache__/**
 **/*_batch_splitted_files/**
-çeviri/doktorsitesi/batched/batch*_info.txt
-çeviri/doktorsitesi/*batch.jsonl
+çeviri/batched/batch*info.txt
+çeviri/*batch.jsonl
 **/output_chat.jsonl/**

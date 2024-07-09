@@ -8,7 +8,7 @@ sys.path.append("..")
 from fonksiyonlar import veri_yolu_al
 
 # API anahtarını oku
-with open("../../../api_key.txt", "r") as file:
+with open("../../api_key.txt", "r") as file:
     api_key = file.read().strip()
 
 # OpenAI istemcisini başlat

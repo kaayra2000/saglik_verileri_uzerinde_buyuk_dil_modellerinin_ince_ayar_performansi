@@ -12,7 +12,7 @@ def get_file_id(file_line):
 
 
 # OpenAI API anahtarını oku
-with open("../../../api_key.txt", "r") as file:
+with open("../../api_key.txt", "r") as file:
     api_key = file.read().strip()
 
 client = OpenAI(api_key=api_key)

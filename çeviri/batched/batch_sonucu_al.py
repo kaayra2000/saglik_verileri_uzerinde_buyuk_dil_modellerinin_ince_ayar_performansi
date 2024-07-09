@@ -8,7 +8,7 @@ from fonksiyonlar import veri_yolu_al
 from openai import OpenAI
 
 # API anahtarını oku
-with open("../../../api_key.txt", "r", encoding="utf-8") as file:
+with open("../../api_key.txt", "r", encoding="utf-8") as file:
     api_key = file.read().strip()
 
 # OpenAI istemcisini oluştur

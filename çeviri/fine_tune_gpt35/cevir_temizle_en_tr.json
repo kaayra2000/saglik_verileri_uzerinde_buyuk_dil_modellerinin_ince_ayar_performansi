@@ -1,0 +1,532 @@
+{
+    "data": [
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The weather today is surprisingly pleasant, isn't it?."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Bugün hava şaşırtıcı derecede hoş, değil mi?"
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "I have been reading an interesting book about ancient civilizations.."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Antik medeniyetler hakkında ilginç bir kitap okuyorum."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Could you please explain the process of photosynthesis in detail?.."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Fotosentez sürecini ayrıntılı olarak açıklayabilir misiniz?"
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "I recently visited a museum that had an impressive collection of modern art."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yakın zamanda modern sanatın etkileyici bir koleksiyonuna sahip bir müzeyi ziyaret ettim."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Despite the heavy traffic, we managed to arrive at the meeting on time."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yoğun trafiğe rağmen, toplantıya zamanında varmayı başardık."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The new restaurant in town offers a wide variety of vegan dishes."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Şehirdeki yeni restoran, çeşitli vegan yemekler sunuyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "She decided to take a year off from work to travel around the world."
+                },
+                {
+                    "role": "assistant",
+                    "content": "O, dünyayı dolaşmak için işten bir yıl izin almaya karar verdi."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Can you believe how quickly this year has passed by?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Bu yılın ne kadar hızlı geçtiğine inanabiliyor musun?"
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The conference provided valuable insights into the latest industry trends."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Konferans, en son endüstri trendleri hakkında değerli bilgiler sağladı."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "I am looking forward to the upcoming concert by my favorite band."
+                },
+                {
+                    "role": "assistant",
+                    "content": "En sevdiğim grubun yaklaşan konserini sabırsızlıkla bekliyorum."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The documentary shed light on the effects of climate change on our planet."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Belgesel, iklim değişikliğinin gezegenimiz üzerindeki etkilerini gözler önüne serdi."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "We need to come up with a plan to improve our customer service."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Müşteri hizmetlerimizi iyileştirmek için bir plan oluşturmalıyız."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Her dedication to her work is truly inspiring to everyone in the team."
+                },
+                {
+                    "role": "assistant",
+                    "content": "İşine olan bağlılığı, ekipteki herkesi gerçekten ilham verici."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The team's performance has significantly improved over the last few months."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Ekibin performansı son birkaç ayda önemli ölçüde iyileşti."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Reading helps expand your knowledge and understanding of the world."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Okumak, bilgi ve dünya anlayışınızı genişletmenize yardımcı olur."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The new policy aims to reduce waste and promote recycling in the office."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yeni politika, atıkları azaltmayı ve ofiste geri dönüşümü teşvik etmeyi amaçlıyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "It's important to take breaks and rest to maintain productivity throughout the day."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Gün boyunca verimliliği korumak için ara vermek ve dinlenmek önemlidir."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "She presented her research findings at the international conference last week."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Geçen hafta uluslararası konferansta araştırma bulgularını sundu."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "They are planning to launch a new product line by the end of the year."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yıl sonuna kadar yeni bir ürün serisi başlatmayı planlıyorlar."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The professor emphasized the importance of critical thinking in problem-solving."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Profesör, problem çözmede eleştirel düşünmenin önemini vurguladı."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The technology they are developing has the potential to revolutionize the industry."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Geliştirdikleri teknoloji, endüstriyi kökten değiştirme potansiyeline sahip."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "He enjoys spending his weekends hiking in the mountains."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Hafta sonlarını dağlarda yürüyüş yaparak geçirmeyi seviyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The new software update includes several performance enhancements and bug fixes."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yeni yazılım güncellemesi, birkaç performans iyileştirmesi ve hata düzeltmeleri içeriyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "She is an expert in her field and often gives lectures at universities."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Kendi alanında uzmandır ve sık sık üniversitelerde dersler verir."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "I am currently working on a project that aims to improve water conservation techniques."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Şu anda su koruma tekniklerini iyileştirmeyi amaçlayan bir proje üzerinde çalışıyorum."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The museum's exhibit on ancient Egypt was both educational and fascinating."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Müzenin antik Mısır sergisi hem eğitici hem de büyüleyiciydi."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "We should consider implementing a new strategy to boost sales in the next quarter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Gelecek çeyrekte satışları artırmak için yeni bir strateji uygulamayı düşünmeliyiz."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The research paper explores the impact of social media on mental health."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Araştırma makalesi, sosyal medyanın ruh sağlığı üzerindeki etkisini inceliyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "He was awarded a scholarship to study at one of the top universities in the country."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Ülkenin en iyi üniversitelerinden birinde eğitim görmek için burs kazandı."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "She plans to start her own business after gaining enough industry experience."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Yeterince endüstri deneyimi kazandıktan sonra kendi işini kurmayı planlıyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "The book provides a comprehensive overview of the history of modern science."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Kitap, modern bilimin tarihine kapsamlı bir genel bakış sunuyor."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "hello...i have a severe gambling addiction that I would like to quit with some assistance from naltrexone. Ive done lots of research on it and am wanting to look into getting a prescription. I have also used vicodin daily for about 4 years about 20-30 mg daily. I have not had any vicodin for 5 days but see that naltrexone can assist in keeping me off the pills too. please help."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Merhaba... Şiddetli bir kumar bağımlılığım var ve naltrekson yardımıyla bundan kurtulmak istiyorum. Bununla ilgili çok fazla araştırma yaptım ve reçete almak istiyorum. Ayrıca yaklaşık 4 yıldır günlük olarak yaklaşık 20-30 mg Vicodin kullanıyorum. 5 gündür Vicodin kullanmadım ama naltreksonun beni haplardan uzak tutmaya yardımcı olabileceğini görüyorum. Lütfen yardım edin."
+                }
+            ]
+        },
+        {
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap."
+                },
+                {
+                    "role": "user",
+                    "content": "Im 13 years old, my chest hurts sometimes, from both sides. Near my heart and the right side as well but not at the same time and not always , what does it mean? , also my boobs kinda hurt when i touch them in certain areas , should I be worried and what does this mean ?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "13 yaşındayım, bazen göğsüm her iki taraftan da ağrıyor. Kalbimin yakınında ve sağ tarafta da ama aynı anda değil ve her zaman değil, bu ne anlama geliyor? Ayrıca göğüslerime belirli bölgelere dokunduğumda biraz acıyor, endişelenmeli miyim ve bu ne anlama geliyor?"
+                }
+            ]
+        }
+    ]
+}

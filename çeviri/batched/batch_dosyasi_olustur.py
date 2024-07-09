@@ -13,11 +13,11 @@ def create_batch_request(content, index, type):
         "method": "POST",
         "url": "/v1/chat/completions",
         "body": {
-            "model": "ft:gpt-3.5-turbo-0125:kayra::9ixgAbko",
+            "model": "ft:gpt-3.5-turbo-0125:kayra::9j4bLRR4",
             "messages": [
                 {
                     "role": "system",
-                    "content": "İngilizceden Türkçe'ye çeviri yap.",
+                    "content": "İngilizce cümleyi temizle ve Türkçe'ye çeviri yap.",
                 },
                 {
                     "role": "user",

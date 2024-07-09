@@ -114,6 +114,15 @@
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/çeviri/doktorsitesi/batched",
       "args": []
+    },
+    {
+      "name": "temizlenmis_batchleri_csv_ile_birlestir",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/çeviri/batched/temizlenmis_batchleri_csv_ile_birlestir.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/çeviri/batched",
+      "args": ["sonuclar"]
     }
   ]
 }

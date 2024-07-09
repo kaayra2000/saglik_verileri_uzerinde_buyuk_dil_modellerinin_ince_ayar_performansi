@@ -42,8 +42,9 @@ def process_json_files(folder_path):
 
     # Dosya adlarını sayısal olarak sıralama
     json_files.sort(key=lambda x: get_numeric_part(x)[0])
-    csv_file_prefix = json_files[0].split("_")[0]
-    combined_data = defaultdict(lambda: {"question_content": "", "question_answer": ""})
+    parcalar = json_files[0].split("_")
+    csv_file_prefix = "_".join(parcalar[:3])
+    combined_data = defaultdict(lambda: {"Title": "", "Question": "", "Answer": ""})
 
     for json_file in json_files:
         with open(os.path.join(folder_path, json_file), "r", encoding="utf-8") as f:
@@ -55,9 +56,11 @@ def process_json_files(folder_path):
                 content = item["response"]["body"]["choices"][0]["message"]["content"]
 
                 if "question" in custom_id:
-                    combined_data[index]["question_content"] = content
+                    combined_data[index]["Question"] = content
                 elif "answer" in custom_id:
-                    combined_data[index]["question_answer"] = content
+                    combined_data[index]["Answer"] = content
+                elif "title" in custom_id:
+                    combined_data[index]["Title"] = content
 
     return combined_data, csv_file_prefix
 
@@ -85,10 +88,9 @@ def write_combined_csv(prefix, combined_data):
         cleaned_csv_filename, "w", newline="", encoding="utf-8"
     ) as cleaned_csvfile:
         fieldnames = [
-            "doctor_title",
-            "doctor_speciality",
-            "question_content",
-            "question_answer",
+            "Title",
+            "Question",
+            "Answer",
         ]
         writer = csv.DictWriter(cleaned_csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -96,14 +98,16 @@ def write_combined_csv(prefix, combined_data):
         last_written_index = len(existing_cleaned_data)
         for i, row in enumerate(existing_cleaned_data):
             if i in combined_data:
-                row["question_content"] = combined_data[i]["question_content"]
-                row["question_answer"] = combined_data[i]["question_answer"]
+                row["Title"] = combined_data[i]["Title"]
+                row["Question"] = combined_data[i]["Question"]
+                row["Answer"] = combined_data[i]["Answer"]
             writer.writerow(row)
 
         for i, row in enumerate(existing_data, start=last_written_index):
             if i in combined_data:
-                row["question_content"] = combined_data[i]["question_content"]
-                row["question_answer"] = combined_data[i]["question_answer"]
+                row["Title"] = combined_data[i]["Title"]
+                row["Question"] = combined_data[i]["Question"]
+                row["Answer"] = combined_data[i]["Answer"]
                 writer.writerow(row)
             else:
                 break

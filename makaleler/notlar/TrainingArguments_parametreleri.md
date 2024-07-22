@@ -26,7 +26,7 @@
 * num_train_epochs=1 ya da 2 bu da deneysel
 * max_seq_length=modelin boyutu kadar
 * lr_scheduler_type="linear" olacak.
-
+* gradient_accumulation_steps=32
 * weight_decay=0.01
 **KAYNAK** Exploring the Efficacy of Pre-trained Checkpoints in Text-to-Music Generation Task
 Except for BART, the decoder for all other models is randomly initialised with the same configuration as the RND

@@ -23,5 +23,6 @@ We use LoRA (Hu et al., 2021) with rank 16 for all tasks with a dropout rate of 
 We set the dropout rate to 0 unless otherwise specified.
 * bias=none çünkü Bias'ları eğitmek yerine onları kaldırmak, modelin eğitiminde daha az parametre anlamına gelir, bu da daha hızlı eğitim ve daha az hesaplama gereksinimi demektir.
 * use_gradient_checkpointing="unsloth" zaten pek bir olayı yok
+* random_state=3407 önemsiz
 * use_rslora=False zaten loranın özelleşmiş hali kullanmayacağım
 * loftq_config=None LoftQ (LoRA-Fine-Tuning-aware Quantization) zaten bu da aynı

@@ -1,4 +1,4 @@
 Mistral Trendyol -> Trendyol/Trendyol-LLM-7b-chat-v1.8 (https://huggingface.co/Trendyol/Trendyol-LLM-7b-chat-v1.8)
 Llama3 Cosmos -> ytu-ce-cosmos/Turkish-Llama-8b-v0.1 (https://huggingface.co/ytu-ce-cosmos/Turkish-Llama-8b-v0.1)
-Qwen Orbina -> Orbina/Orbita-v0.1 (https://huggingface.co/Orbina/Orbita-v0.1)
+Mistral TURKCELL -> Turkcell-LLM-7b-v1 (https://huggingface.co/TURKCELL/Turkcell-LLM-7b-v1)
 GPT2 Cosmos -> ytu-ce-cosmos/turkish-gpt2-large (https://huggingface.co/ytu-ce-cosmos/turkish-gpt2-large)

@@ -123,6 +123,15 @@
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/çeviri/batched",
       "args": ["sonuclar"]
+    },
+    {
+      "name": "çeviri",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/çeviri/ceviri.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/çeviri",
+      "args": ["test.json"]
     }
   ]
 }

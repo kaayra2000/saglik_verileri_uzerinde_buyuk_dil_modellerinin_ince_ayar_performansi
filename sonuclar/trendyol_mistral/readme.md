@@ -1,2 +1,2 @@
 # link
-https://huggingface.co/Trendyol/Trendyol-LLM-7b-chat-v1.8
+https://huggingface.co/kayrab/doktor-Mistral-trendyol-7b

@@ -59,6 +59,7 @@ trainer = SFTTrainer(
 
 ```
 from unsloth import FastLanguageModel
+max_seq_length = 8192
 dtype = None
 load_in_4bit = False
 

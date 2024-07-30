@@ -1,2 +1,2 @@
 # link
-https://huggingface.co/sambanovasystems/SambaLingo-Turkish-Chat
+https://huggingface.co/kayrab/doktor-LLama2-sambanovasystems-7b

@@ -12,7 +12,7 @@ alpaca_prompt = """Sen bir doktorsun. Soruları buna göre cevapla.
 ```
 batch_size = 128
 gradient_accumulation_steps = 32
-num_train_epochs = 2
+num_train_epochs = 1
 per_device_batch_size = int(batch_size / gradient_accumulation_steps)
 training_args = TrainingArguments(
         per_device_train_batch_size = per_device_batch_size,

@@ -7,8 +7,15 @@ def create_filtered_csv(merged_file, insana_sorulacak_file, output_file):
     merged_df = pd.read_csv(merged_file)
     insana_sorulacak_df = pd.read_csv(insana_sorulacak_file)
 
+    # İndis kolonunu ayarla
+    if "index" not in insana_sorulacak_df.columns:
+        raise KeyError("`insana_sorulacak_file` dosyasında 'index' kolonu bulunamadı.")
+
     # İndisleri kullanarak filtreleme
-    filtered_df = merged_df.loc[insana_sorulacak_df.index]
+    filtered_df = merged_df.loc[insana_sorulacak_df["index"]].copy()
+
+    # `index` kolonunu ilk kolona ekle
+    filtered_df.insert(0, "index", insana_sorulacak_df["index"].values)
 
     # Yeni dosyayı kaydet
     filtered_df.to_csv(output_file, index=False)

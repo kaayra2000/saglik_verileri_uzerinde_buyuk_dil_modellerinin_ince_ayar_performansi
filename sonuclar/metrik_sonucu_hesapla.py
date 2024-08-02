@@ -8,6 +8,8 @@ bleu = evaluate.load("bleu")
 rouge = evaluate.load("rouge")
 meteor = evaluate.load("meteor")
 bertscore = evaluate.load("bertscore")
+cer = evaluate.load("cer")
+wer = evaluate.load("wer")
 
 
 # compute_metrics fonksiyonunu tanımlama
@@ -27,12 +29,21 @@ def compute_metrics(predictions, references):
         predictions=predictions, references=references, lang="tr"
     )
     print("BERTScore skoru hesaplandı.")
+    # CER skoru hesaplama
+    cer_result = cer.compute(predictions=predictions, references=references)
+    print("CER skoru hesaplandı.")
+    # WER skoru hesaplama
+    wer_result = wer.compute(predictions=predictions, references=references)
+    print("WER skoru hesaplandı.")
+
     # Tüm metrikleri birleştirme
     metrics = {
         "bleu": bleu_result,
         "rouge": rouge_result,
         "meteor": meteor_result,
         "bertscore": bertscore_result,
+        "cer": cer_result,
+        "wer": wer_result,
     }
 
     return metrics

@@ -10,101 +10,13 @@
       "cwd": "${workspaceFolder}/model eğitimi"
     },
     {
-      "name": "Python: gpt2_train",
+      "name": "metrik hesapla",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/gpt2_train.py",
+      "program": "${workspaceFolder}/sonuclar/metrik_sonucu_hesapla.py",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: model elle test",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_elle_test.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: model elle test gguf",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_elle_test_gguf.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: model_elle_test_head",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/model_elle_test_head.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: grimore_egit_kodu",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/grimore_egit_kodu.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: grimore_test_kodu",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/model eğitimi/grimore_test_kodu.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/model eğitimi"
-    },
-    {
-      "name": "Python: Breast cancer",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/veri_setleri/Breast_cancer_data/on_isle.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/veri_setleri/Breast_cancer_data"
-    },
-    {
-      "name": "bölüştür",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/train_test_bolustur.py",
-      "console": "integratedTerminal"
-    },
-    {
-      "name": "deneme",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/colab/deneme.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/colab/"
-    },
-    {
-      "name": "çeviri openai",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/çeviri/ceviri_openai.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri/"
-    },
-    {
-      "name": "çeviri google",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/çeviri/avaliyev/ceviri_google.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri/avaliyev",
-      "args": ["train.json"]
-    },
-    {
-      "name": "temizle doktorsitesi",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${workspaceFolder}/çeviri/doktorsitesi/temizle.py",
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri/doktorsitesi",
-      "args": ["sohbetler20000.csv"]
+      "cwd": "${workspaceFolder}/sonuclar",
+      "args": ["merged_test.csv", "trendyol"]
     },
     {
       "name": "batch başlat",

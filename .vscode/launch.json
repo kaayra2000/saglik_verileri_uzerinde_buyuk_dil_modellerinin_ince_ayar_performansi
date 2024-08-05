@@ -37,13 +37,13 @@
       "args": ["sonuclar"]
     },
     {
-      "name": "çeviri",
+      "name": "insana_sor",
       "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/çeviri/ceviri.py",
+      "program": "${workspaceFolder}/insana_sor/fikstur_olustur.py",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}/çeviri",
-      "args": ["test.json"]
+      "cwd": "${workspaceFolder}/insana_sor",
+      "args": []
     }
   ]
 }

@@ -28,6 +28,7 @@ def plot_custom_bar_chart(
     subplots_adjust_right=0.8,
     value_fontsize=10,  # Bar üstündeki sayıların yazı tipi boyutu
     y_tick_label_fontsize=10,  # Y ekseni etiketlerinin yazı tipi boyutu
+    float_len=3,
 ):
     """
     Özelleştirilebilir bar chart çizen ve SVG olarak kaydeden fonksiyon.
@@ -69,7 +70,7 @@ def plot_custom_bar_chart(
             for bar in bars:
                 height = bar.get_height()
                 ax.annotate(
-                    "{}".format(round(height, 3)),
+                    "{}".format(round(height, float_len)),
                     xy=(bar.get_x() + bar.get_width() / 2, height),
                     xytext=(0, 3),  # 3 points vertical offset
                     textcoords="offset points",
@@ -150,7 +151,7 @@ model_names = [
 """"
 BERT SKOR KISMI
 """
-bert_labels = ["Avg Precision", "Avg Recall", "Avg F1"]
+bert_labels = ["Ort. Precision", "Ort. Recall", "Ort. F1"]
 
 bert_general_file_path = "bert_general_chart.svg"
 bert_general_matrix = []
@@ -162,17 +163,17 @@ bert_specific_matrix_model = []
 for content in json_contents:
     for model_name in model_names:
         if model_name in content:
-            content = content[model_name]
+            model_content = content[model_name]
             bert_specific_matrix_model.append(
                 [
-                    content["bertscore"]["avg_precision"],
-                    content["bertscore"]["avg_recall"],
-                    content["bertscore"]["avg_f1"],
+                    model_content["bertscore"]["avg_precision"],
+                    model_content["bertscore"]["avg_recall"],
+                    model_content["bertscore"]["avg_f1"],
                 ]
             )
             bert_general_matrix.append(
                 [
-                    content["bertscore"]["avg_f1"],
+                    model_content["bertscore"]["avg_f1"],
                 ]
             )
             break
@@ -261,4 +262,118 @@ plot_custom_bar_chart(
     subplots_adjust_right=0.78,
     y_tick_label_fontsize=18,
     value_fontsize=12,
+)
+
+""""
+BLEU KISMI
+"""
+
+bleu_labels = ["BLEU-1 Skoru", "BLEU-2 Skoru", "BLEU-3 Skoru", "BLEU-4 Skoru"]
+
+bleu_general_label = ["Genel BLEU Skoru"]
+bleu_general_file_path = "bleu_general_chart.svg"
+bleu_general_matrix = []
+
+bleu_specific_file_path = "bleu_specific_chart.svg"
+bleu_spesific_model_file_path = "bleu_specific_model_chart.svg"
+bleu_specific_matrix_model = []
+
+for content in json_contents:
+    for model_name in model_names:
+        if model_name in content:
+            model_content = content[model_name]
+            bleu_specific_matrix_model.append(model_content["bleu"]["precisions"])
+            bleu_general_matrix.append([model_content["bleu"]["bleu"]])
+            break
+
+# NumPy array'e dönüştürme
+bleu_specific_matrix = np.array(bleu_specific_matrix_model)
+
+# Matrisin transpozesini alma
+bleu_specific_matrix = np.transpose(bleu_specific_matrix)
+
+plot_custom_bar_chart(
+    bleu_specific_matrix_model,
+    model_names,
+    colors,
+    bleu_labels,
+    show_data_lables=True,
+    title="Farklı Modellerin BLEU Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="BLEU Skor Değerleri",
+    legend_location="upper right",
+    bar_width=0.23,
+    show_values=True,
+    file_path=bleu_spesific_model_file_path,
+    fig_size=(12, 10),
+    x_label_fontsize=12,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.2,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.15,
+    subplots_adjust_right=0.95,
+    value_fontsize=8,
+    y_tick_label_fontsize=15,
+    float_len=5,
+)
+
+
+plot_custom_bar_chart(
+    bleu_general_matrix,
+    model_names,
+    colors,
+    bleu_general_label,
+    show_data_lables=False,
+    title="Farklı Modellerin Genel BLEU Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="Genel BLEU Skor Değerleri",
+    legend_location="upper right",
+    bar_width=0.4,
+    show_values=True,
+    file_path=bleu_general_file_path,
+    fig_size=(14, 10),
+    x_label_fontsize=12.2,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.2,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.15,
+    subplots_adjust_right=0.95,
+    value_fontsize=15,
+    y_tick_label_fontsize=15,
+    float_len=5,
+)
+
+
+plot_custom_bar_chart(
+    bleu_specific_matrix,
+    bleu_labels,
+    colors,
+    model_names,
+    show_data_lables=True,
+    title="Farklı Modellerin BLEU Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="BLEU Skor Değerleri",
+    legend_location="upper right",
+    bar_width=0.23,
+    show_values=True,
+    file_path=bleu_specific_file_path,
+    fig_size=(12, 10),
+    x_label_fontsize=12,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.14,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.15,
+    subplots_adjust_right=0.95,
+    value_fontsize=8,
+    y_tick_label_fontsize=15,
+    float_len=5,
 )

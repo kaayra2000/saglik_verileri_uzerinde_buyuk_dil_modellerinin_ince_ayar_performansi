@@ -377,3 +377,125 @@ plot_custom_bar_chart(
     y_tick_label_fontsize=15,
     float_len=5,
 )
+
+
+""""
+ROUGE KISMI
+"""
+
+rouge_labels = ["ROUGE-1 Skoru", "ROUGE-2 Skoru", "ROUGE-L Skoru", "ROUGE-Lsum Skoru"]
+
+rouge_general_label = ["ROUGE-L Skoru"]
+rouge_general_file_path = "rouge_general_chart.svg"
+rouge_general_matrix = []
+
+rouge_specific_file_path = "rouge_specific_chart.svg"
+rouge_spesific_model_file_path = "rouge_specific_model_chart.svg"
+rouge_specific_matrix_model = []
+
+for content in json_contents:
+    for model_name in model_names:
+        if model_name in content:
+            model_content = content[model_name]
+            rouge_specific_matrix_model.append(
+                [
+                    model_content["rouge"]["rouge1"],
+                    model_content["rouge"]["rouge2"],
+                    model_content["rouge"]["rougeL"],
+                    model_content["rouge"]["rougeLsum"],
+                ]
+            )
+            rouge_general_matrix.append([model_content["rouge"]["rougeL"]])
+            break
+
+# NumPy array'e dönüştürme
+rouge_specific_matrix = np.array(rouge_specific_matrix_model)
+
+# Matrisin transpozesini alma
+rouge_specific_matrix = np.transpose(rouge_specific_matrix)
+
+plot_custom_bar_chart(
+    rouge_specific_matrix_model,
+    model_names,
+    colors,
+    rouge_labels,
+    show_data_lables=True,
+    title="Farklı Modellerin ROUGE Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="ROUGE Skor Değerleri",
+    legend_location="upper right",
+    bar_width=0.20,
+    show_values=True,
+    file_path=rouge_spesific_model_file_path,
+    fig_size=(12, 10),
+    x_label_fontsize=12,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.2,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.15,
+    subplots_adjust_right=0.95,
+    value_fontsize=8,
+    y_tick_label_fontsize=15,
+    float_len=4,
+)
+
+
+plot_custom_bar_chart(
+    rouge_general_matrix,
+    model_names,
+    colors,
+    rouge_general_label,
+    show_data_lables=False,
+    title="Farklı Modellerin ROUGE-L Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="ROUGE-L Skor Değerleri",
+    legend_location="upper right",
+    bar_width=0.4,
+    show_values=True,
+    file_path=rouge_general_file_path,
+    fig_size=(14, 11),
+    x_label_fontsize=13,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.2,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.15,
+    subplots_adjust_right=0.95,
+    value_fontsize=15,
+    y_tick_label_fontsize=15,
+    float_len=4,
+)
+
+
+plot_custom_bar_chart(
+    rouge_specific_matrix,
+    rouge_labels,
+    colors,
+    model_names,
+    show_data_lables=True,
+    title="Farklı Modellerin ROUGE Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="ROUGE Skor Değerleri",
+    legend_location="upper right",
+    bar_width=0.20,
+    show_values=True,
+    file_path=rouge_specific_file_path,
+    fig_size=(12, 10),
+    x_label_fontsize=12,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.14,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.15,
+    subplots_adjust_right=0.95,
+    value_fontsize=8,
+    y_tick_label_fontsize=15,
+    float_len=4,
+)

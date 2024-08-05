@@ -87,7 +87,7 @@ def calculate_elo_and_winpct(file_path):
 
 
 # CSV dosyasını işle ve sonuçları göster
-file_path = "oyun_sonuclari.csv"
+file_path = "gpt_oyun_sonuclari.csv"
 results = calculate_elo_and_winpct(file_path)
 print(results)
 with open("elo_winpct.json", "w") as f:

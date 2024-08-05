@@ -499,3 +499,95 @@ plot_custom_bar_chart(
     y_tick_label_fontsize=15,
     float_len=4,
 )
+
+
+""""
+METEOR KISMI
+"""
+
+meteor_general_label = ["METEOR Skoru"]
+meteor_general_file_path = "meteor_general_chart.svg"
+meteor_general_matrix = []
+
+
+for content in json_contents:
+    for model_name in model_names:
+        if model_name in content:
+            model_content = content[model_name]
+            meteor_general_matrix.append([model_content["meteor"]["meteor"]])
+            break
+
+
+plot_custom_bar_chart(
+    meteor_general_matrix,
+    model_names,
+    colors,
+    meteor_general_label,
+    show_data_lables=False,
+    title="Farklı Modellerin METEOR Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="METEOR Skor Değerleri",
+    legend_location="upper right",
+    bar_width=0.4,
+    show_values=True,
+    file_path=meteor_general_file_path,
+    fig_size=(14, 11),
+    x_label_fontsize=13,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.2,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.15,
+    subplots_adjust_right=0.95,
+    value_fontsize=15,
+    y_tick_label_fontsize=15,
+    float_len=4,
+)
+
+
+""""
+CER-WER KISMI
+"""
+
+cer_wer_general_label = ["CER Skoru", "WER Skoru"]
+cer_wer_general_file_path = "cer_wer_general_chart.svg"
+cer_wer_general_matrix = []
+
+
+for content in json_contents:
+    for model_name in model_names:
+        if model_name in content:
+            model_content = content[model_name]
+            cer_wer_general_matrix.append([model_content["cer"], model_content["wer"]])
+            break
+
+
+plot_custom_bar_chart(
+    cer_wer_general_matrix,
+    model_names,
+    colors,
+    cer_wer_general_label,
+    show_data_lables=True,
+    title="Farklı Modellerin CER-WER Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="CER-WER Skor Değerleri",
+    legend_location="upper left",
+    bar_width=0.4,
+    show_values=True,
+    file_path=cer_wer_general_file_path,
+    fig_size=(16, 11),
+    x_label_fontsize=15,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.25,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.08,
+    subplots_adjust_right=0.9,
+    value_fontsize=15,
+    y_tick_label_fontsize=15,
+    float_len=2,
+)

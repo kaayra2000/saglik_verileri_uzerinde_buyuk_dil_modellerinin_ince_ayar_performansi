@@ -1,0 +1,4 @@
+#000080 (Navy Blue)
+#0000ff (Blue)
+#1e90ff (Dodger Blue)
+#87ceeb (Sky Blue)

@@ -44,6 +44,15 @@
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}/insana_sor",
       "args": []
+    },
+    {
+      "name": "gorsel sonuclar",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/sonuclar/gorsel_sonuclar/gorsel_sonuclari_olustur.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/sonuclar/gorsel_sonuclar",
+      "args": []
     }
   ]
 }

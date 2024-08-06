@@ -1,0 +1,22 @@
+[
+    {
+        "Oyuncu": "sambalingo_llama2",
+        "ELO": 1277.3957671690614,
+        "WinPct": 63.33333333333333
+    },
+    {
+        "Oyuncu": "trendyol_mistral",
+        "ELO": 1226.034485653224,
+        "WinPct": 46.666666666666664
+    },
+    {
+        "Oyuncu": "meta_llama3",
+        "ELO": 1151.4810863608486,
+        "WinPct": 38.333333333333336
+    },
+    {
+        "Oyuncu": "cosmos_llama3",
+        "ELO": 1145.0886608168662,
+        "WinPct": 31.666666666666664
+    }
+]

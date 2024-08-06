@@ -113,9 +113,9 @@ indis,oyuncu1,oyuncu2,mac_sonucu,veri_indisi
 111,cosmos_llama3,trendyol_mistral,0,26438
 112,cosmos_llama3,meta_llama3,0,26438
 113,trendyol_mistral,meta_llama3,2,26438
-114,cosmos_llama3,sambalingo_llama2,-1,8761
-115,cosmos_llama3,trendyol_mistral,-1,8761
-116,cosmos_llama3,meta_llama3,-1,8761
-117,sambalingo_llama2,trendyol_mistral,-1,8761
-118,sambalingo_llama2,meta_llama3,-1,8761
-119,trendyol_mistral,meta_llama3,-1,8761
+114,cosmos_llama3,sambalingo_llama2,2,8761
+115,cosmos_llama3,trendyol_mistral,2,8761
+116,cosmos_llama3,meta_llama3,0,8761
+117,sambalingo_llama2,trendyol_mistral,2,8761
+118,sambalingo_llama2,meta_llama3,0,8761
+119,trendyol_mistral,meta_llama3,0,8761

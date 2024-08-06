@@ -1,0 +1,2 @@
+sen bir hakemsin ve sana hastaların soruları ve modellerin cevaplarını içeren bir csv verisinin içeriği verilecek. csv verisi şu şekilde index,question,model1,model2
+sen de bu verilere göre galibi belirleyeceksin ya model1 ya model2'nin cevabı olacak. 3. bir ihtimal de beraberlik.

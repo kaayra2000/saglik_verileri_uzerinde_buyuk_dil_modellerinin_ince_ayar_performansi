@@ -1,10 +1,10 @@
 indis,oyuncu1,oyuncu2,mac_sonucu,veri_indisi
-0,trendyol_mistral,sambalingo_llama2,-1,28543
-1,trendyol_mistral,cosmos_llama3,-1,28543
-2,trendyol_mistral,meta_llama3,-1,28543
-3,sambalingo_llama2,cosmos_llama3,-1,28543
-4,sambalingo_llama2,meta_llama3,-1,28543
-5,cosmos_llama3,meta_llama3,-1,28543
+0,trendyol_mistral,sambalingo_llama2,2,28543
+1,trendyol_mistral,cosmos_llama3,2,28543
+2,trendyol_mistral,meta_llama3,1,28543
+3,sambalingo_llama2,cosmos_llama3,1,28543
+4,sambalingo_llama2,meta_llama3,1,28543
+5,cosmos_llama3,meta_llama3,1,28543
 6,meta_llama3,sambalingo_llama2,-1,9642
 7,meta_llama3,cosmos_llama3,-1,9642
 8,meta_llama3,trendyol_mistral,-1,9642

@@ -595,7 +595,7 @@ plot_custom_bar_chart(
 ELO KISMI
 """
 
-elo_wer_general_label = ["GPT-4o"]
+elo_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct"]
 elo_wer_general_file_path = "elo_general_chart.svg"
 elo_wer_general_matrix = []
 
@@ -604,7 +604,12 @@ for model_name in model_names:
     for content in json_contents:
         if model_name in content:
             model_content = content[model_name]
-            elo_wer_general_matrix.append([model_content["ELO"]["gpt4o"]])
+            elo_wer_general_matrix.append(
+                [
+                    model_content["ELO"]["gpt4o"],
+                    model_content["ELO"]["llama3"],
+                ]
+            )
             break
 
 
@@ -641,7 +646,7 @@ plot_custom_bar_chart(
 WinPct KISMI
 """
 
-winpct_wer_general_label = ["GPT-4o"]
+winpct_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct"]
 winpct_wer_general_file_path = "winpct_general_chart.svg"
 winpct_wer_general_matrix = []
 
@@ -650,7 +655,12 @@ for model_name in model_names:
     for content in json_contents:
         if model_name in content:
             model_content = content[model_name]
-            winpct_wer_general_matrix.append([model_content["WinPct"]["gpt4o"]])
+            winpct_wer_general_matrix.append(
+                [
+                    model_content["WinPct"]["gpt4o"],
+                    model_content["WinPct"]["llama3"],
+                ]
+            )
             break
 
 

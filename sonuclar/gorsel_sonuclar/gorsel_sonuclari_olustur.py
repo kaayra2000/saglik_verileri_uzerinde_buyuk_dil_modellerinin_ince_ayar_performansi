@@ -139,7 +139,7 @@ def list_and_read_json_files(base_dir=".."):
 all_files, json_contents = list_and_read_json_files()
 
 
-colors = ["#000080", "#0000ff", "#1e90ff", "#87ceeb"]
+colors = ["#000080", "#0000ff", "#4682b4", "#1e90ff", "#87ceeb"]
 
 model_names = [
     "doktor-meta-llama-3-8b",
@@ -600,6 +600,7 @@ elo_general_label = [
     "LLama-3.1-70B-Instruct",
     "Copilot",
     "gemini-1.5-pro-001",
+    "Claude 3.5 Sonnet",
 ]
 elo_general_model_file_path = "elo_general_model_chart.svg"
 elo_general_file_path = "elo_general_chart.svg"
@@ -616,6 +617,7 @@ for model_name in model_names:
                     model_content["ELO"]["llama3"],
                     model_content["ELO"]["copilot"],
                     model_content["ELO"]["gemini"],
+                    model_content["ELO"]["claude"],
                 ]
             )
             break
@@ -635,7 +637,7 @@ plot_custom_bar_chart(
     x_axis_label="Model",
     y_axis_label="ELO Skor Değerleri",
     legend_location="upper left",
-    bar_width=0.2,
+    bar_width=0.15,
     show_values=True,
     file_path=elo_general_model_file_path,
     fig_size=(16, 11),
@@ -648,7 +650,7 @@ plot_custom_bar_chart(
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
-    value_fontsize=15,
+    value_fontsize=11.5,
     y_tick_label_fontsize=15,
     float_len=2,
 )
@@ -676,7 +678,7 @@ plot_custom_bar_chart(
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
-    value_fontsize=15,
+    value_fontsize=11.5,
     y_tick_label_fontsize=15,
     float_len=2,
 )
@@ -691,6 +693,7 @@ winpct_wer_general_label = [
     "LLama-3.1-70B-Instruct",
     "Copilot",
     "gemini-1.5-pro-001",
+    "Claude 3.5 Sonnet",
 ]
 winpct_general_model_file_path = "winpct_general_model_chart.svg"
 winpct_general_file_path = "winpct_general_chart.svg"
@@ -707,6 +710,7 @@ for model_name in model_names:
                     model_content["WinPct"]["llama3"],
                     model_content["WinPct"]["copilot"],
                     model_content["WinPct"]["gemini"],
+                    model_content["WinPct"]["claude"],
                 ]
             )
             break
@@ -726,7 +730,7 @@ plot_custom_bar_chart(
     x_axis_label="Model",
     y_axis_label="WinPct Skor Değerleri",
     legend_location="upper left",
-    bar_width=0.2,
+    bar_width=0.15,
     show_values=True,
     file_path=winpct_general_model_file_path,
     fig_size=(16, 11),
@@ -739,7 +743,7 @@ plot_custom_bar_chart(
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
-    value_fontsize=15,
+    value_fontsize=11.5,
     y_tick_label_fontsize=15,
     float_len=2,
 )
@@ -768,7 +772,7 @@ plot_custom_bar_chart(
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
-    value_fontsize=15,
+    value_fontsize=11.5,
     y_tick_label_fontsize=15,
     float_len=2,
 )

@@ -595,7 +595,7 @@ plot_custom_bar_chart(
 ELO KISMI
 """
 
-elo_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct"]
+elo_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct", "Copilot"]
 elo_wer_general_file_path = "elo_general_chart.svg"
 elo_wer_general_matrix = []
 
@@ -608,6 +608,7 @@ for model_name in model_names:
                 [
                     model_content["ELO"]["gpt4o"],
                     model_content["ELO"]["llama3"],
+                    model_content["ELO"]["copilot"],
                 ]
             )
             break
@@ -623,7 +624,7 @@ plot_custom_bar_chart(
     x_axis_label="Model",
     y_axis_label="ELO Skor Değerleri",
     legend_location="upper left",
-    bar_width=0.4,
+    bar_width=0.3,
     show_values=True,
     file_path=elo_wer_general_file_path,
     fig_size=(16, 11),
@@ -646,7 +647,7 @@ plot_custom_bar_chart(
 WinPct KISMI
 """
 
-winpct_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct"]
+winpct_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct", "Copilot"]
 winpct_wer_general_file_path = "winpct_general_chart.svg"
 winpct_wer_general_matrix = []
 
@@ -659,6 +660,7 @@ for model_name in model_names:
                 [
                     model_content["WinPct"]["gpt4o"],
                     model_content["WinPct"]["llama3"],
+                    model_content["WinPct"]["copilot"],
                 ]
             )
             break
@@ -674,7 +676,7 @@ plot_custom_bar_chart(
     x_axis_label="Model",
     y_axis_label="WinPct Skor Değerleri",
     legend_location="upper left",
-    bar_width=0.4,
+    bar_width=0.3,
     show_values=True,
     file_path=winpct_wer_general_file_path,
     fig_size=(16, 11),

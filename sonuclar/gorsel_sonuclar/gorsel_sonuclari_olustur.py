@@ -70,7 +70,9 @@ def plot_custom_bar_chart(
             for bar in bars:
                 height = bar.get_height()
                 ax.annotate(
-                    "{}".format(round(height, float_len)),
+                    "{}".format(
+                        round(height, float_len) if float_len > 0 else int(height)
+                    ),
                     xy=(bar.get_x() + bar.get_width() / 2, height),
                     xytext=(0, 3),  # 3 points vertical offset
                     textcoords="offset points",
@@ -650,9 +652,9 @@ plot_custom_bar_chart(
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
-    value_fontsize=11.5,
+    value_fontsize=9,
     y_tick_label_fontsize=15,
-    float_len=2,
+    float_len=0,
 )
 
 plot_custom_bar_chart(
@@ -678,9 +680,9 @@ plot_custom_bar_chart(
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
-    value_fontsize=11.5,
+    value_fontsize=10,
     y_tick_label_fontsize=15,
-    float_len=2,
+    float_len=0,
 )
 
 
@@ -772,7 +774,7 @@ plot_custom_bar_chart(
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
-    value_fontsize=11.5,
+    value_fontsize=13,
     y_tick_label_fontsize=15,
-    float_len=2,
+    float_len=1,
 )

@@ -595,38 +595,77 @@ plot_custom_bar_chart(
 ELO KISMI
 """
 
-elo_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct", "Copilot"]
-elo_wer_general_file_path = "elo_general_chart.svg"
-elo_wer_general_matrix = []
+elo_general_label = [
+    "GPT-4o",
+    "LLama-3.1-70B-Instruct",
+    "Copilot",
+    "gemini-1.5-pro-001",
+]
+elo_general_model_file_path = "elo_general_model_chart.svg"
+elo_general_file_path = "elo_general_chart.svg"
+elo_general_matrix_model = []
 
 
 for model_name in model_names:
     for content in json_contents:
         if model_name in content:
             model_content = content[model_name]
-            elo_wer_general_matrix.append(
+            elo_general_matrix_model.append(
                 [
                     model_content["ELO"]["gpt4o"],
                     model_content["ELO"]["llama3"],
                     model_content["ELO"]["copilot"],
+                    model_content["ELO"]["gemini"],
                 ]
             )
             break
 
+# NumPy array'e dönüştürme
+elo_general_matrix = np.array(elo_general_matrix_model)
 
+# Matrisin transpozesini alma
+elo_general_matrix = np.transpose(elo_general_matrix)
 plot_custom_bar_chart(
-    elo_wer_general_matrix,
+    elo_general_matrix_model,
     model_names,
     colors,
-    elo_wer_general_label,
+    elo_general_label,
     show_data_lables=True,
     title="Farklı Modellerin ELO Skor Performans Değerleri",
     x_axis_label="Model",
     y_axis_label="ELO Skor Değerleri",
     legend_location="upper left",
-    bar_width=0.3,
+    bar_width=0.2,
     show_values=True,
-    file_path=elo_wer_general_file_path,
+    file_path=elo_general_model_file_path,
+    fig_size=(16, 11),
+    x_label_fontsize=15,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.25,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.08,
+    subplots_adjust_right=0.9,
+    value_fontsize=15,
+    y_tick_label_fontsize=15,
+    float_len=2,
+)
+
+plot_custom_bar_chart(
+    elo_general_matrix,
+    elo_general_label,
+    colors,
+    model_names,
+    show_data_lables=True,
+    title="Farklı Modellerin ELO Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="ELO Skor Değerleri",
+    legend_location="upper left",
+    bar_width=0.2,
+    show_values=True,
+    file_path=elo_general_file_path,
     fig_size=(16, 11),
     x_label_fontsize=15,
     x_label_rotation=25,
@@ -647,27 +686,38 @@ plot_custom_bar_chart(
 WinPct KISMI
 """
 
-winpct_wer_general_label = ["GPT-4o", "LLama-3.1-70B-Instruct", "Copilot"]
-winpct_wer_general_file_path = "winpct_general_chart.svg"
-winpct_wer_general_matrix = []
+winpct_wer_general_label = [
+    "GPT-4o",
+    "LLama-3.1-70B-Instruct",
+    "Copilot",
+    "gemini-1.5-pro-001",
+]
+winpct_general_model_file_path = "winpct_general_model_chart.svg"
+winpct_general_file_path = "winpct_general_chart.svg"
+winpct_general_matrix_model = []
 
 
 for model_name in model_names:
     for content in json_contents:
         if model_name in content:
             model_content = content[model_name]
-            winpct_wer_general_matrix.append(
+            winpct_general_matrix_model.append(
                 [
                     model_content["WinPct"]["gpt4o"],
                     model_content["WinPct"]["llama3"],
                     model_content["WinPct"]["copilot"],
+                    model_content["WinPct"]["gemini"],
                 ]
             )
             break
+# NumPy array'e dönüştürme
+winpct_general_matrix = np.array(winpct_general_matrix_model)
 
+# Matrisin transpozesini alma
+winpct_general_matrix = np.transpose(winpct_general_matrix)
 
 plot_custom_bar_chart(
-    winpct_wer_general_matrix,
+    winpct_general_matrix_model,
     model_names,
     colors,
     winpct_wer_general_label,
@@ -676,9 +726,38 @@ plot_custom_bar_chart(
     x_axis_label="Model",
     y_axis_label="WinPct Skor Değerleri",
     legend_location="upper left",
-    bar_width=0.3,
+    bar_width=0.2,
     show_values=True,
-    file_path=winpct_wer_general_file_path,
+    file_path=winpct_general_model_file_path,
+    fig_size=(16, 11),
+    x_label_fontsize=15,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.25,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.08,
+    subplots_adjust_right=0.9,
+    value_fontsize=15,
+    y_tick_label_fontsize=15,
+    float_len=2,
+)
+
+
+plot_custom_bar_chart(
+    winpct_general_matrix,
+    winpct_wer_general_label,
+    colors,
+    model_names,
+    show_data_lables=True,
+    title="Farklı Modellerin WinPct Skor Performans Değerleri",
+    x_axis_label="Model",
+    y_axis_label="WinPct Skor Değerleri",
+    legend_location="upper left",
+    bar_width=0.2,
+    show_values=True,
+    file_path=winpct_general_file_path,
     fig_size=(16, 11),
     x_label_fontsize=15,
     x_label_rotation=25,

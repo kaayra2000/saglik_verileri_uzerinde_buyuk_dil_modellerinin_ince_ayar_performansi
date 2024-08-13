@@ -1,0 +1,33 @@
+{
+  "total_elements": 316,
+  "unique_titles": {
+    "İntern": 316
+  },
+  "unique_name_title_pairs": {
+    "Hasret Çakıl-İntern": 80,
+    "Büşra Büyük-İntern": 76,
+    "Emirhan Ova-İntern": 80,
+    "Özge Kurt-İntern": 80
+  },
+  "total_unique_name_title_pairs": 4,
+  "model_averages": {
+    "trendyol_mistral": 2.3164556962025316,
+    "sambalingo_llama2": 2.3037974683544302,
+    "meta_llama3": 2.278481012658228,
+    "cosmos_llama3": 0.11392405063291139
+  },
+  "skipped_rows": {
+    "sonuc_gorselleri/2_Büşra Büyük/sonuc.csv": [
+      "73-76"
+    ]
+  },
+  "title_person_count": {
+    "İntern": 4
+  },
+  "person_question_count": {
+    "Hasret Çakıl": 80,
+    "Büşra Büyük": 76,
+    "Emirhan Ova": 80,
+    "Özge Kurt": 80
+  }
+}

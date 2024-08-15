@@ -23,7 +23,7 @@ def update_result_files(root_folder, statistics_file):
                     existing_data = json.load(f)
 
                 # Yeni veriyi en başa ekle
-                updated_data = {"overall_average": stats}
+                updated_data = {"insan_sonuclari": stats}
                 updated_data.update(existing_data)
 
                 # Dosyayı güncelle

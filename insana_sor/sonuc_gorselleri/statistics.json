@@ -1,33 +1,495 @@
 {
-  "total_elements": 316,
-  "unique_titles": {
+  "Toplam Cevap Sayısı": 635,
+  "Ünvanlara Göre Cevap Sayısı": {
+    "5. Sınıf": 159,
+    "Uzman": 160,
     "İntern": 316
   },
-  "unique_name_title_pairs": {
-    "Hasret Çakıl-İntern": 80,
-    "Büşra Büyük-İntern": 76,
-    "Emirhan Ova-İntern": 80,
-    "Özge Kurt-İntern": 80
-  },
-  "total_unique_name_title_pairs": 4,
-  "model_averages": {
-    "trendyol_mistral": 2.3164556962025316,
-    "sambalingo_llama2": 2.3037974683544302,
-    "meta_llama3": 2.278481012658228,
-    "cosmos_llama3": 0.11392405063291139
-  },
-  "skipped_rows": {
-    "sonuc_gorselleri/2_Büşra Büyük/sonuc.csv": [
-      "73-76"
-    ]
-  },
-  "title_person_count": {
+  "Ünvan-İnsan Sayısı": {
+    "5. Sınıf": 2,
+    "Uzman": 2,
     "İntern": 4
   },
-  "person_question_count": {
+  "İnsan-Cevap Sayısı": {
+    "Metehan Ersarı": 79,
+    "Hülya Durmuş": 80,
+    "Ahsen Doğan": 80,
+    "Berkem Aydın": 80,
     "Hasret Çakıl": 80,
     "Büşra Büyük": 76,
     "Emirhan Ova": 80,
     "Özge Kurt": 80
+  },
+  "Uzmanlık Olan Doktor Sayısı": 160,
+  "Uzman Olmayan Doktor Sayısı": 475,
+  "Kurum - Cevap Sayısı": {
+    "ESOGÜ": 159,
+    "ERÜ": 80,
+    "KOÜ": 80,
+    "KSÜ": 316
+  },
+  "Farklı Kurum Sayısı": 4,
+  "Model Sonuçları": {
+    "overall_average": {
+      "trendyol_mistral": {
+        "average": 3.006289308176101,
+        "median": 5.0,
+        "std_dev": 5.914471477019726,
+        "min": -10.0,
+        "max": 10.0,
+        "zero_count": 12,
+        "positive_count": 114,
+        "negative_count": 33,
+        "score_distribution": {
+          "-10.0": 12,
+          "-9.0": 1,
+          "-8.0": 1,
+          "-7.0": 2,
+          "-6.0": 2,
+          "-5.0": 12,
+          "-2.0": 2,
+          "-1.0": 1,
+          "0.0": 12,
+          "1.0": 6,
+          "2.0": 5,
+          "3.0": 6,
+          "4.0": 7,
+          "5.0": 33,
+          "6.0": 5,
+          "7.0": 9,
+          "8.0": 19,
+          "9.0": 6,
+          "10.0": 18
+        }
+      },
+      "sambalingo_llama2": {
+        "average": 3.0440251572327046,
+        "median": 5.0,
+        "std_dev": 6.098709047822827,
+        "min": -10.0,
+        "max": 10.0,
+        "zero_count": 12,
+        "positive_count": 112,
+        "negative_count": 35,
+        "score_distribution": {
+          "-10.0": 12,
+          "-9.0": 1,
+          "-8.0": 4,
+          "-7.0": 1,
+          "-5.0": 10,
+          "-3.0": 3,
+          "-2.0": 4,
+          "0.0": 12,
+          "1.0": 8,
+          "2.0": 5,
+          "3.0": 4,
+          "4.0": 8,
+          "5.0": 23,
+          "6.0": 6,
+          "7.0": 7,
+          "8.0": 26,
+          "9.0": 1,
+          "10.0": 24
+        }
+      },
+      "meta_llama3": {
+        "average": 2.6666666666666665,
+        "median": 4.0,
+        "std_dev": 5.667659381896403,
+        "min": -10.0,
+        "max": 10.0,
+        "zero_count": 22,
+        "positive_count": 103,
+        "negative_count": 34,
+        "score_distribution": {
+          "-10.0": 6,
+          "-9.0": 2,
+          "-8.0": 4,
+          "-7.0": 2,
+          "-6.0": 1,
+          "-5.0": 12,
+          "-4.0": 2,
+          "-3.0": 2,
+          "-2.0": 1,
+          "-1.0": 2,
+          "0.0": 22,
+          "1.0": 5,
+          "2.0": 7,
+          "3.0": 10,
+          "4.0": 9,
+          "5.0": 19,
+          "6.0": 5,
+          "7.0": 9,
+          "8.0": 12,
+          "9.0": 7,
+          "10.0": 20
+        }
+      },
+      "cosmos_llama3": {
+        "average": -0.12025316455696203,
+        "median": 0.0,
+        "std_dev": 6.342011972478951,
+        "min": -10.0,
+        "max": 10.0,
+        "zero_count": 27,
+        "positive_count": 76,
+        "negative_count": 55,
+        "score_distribution": {
+          "-10.0": 22,
+          "-9.0": 1,
+          "-8.0": 12,
+          "-7.0": 1,
+          "-6.0": 1,
+          "-5.0": 14,
+          "-4.0": 1,
+          "-3.0": 1,
+          "-2.0": 1,
+          "-1.0": 1,
+          "0.0": 27,
+          "1.0": 13,
+          "2.0": 4,
+          "3.0": 10,
+          "4.0": 5,
+          "5.0": 11,
+          "6.0": 5,
+          "7.0": 6,
+          "8.0": 8,
+          "9.0": 3,
+          "10.0": 11
+        }
+      }
+    },
+    "specific_averages": {
+      "5. Sınıf": {
+        "trendyol_mistral": {
+          "average": 3.425,
+          "median": 5.0,
+          "std_dev": 6.109628802354862,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 3,
+          "positive_count": 28,
+          "negative_count": 9,
+          "score_distribution": {
+            "-10.0": 2,
+            "-5.0": 7,
+            "0.0": 3,
+            "1.0": 2,
+            "2.0": 2,
+            "5.0": 6,
+            "6.0": 2,
+            "7.0": 2,
+            "8.0": 5,
+            "10.0": 9
+          }
+        },
+        "sambalingo_llama2": {
+          "average": 3.925,
+          "median": 7.0,
+          "std_dev": 6.124300064664638,
+          "min": -8.0,
+          "max": 10.0,
+          "zero_count": 3,
+          "positive_count": 27,
+          "negative_count": 10,
+          "score_distribution": {
+            "-8.0": 2,
+            "-7.0": 1,
+            "-5.0": 3,
+            "-3.0": 3,
+            "-2.0": 1,
+            "0.0": 3,
+            "1.0": 2,
+            "2.0": 1,
+            "3.0": 1,
+            "5.0": 2,
+            "7.0": 3,
+            "8.0": 6,
+            "10.0": 12
+          }
+        },
+        "meta_llama3": {
+          "average": 3.125,
+          "median": 4.5,
+          "std_dev": 6.587429754405793,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 3,
+          "positive_count": 26,
+          "negative_count": 11,
+          "score_distribution": {
+            "-10.0": 2,
+            "-7.0": 1,
+            "-5.0": 7,
+            "-4.0": 1,
+            "0.0": 3,
+            "1.0": 1,
+            "2.0": 2,
+            "3.0": 2,
+            "4.0": 1,
+            "5.0": 2,
+            "7.0": 1,
+            "8.0": 5,
+            "9.0": 1,
+            "10.0": 11
+          }
+        },
+        "cosmos_llama3": {
+          "average": 0.3333333333333333,
+          "median": 0.0,
+          "std_dev": 6.010225205226827,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 18,
+          "positive_count": 12,
+          "negative_count": 9,
+          "score_distribution": {
+            "-10.0": 5,
+            "-8.0": 1,
+            "-5.0": 3,
+            "0.0": 18,
+            "2.0": 2,
+            "4.0": 1,
+            "5.0": 2,
+            "8.0": 1,
+            "10.0": 6
+          }
+        }
+      },
+      "Uzman": {
+        "trendyol_mistral": {
+          "average": 3.95,
+          "median": 5.0,
+          "std_dev": 4.0124805295477755,
+          "min": -8.0,
+          "max": 10.0,
+          "zero_count": 5,
+          "positive_count": 32,
+          "negative_count": 3,
+          "score_distribution": {
+            "-8.0": 1,
+            "-7.0": 1,
+            "-5.0": 1,
+            "0.0": 5,
+            "2.0": 2,
+            "3.0": 3,
+            "4.0": 2,
+            "5.0": 14,
+            "7.0": 4,
+            "8.0": 5,
+            "9.0": 1,
+            "10.0": 1
+          }
+        },
+        "sambalingo_llama2": {
+          "average": 3.625,
+          "median": 5.0,
+          "std_dev": 5.333433492649254,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 3,
+          "positive_count": 31,
+          "negative_count": 6,
+          "score_distribution": {
+            "-10.0": 2,
+            "-8.0": 1,
+            "-5.0": 3,
+            "0.0": 3,
+            "1.0": 1,
+            "2.0": 1,
+            "3.0": 3,
+            "4.0": 1,
+            "5.0": 8,
+            "6.0": 3,
+            "7.0": 3,
+            "8.0": 8,
+            "9.0": 1,
+            "10.0": 2
+          }
+        },
+        "meta_llama3": {
+          "average": 2.975,
+          "median": 5.0,
+          "std_dev": 4.833045968468884,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 11,
+          "positive_count": 25,
+          "negative_count": 4,
+          "score_distribution": {
+            "-10.0": 1,
+            "-9.0": 1,
+            "-8.0": 1,
+            "-5.0": 1,
+            "0.0": 11,
+            "3.0": 3,
+            "4.0": 1,
+            "5.0": 7,
+            "6.0": 4,
+            "7.0": 4,
+            "8.0": 4,
+            "9.0": 1,
+            "10.0": 1
+          }
+        },
+        "cosmos_llama3": {
+          "average": -1.025,
+          "median": 0.0,
+          "std_dev": 5.972103954305019,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 6,
+          "positive_count": 17,
+          "negative_count": 17,
+          "score_distribution": {
+            "-10.0": 2,
+            "-8.0": 10,
+            "-7.0": 1,
+            "-5.0": 2,
+            "-3.0": 1,
+            "-2.0": 1,
+            "0.0": 6,
+            "1.0": 1,
+            "2.0": 1,
+            "3.0": 5,
+            "4.0": 2,
+            "5.0": 2,
+            "6.0": 2,
+            "7.0": 1,
+            "8.0": 2,
+            "10.0": 1
+          }
+        }
+      },
+      "İntern": {
+        "trendyol_mistral": {
+          "average": 2.3164556962025316,
+          "median": 5.0,
+          "std_dev": 6.566317126836893,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 4,
+          "positive_count": 54,
+          "negative_count": 21,
+          "score_distribution": {
+            "-10.0": 10,
+            "-9.0": 1,
+            "-7.0": 1,
+            "-6.0": 2,
+            "-5.0": 4,
+            "-2.0": 2,
+            "-1.0": 1,
+            "0.0": 4,
+            "1.0": 4,
+            "2.0": 1,
+            "3.0": 3,
+            "4.0": 5,
+            "5.0": 13,
+            "6.0": 3,
+            "7.0": 3,
+            "8.0": 9,
+            "9.0": 5,
+            "10.0": 8
+          }
+        },
+        "sambalingo_llama2": {
+          "average": 2.3037974683544302,
+          "median": 4.0,
+          "std_dev": 6.421826624039634,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 6,
+          "positive_count": 54,
+          "negative_count": 19,
+          "score_distribution": {
+            "-10.0": 10,
+            "-9.0": 1,
+            "-8.0": 1,
+            "-5.0": 4,
+            "-2.0": 3,
+            "0.0": 6,
+            "1.0": 5,
+            "2.0": 3,
+            "4.0": 7,
+            "5.0": 13,
+            "6.0": 3,
+            "7.0": 1,
+            "8.0": 12,
+            "10.0": 10
+          }
+        },
+        "meta_llama3": {
+          "average": 2.278481012658228,
+          "median": 3.0,
+          "std_dev": 5.602052528751517,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 8,
+          "positive_count": 52,
+          "negative_count": 19,
+          "score_distribution": {
+            "-10.0": 3,
+            "-9.0": 1,
+            "-8.0": 3,
+            "-7.0": 1,
+            "-6.0": 1,
+            "-5.0": 4,
+            "-4.0": 1,
+            "-3.0": 2,
+            "-2.0": 1,
+            "-1.0": 2,
+            "0.0": 8,
+            "1.0": 4,
+            "2.0": 5,
+            "3.0": 5,
+            "4.0": 7,
+            "5.0": 10,
+            "6.0": 1,
+            "7.0": 4,
+            "8.0": 3,
+            "9.0": 5,
+            "10.0": 8
+          }
+        },
+        "cosmos_llama3": {
+          "average": 0.11392405063291139,
+          "median": 1.0,
+          "std_dev": 6.70435629861459,
+          "min": -10.0,
+          "max": 10.0,
+          "zero_count": 3,
+          "positive_count": 47,
+          "negative_count": 29,
+          "score_distribution": {
+            "-10.0": 15,
+            "-9.0": 1,
+            "-8.0": 1,
+            "-6.0": 1,
+            "-5.0": 9,
+            "-4.0": 1,
+            "-1.0": 1,
+            "0.0": 3,
+            "1.0": 12,
+            "2.0": 1,
+            "3.0": 5,
+            "4.0": 2,
+            "5.0": 7,
+            "6.0": 3,
+            "7.0": 5,
+            "8.0": 5,
+            "9.0": 3,
+            "10.0": 4
+          }
+        }
+      }
+    }
+  },
+  "skipped_rows": {
+    "insana_sor/sonuc_gorselleri/7_Metehan Ersarı/sonuc.csv": [
+      "32"
+    ],
+    "insana_sor/sonuc_gorselleri/2_Büşra Büyük/sonuc.csv": [
+      "73-76"
+    ]
   }
 }

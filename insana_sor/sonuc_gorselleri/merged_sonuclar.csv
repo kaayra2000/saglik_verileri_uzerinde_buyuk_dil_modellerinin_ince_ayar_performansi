@@ -1,317 +1,636 @@
-isim,unvan,soru,indis,model_adi,puan
-Hasret Çakıl,İntern,1,27012,trendyol_mistral,4
-Hasret Çakıl,İntern,1,27012,sambalingo_llama2,-8
-Hasret Çakıl,İntern,1,27012,meta_llama3,7
-Hasret Çakıl,İntern,1,27012,cosmos_llama3,-9
-Hasret Çakıl,İntern,2,7057,trendyol_mistral,5
-Hasret Çakıl,İntern,2,7057,sambalingo_llama2,-10
-Hasret Çakıl,İntern,2,7057,meta_llama3,0
-Hasret Çakıl,İntern,2,7057,cosmos_llama3,-10
-Hasret Çakıl,İntern,3,3190,trendyol_mistral,0
-Hasret Çakıl,İntern,3,3190,sambalingo_llama2,8
-Hasret Çakıl,İntern,3,3190,meta_llama3,-7
-Hasret Çakıl,İntern,3,3190,cosmos_llama3,-10
-Hasret Çakıl,İntern,4,4432,trendyol_mistral,-5
-Hasret Çakıl,İntern,4,4432,sambalingo_llama2,5
-Hasret Çakıl,İntern,4,4432,meta_llama3,4
-Hasret Çakıl,İntern,4,4432,cosmos_llama3,-10
-Hasret Çakıl,İntern,5,3175,trendyol_mistral,-10
-Hasret Çakıl,İntern,5,3175,sambalingo_llama2,0
-Hasret Çakıl,İntern,5,3175,meta_llama3,1
-Hasret Çakıl,İntern,5,3175,cosmos_llama3,-5
-Hasret Çakıl,İntern,6,18466,trendyol_mistral,-10
-Hasret Çakıl,İntern,6,18466,sambalingo_llama2,-10
-Hasret Çakıl,İntern,6,18466,meta_llama3,-10
-Hasret Çakıl,İntern,6,18466,cosmos_llama3,-10
-Hasret Çakıl,İntern,7,31196,trendyol_mistral,-7
-Hasret Çakıl,İntern,7,31196,sambalingo_llama2,4
-Hasret Çakıl,İntern,7,31196,meta_llama3,-8
-Hasret Çakıl,İntern,7,31196,cosmos_llama3,4
-Hasret Çakıl,İntern,8,10410,trendyol_mistral,-10
-Hasret Çakıl,İntern,8,10410,sambalingo_llama2,-9
-Hasret Çakıl,İntern,8,10410,meta_llama3,4
-Hasret Çakıl,İntern,8,10410,cosmos_llama3,-10
-Hasret Çakıl,İntern,9,24456,trendyol_mistral,1
-Hasret Çakıl,İntern,9,24456,sambalingo_llama2,4
-Hasret Çakıl,İntern,9,24456,meta_llama3,0
-Hasret Çakıl,İntern,9,24456,cosmos_llama3,-10
-Hasret Çakıl,İntern,10,32027,trendyol_mistral,7
-Hasret Çakıl,İntern,10,32027,sambalingo_llama2,4
-Hasret Çakıl,İntern,10,32027,meta_llama3,-10
-Hasret Çakıl,İntern,10,32027,cosmos_llama3,3
-Hasret Çakıl,İntern,11,31918,trendyol_mistral,6
-Hasret Çakıl,İntern,11,31918,sambalingo_llama2,2
-Hasret Çakıl,İntern,11,31918,meta_llama3,-4
-Hasret Çakıl,İntern,11,31918,cosmos_llama3,0
-Hasret Çakıl,İntern,12,4858,trendyol_mistral,-10
-Hasret Çakıl,İntern,12,4858,sambalingo_llama2,5
-Hasret Çakıl,İntern,12,4858,meta_llama3,5
-Hasret Çakıl,İntern,12,4858,cosmos_llama3,-10
-Hasret Çakıl,İntern,13,22412,trendyol_mistral,3
-Hasret Çakıl,İntern,13,22412,sambalingo_llama2,4
-Hasret Çakıl,İntern,13,22412,meta_llama3,0
-Hasret Çakıl,İntern,13,22412,cosmos_llama3,-5
-Hasret Çakıl,İntern,14,30396,trendyol_mistral,-2
-Hasret Çakıl,İntern,14,30396,sambalingo_llama2,4
-Hasret Çakıl,İntern,14,30396,meta_llama3,3
-Hasret Çakıl,İntern,14,30396,cosmos_llama3,-4
-Hasret Çakıl,İntern,15,25067,trendyol_mistral,6
-Hasret Çakıl,İntern,15,25067,sambalingo_llama2,8
-Hasret Çakıl,İntern,15,25067,meta_llama3,3
-Hasret Çakıl,İntern,15,25067,cosmos_llama3,9
-Hasret Çakıl,İntern,16,27027,trendyol_mistral,10
-Hasret Çakıl,İntern,16,27027,sambalingo_llama2,10
-Hasret Çakıl,İntern,16,27027,meta_llama3,9
-Hasret Çakıl,İntern,16,27027,cosmos_llama3,7
-Hasret Çakıl,İntern,17,7307,trendyol_mistral,3
-Hasret Çakıl,İntern,17,7307,sambalingo_llama2,6
-Hasret Çakıl,İntern,17,7307,meta_llama3,4
-Hasret Çakıl,İntern,17,7307,cosmos_llama3,7
-Hasret Çakıl,İntern,18,20361,trendyol_mistral,4
-Hasret Çakıl,İntern,18,20361,sambalingo_llama2,6
-Hasret Çakıl,İntern,18,20361,meta_llama3,-1
-Hasret Çakıl,İntern,18,20361,cosmos_llama3,5
-Hasret Çakıl,İntern,19,17740,trendyol_mistral,5
-Hasret Çakıl,İntern,19,17740,sambalingo_llama2,2
-Hasret Çakıl,İntern,19,17740,meta_llama3,-1
-Hasret Çakıl,İntern,19,17740,cosmos_llama3,3
-Hasret Çakıl,İntern,20,5006,trendyol_mistral,4
-Hasret Çakıl,İntern,20,5006,sambalingo_llama2,1
-Hasret Çakıl,İntern,20,5006,meta_llama3,3
-Hasret Çakıl,İntern,20,5006,cosmos_llama3,-10
-Büşra Büyük,İntern,1,27012,trendyol_mistral,4
-Büşra Büyük,İntern,1,27012,sambalingo_llama2,5
-Büşra Büyük,İntern,1,27012,meta_llama3,10
-Büşra Büyük,İntern,1,27012,cosmos_llama3,5
-Büşra Büyük,İntern,2,7057,trendyol_mistral,8
-Büşra Büyük,İntern,2,7057,sambalingo_llama2,0
-Büşra Büyük,İntern,2,7057,meta_llama3,7
-Büşra Büyük,İntern,2,7057,cosmos_llama3,1
-Büşra Büyük,İntern,3,3190,trendyol_mistral,5
-Büşra Büyük,İntern,3,3190,sambalingo_llama2,5
-Büşra Büyük,İntern,3,3190,meta_llama3,5
-Büşra Büyük,İntern,3,3190,cosmos_llama3,1
-Büşra Büyük,İntern,4,4432,trendyol_mistral,8
-Büşra Büyük,İntern,4,4432,sambalingo_llama2,4
-Büşra Büyük,İntern,4,4432,meta_llama3,8
-Büşra Büyük,İntern,4,4432,cosmos_llama3,1
-Büşra Büyük,İntern,5,3175,trendyol_mistral,-10
-Büşra Büyük,İntern,5,3175,sambalingo_llama2,-5
-Büşra Büyük,İntern,5,3175,meta_llama3,-8
-Büşra Büyük,İntern,5,3175,cosmos_llama3,3
-Büşra Büyük,İntern,6,18466,trendyol_mistral,-6
-Büşra Büyük,İntern,6,18466,sambalingo_llama2,0
-Büşra Büyük,İntern,6,18466,meta_llama3,1
-Büşra Büyük,İntern,6,18466,cosmos_llama3,-5
-Büşra Büyük,İntern,7,31196,trendyol_mistral,-6
-Büşra Büyük,İntern,7,31196,sambalingo_llama2,10
-Büşra Büyük,İntern,7,31196,meta_llama3,-5
-Büşra Büyük,İntern,7,31196,cosmos_llama3,5
-Büşra Büyük,İntern,8,10410,trendyol_mistral,0
-Büşra Büyük,İntern,8,10410,sambalingo_llama2,-10
-Büşra Büyük,İntern,8,10410,meta_llama3,9
-Büşra Büyük,İntern,8,10410,cosmos_llama3,1
-Büşra Büyük,İntern,9,24456,trendyol_mistral,5
-Büşra Büyük,İntern,9,24456,sambalingo_llama2,10
-Büşra Büyük,İntern,9,24456,meta_llama3,5
-Büşra Büyük,İntern,9,24456,cosmos_llama3,1
-Büşra Büyük,İntern,10,32027,trendyol_mistral,9
-Büşra Büyük,İntern,10,32027,sambalingo_llama2,-5
-Büşra Büyük,İntern,10,32027,meta_llama3,1
-Büşra Büyük,İntern,10,32027,cosmos_llama3,8
-Büşra Büyük,İntern,11,31918,trendyol_mistral,-10
-Büşra Büyük,İntern,11,31918,sambalingo_llama2,5
-Büşra Büyük,İntern,11,31918,meta_llama3,1
-Büşra Büyük,İntern,11,31918,cosmos_llama3,5
-Büşra Büyük,İntern,12,4858,trendyol_mistral,5
-Büşra Büyük,İntern,12,4858,sambalingo_llama2,-5
-Büşra Büyük,İntern,12,4858,meta_llama3,-5
-Büşra Büyük,İntern,12,4858,cosmos_llama3,1
-Büşra Büyük,İntern,13,22412,trendyol_mistral,5
-Büşra Büyük,İntern,13,22412,sambalingo_llama2,8
-Büşra Büyük,İntern,13,22412,meta_llama3,0
-Büşra Büyük,İntern,13,22412,cosmos_llama3,10
-Büşra Büyük,İntern,14,30396,trendyol_mistral,-5
-Büşra Büyük,İntern,14,30396,sambalingo_llama2,-10
-Büşra Büyük,İntern,14,30396,meta_llama3,9
-Büşra Büyük,İntern,14,30396,cosmos_llama3,-5
-Büşra Büyük,İntern,15,25067,trendyol_mistral,8
-Büşra Büyük,İntern,15,25067,sambalingo_llama2,10
-Büşra Büyük,İntern,15,25067,meta_llama3,2
-Büşra Büyük,İntern,15,25067,cosmos_llama3,9
-Büşra Büyük,İntern,16,27027,trendyol_mistral,5
-Büşra Büyük,İntern,16,27027,sambalingo_llama2,10
-Büşra Büyük,İntern,16,27027,meta_llama3,9
-Büşra Büyük,İntern,16,27027,cosmos_llama3,8
-Büşra Büyük,İntern,17,7307,trendyol_mistral,5
-Büşra Büyük,İntern,17,7307,sambalingo_llama2,8
-Büşra Büyük,İntern,17,7307,meta_llama3,5
-Büşra Büyük,İntern,17,7307,cosmos_llama3,6
-Büşra Büyük,İntern,18,20361,trendyol_mistral,5
-Büşra Büyük,İntern,18,20361,sambalingo_llama2,8
-Büşra Büyük,İntern,18,20361,meta_llama3,0
-Büşra Büyük,İntern,18,20361,cosmos_llama3,-5
-Büşra Büyük,İntern,20,5006,trendyol_mistral,8
-Büşra Büyük,İntern,20,5006,sambalingo_llama2,2
-Büşra Büyük,İntern,20,5006,meta_llama3,4
-Büşra Büyük,İntern,20,5006,cosmos_llama3,1
-Emirhan Ova,İntern,1,27012,trendyol_mistral,2
-Emirhan Ova,İntern,1,27012,sambalingo_llama2,4
-Emirhan Ova,İntern,1,27012,meta_llama3,10
-Emirhan Ova,İntern,1,27012,cosmos_llama3,3
-Emirhan Ova,İntern,2,7057,trendyol_mistral,7
-Emirhan Ova,İntern,2,7057,sambalingo_llama2,-10
-Emirhan Ova,İntern,2,7057,meta_llama3,2
-Emirhan Ova,İntern,2,7057,cosmos_llama3,-10
-Emirhan Ova,İntern,3,3190,trendyol_mistral,3
-Emirhan Ova,İntern,3,3190,sambalingo_llama2,-5
-Emirhan Ova,İntern,3,3190,meta_llama3,0
-Emirhan Ova,İntern,3,3190,cosmos_llama3,-10
-Emirhan Ova,İntern,4,4432,trendyol_mistral,10
-Emirhan Ova,İntern,4,4432,sambalingo_llama2,10
-Emirhan Ova,İntern,4,4432,meta_llama3,10
-Emirhan Ova,İntern,4,4432,cosmos_llama3,-10
-Emirhan Ova,İntern,5,3175,trendyol_mistral,-10
-Emirhan Ova,İntern,5,3175,sambalingo_llama2,5
-Emirhan Ova,İntern,5,3175,meta_llama3,5
-Emirhan Ova,İntern,5,3175,cosmos_llama3,-8
-Emirhan Ova,İntern,6,18466,trendyol_mistral,-10
-Emirhan Ova,İntern,6,18466,sambalingo_llama2,-10
-Emirhan Ova,İntern,6,18466,meta_llama3,-10
-Emirhan Ova,İntern,6,18466,cosmos_llama3,-10
-Emirhan Ova,İntern,7,31196,trendyol_mistral,0
-Emirhan Ova,İntern,7,31196,sambalingo_llama2,5
-Emirhan Ova,İntern,7,31196,meta_llama3,-8
-Emirhan Ova,İntern,7,31196,cosmos_llama3,3
-Emirhan Ova,İntern,8,10410,trendyol_mistral,7
-Emirhan Ova,İntern,8,10410,sambalingo_llama2,5
-Emirhan Ova,İntern,8,10410,meta_llama3,9
-Emirhan Ova,İntern,8,10410,cosmos_llama3,-10
-Emirhan Ova,İntern,9,24456,trendyol_mistral,9
-Emirhan Ova,İntern,9,24456,sambalingo_llama2,8
-Emirhan Ova,İntern,9,24456,meta_llama3,3
-Emirhan Ova,İntern,9,24456,cosmos_llama3,-5
-Emirhan Ova,İntern,10,32027,trendyol_mistral,9
-Emirhan Ova,İntern,10,32027,sambalingo_llama2,8
-Emirhan Ova,İntern,10,32027,meta_llama3,2
-Emirhan Ova,İntern,10,32027,cosmos_llama3,7
-Emirhan Ova,İntern,11,31918,trendyol_mistral,1
-Emirhan Ova,İntern,11,31918,sambalingo_llama2,8
-Emirhan Ova,İntern,11,31918,meta_llama3,5
-Emirhan Ova,İntern,11,31918,cosmos_llama3,2
-Emirhan Ova,İntern,12,4858,trendyol_mistral,-10
-Emirhan Ova,İntern,12,4858,sambalingo_llama2,10
-Emirhan Ova,İntern,12,4858,meta_llama3,4
-Emirhan Ova,İntern,12,4858,cosmos_llama3,-10
-Emirhan Ova,İntern,13,22412,trendyol_mistral,9
-Emirhan Ova,İntern,13,22412,sambalingo_llama2,-10
-Emirhan Ova,İntern,13,22412,meta_llama3,3
-Emirhan Ova,İntern,13,22412,cosmos_llama3,9
-Emirhan Ova,İntern,14,30396,trendyol_mistral,0
-Emirhan Ova,İntern,14,30396,sambalingo_llama2,6
-Emirhan Ova,İntern,14,30396,meta_llama3,6
-Emirhan Ova,İntern,14,30396,cosmos_llama3,-5
-Emirhan Ova,İntern,15,25067,trendyol_mistral,5
-Emirhan Ova,İntern,15,25067,sambalingo_llama2,7
-Emirhan Ova,İntern,15,25067,meta_llama3,2
-Emirhan Ova,İntern,15,25067,cosmos_llama3,6
-Emirhan Ova,İntern,16,27027,trendyol_mistral,10
-Emirhan Ova,İntern,16,27027,sambalingo_llama2,8
-Emirhan Ova,İntern,16,27027,meta_llama3,8
-Emirhan Ova,İntern,16,27027,cosmos_llama3,5
-Emirhan Ova,İntern,17,7307,trendyol_mistral,5
-Emirhan Ova,İntern,17,7307,sambalingo_llama2,5
-Emirhan Ova,İntern,17,7307,meta_llama3,5
-Emirhan Ova,İntern,17,7307,cosmos_llama3,7
-Emirhan Ova,İntern,18,20361,trendyol_mistral,5
-Emirhan Ova,İntern,18,20361,sambalingo_llama2,8
-Emirhan Ova,İntern,18,20361,meta_llama3,7
-Emirhan Ova,İntern,18,20361,cosmos_llama3,4
-Emirhan Ova,İntern,19,17740,trendyol_mistral,8
-Emirhan Ova,İntern,19,17740,sambalingo_llama2,1
-Emirhan Ova,İntern,19,17740,meta_llama3,-5
-Emirhan Ova,İntern,19,17740,cosmos_llama3,7
-Emirhan Ova,İntern,20,5006,trendyol_mistral,10
-Emirhan Ova,İntern,20,5006,sambalingo_llama2,8
-Emirhan Ova,İntern,20,5006,meta_llama3,0
-Emirhan Ova,İntern,20,5006,cosmos_llama3,-10
-Özge Kurt,İntern,1,27012,trendyol_mistral,5
-Özge Kurt,İntern,1,27012,sambalingo_llama2,5
-Özge Kurt,İntern,1,27012,meta_llama3,10
-Özge Kurt,İntern,1,27012,cosmos_llama3,8
-Özge Kurt,İntern,2,7057,trendyol_mistral,10
-Özge Kurt,İntern,2,7057,sambalingo_llama2,1
-Özge Kurt,İntern,2,7057,meta_llama3,7
-Özge Kurt,İntern,2,7057,cosmos_llama3,-5
-Özge Kurt,İntern,3,3190,trendyol_mistral,10
-Özge Kurt,İntern,3,3190,sambalingo_llama2,5
-Özge Kurt,İntern,3,3190,meta_llama3,5
-Özge Kurt,İntern,3,3190,cosmos_llama3,1
-Özge Kurt,İntern,4,4432,trendyol_mistral,10
-Özge Kurt,İntern,4,4432,sambalingo_llama2,5
-Özge Kurt,İntern,4,4432,meta_llama3,8
-Özge Kurt,İntern,4,4432,cosmos_llama3,0
-Özge Kurt,İntern,5,3175,trendyol_mistral,-10
-Özge Kurt,İntern,5,3175,sambalingo_llama2,0
-Özge Kurt,İntern,5,3175,meta_llama3,-5
-Özge Kurt,İntern,5,3175,cosmos_llama3,5
-Özge Kurt,İntern,6,18466,trendyol_mistral,1
-Özge Kurt,İntern,6,18466,sambalingo_llama2,0
-Özge Kurt,İntern,6,18466,meta_llama3,0
-Özge Kurt,İntern,6,18466,cosmos_llama3,-1
-Özge Kurt,İntern,7,31196,trendyol_mistral,-5
-Özge Kurt,İntern,7,31196,sambalingo_llama2,10
-Özge Kurt,İntern,7,31196,meta_llama3,-6
-Özge Kurt,İntern,7,31196,cosmos_llama3,5
-Özge Kurt,İntern,8,10410,trendyol_mistral,1
-Özge Kurt,İntern,8,10410,sambalingo_llama2,-10
-Özge Kurt,İntern,8,10410,meta_llama3,10
-Özge Kurt,İntern,8,10410,cosmos_llama3,1
-Özge Kurt,İntern,9,24456,trendyol_mistral,8
-Özge Kurt,İntern,9,24456,sambalingo_llama2,-2
-Özge Kurt,İntern,9,24456,meta_llama3,10
-Özge Kurt,İntern,9,24456,cosmos_llama3,0
-Özge Kurt,İntern,10,32027,trendyol_mistral,8
-Özge Kurt,İntern,10,32027,sambalingo_llama2,-10
-Özge Kurt,İntern,10,32027,meta_llama3,-2
-Özge Kurt,İntern,10,32027,cosmos_llama3,8
-Özge Kurt,İntern,11,31918,trendyol_mistral,-9
-Özge Kurt,İntern,11,31918,sambalingo_llama2,1
-Özge Kurt,İntern,11,31918,meta_llama3,5
-Özge Kurt,İntern,11,31918,cosmos_llama3,10
-Özge Kurt,İntern,12,4858,trendyol_mistral,4
-Özge Kurt,İntern,12,4858,sambalingo_llama2,-2
-Özge Kurt,İntern,12,4858,meta_llama3,-3
-Özge Kurt,İntern,12,4858,cosmos_llama3,1
-Özge Kurt,İntern,13,22412,trendyol_mistral,8
-Özge Kurt,İntern,13,22412,sambalingo_llama2,0
-Özge Kurt,İntern,13,22412,meta_llama3,-9
-Özge Kurt,İntern,13,22412,cosmos_llama3,10
-Özge Kurt,İntern,14,30396,trendyol_mistral,-5
-Özge Kurt,İntern,14,30396,sambalingo_llama2,-10
-Özge Kurt,İntern,14,30396,meta_llama3,10
-Özge Kurt,İntern,14,30396,cosmos_llama3,-6
-Özge Kurt,İntern,15,25067,trendyol_mistral,-1
-Özge Kurt,İntern,15,25067,sambalingo_llama2,10
-Özge Kurt,İntern,15,25067,meta_llama3,2
-Özge Kurt,İntern,15,25067,cosmos_llama3,8
-Özge Kurt,İntern,16,27027,trendyol_mistral,9
-Özge Kurt,İntern,16,27027,sambalingo_llama2,8
-Özge Kurt,İntern,16,27027,meta_llama3,10
-Özge Kurt,İntern,16,27027,cosmos_llama3,6
-Özge Kurt,İntern,17,7307,trendyol_mistral,10
-Özge Kurt,İntern,17,7307,sambalingo_llama2,5
-Özge Kurt,İntern,17,7307,meta_llama3,-3
-Özge Kurt,İntern,17,7307,cosmos_llama3,10
-Özge Kurt,İntern,18,20361,trendyol_mistral,-2
-Özge Kurt,İntern,18,20361,sambalingo_llama2,10
-Özge Kurt,İntern,18,20361,meta_llama3,5
-Özge Kurt,İntern,18,20361,cosmos_llama3,-5
-Özge Kurt,İntern,19,17740,trendyol_mistral,6
-Özge Kurt,İntern,19,17740,sambalingo_llama2,-2
-Özge Kurt,İntern,19,17740,meta_llama3,4
-Özge Kurt,İntern,19,17740,cosmos_llama3,1
-Özge Kurt,İntern,20,5006,trendyol_mistral,8
-Özge Kurt,İntern,20,5006,sambalingo_llama2,1
-Özge Kurt,İntern,20,5006,meta_llama3,4
-Özge Kurt,İntern,20,5006,cosmos_llama3,1
+isim,unvan,soru,indis,model_adi,uzmanlık,kurum,puan
+Metehan Ersarı,5. Sınıf,1,27012,trendyol_mistral,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,1,27012,sambalingo_llama2,yok,ESOGÜ,2
+Metehan Ersarı,5. Sınıf,1,27012,meta_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,1,27012,cosmos_llama3,yok,ESOGÜ,4
+Metehan Ersarı,5. Sınıf,2,7057,trendyol_mistral,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,2,7057,sambalingo_llama2,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,2,7057,meta_llama3,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,2,7057,cosmos_llama3,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,3,3190,trendyol_mistral,yok,ESOGÜ,7
+Metehan Ersarı,5. Sınıf,3,3190,sambalingo_llama2,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,3,3190,meta_llama3,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,3,3190,cosmos_llama3,yok,ESOGÜ,-10
+Metehan Ersarı,5. Sınıf,4,4432,trendyol_mistral,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,4,4432,sambalingo_llama2,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,4,4432,meta_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,4,4432,cosmos_llama3,yok,ESOGÜ,-10
+Metehan Ersarı,5. Sınıf,5,3175,trendyol_mistral,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,5,3175,sambalingo_llama2,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,5,3175,meta_llama3,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,5,3175,cosmos_llama3,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,6,18466,trendyol_mistral,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,6,18466,sambalingo_llama2,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,6,18466,meta_llama3,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,6,18466,cosmos_llama3,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,7,31196,trendyol_mistral,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,7,31196,sambalingo_llama2,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,7,31196,meta_llama3,yok,ESOGÜ,-4
+Metehan Ersarı,5. Sınıf,7,31196,cosmos_llama3,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,8,10410,trendyol_mistral,yok,ESOGÜ,6
+Metehan Ersarı,5. Sınıf,8,10410,sambalingo_llama2,yok,ESOGÜ,5
+Metehan Ersarı,5. Sınıf,8,10410,meta_llama3,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,9,24456,trendyol_mistral,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,9,24456,sambalingo_llama2,yok,ESOGÜ,7
+Metehan Ersarı,5. Sınıf,9,24456,meta_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,9,24456,cosmos_llama3,yok,ESOGÜ,-10
+Metehan Ersarı,5. Sınıf,10,32027,trendyol_mistral,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,10,32027,sambalingo_llama2,yok,ESOGÜ,-2
+Metehan Ersarı,5. Sınıf,10,32027,meta_llama3,yok,ESOGÜ,2
+Metehan Ersarı,5. Sınıf,10,32027,cosmos_llama3,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,11,31918,trendyol_mistral,yok,ESOGÜ,2
+Metehan Ersarı,5. Sınıf,11,31918,sambalingo_llama2,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,11,31918,meta_llama3,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,11,31918,cosmos_llama3,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,12,4858,trendyol_mistral,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,12,4858,sambalingo_llama2,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,12,4858,meta_llama3,yok,ESOGÜ,4
+Metehan Ersarı,5. Sınıf,12,4858,cosmos_llama3,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,13,22412,trendyol_mistral,yok,ESOGÜ,6
+Metehan Ersarı,5. Sınıf,13,22412,sambalingo_llama2,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,13,22412,meta_llama3,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,13,22412,cosmos_llama3,yok,ESOGÜ,2
+Metehan Ersarı,5. Sınıf,14,30396,trendyol_mistral,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,14,30396,sambalingo_llama2,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,14,30396,meta_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,14,30396,cosmos_llama3,yok,ESOGÜ,2
+Metehan Ersarı,5. Sınıf,15,25067,trendyol_mistral,yok,ESOGÜ,-5
+Metehan Ersarı,5. Sınıf,15,25067,sambalingo_llama2,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,15,25067,meta_llama3,yok,ESOGÜ,5
+Metehan Ersarı,5. Sınıf,15,25067,cosmos_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,16,27027,trendyol_mistral,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,16,27027,sambalingo_llama2,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,16,27027,meta_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,16,27027,cosmos_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,17,7307,trendyol_mistral,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,17,7307,sambalingo_llama2,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,17,7307,meta_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,17,7307,cosmos_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,18,20361,trendyol_mistral,yok,ESOGÜ,5
+Metehan Ersarı,5. Sınıf,18,20361,sambalingo_llama2,yok,ESOGÜ,7
+Metehan Ersarı,5. Sınıf,18,20361,meta_llama3,yok,ESOGÜ,0
+Metehan Ersarı,5. Sınıf,18,20361,cosmos_llama3,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,19,17740,trendyol_mistral,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,19,17740,sambalingo_llama2,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,19,17740,meta_llama3,yok,ESOGÜ,8
+Metehan Ersarı,5. Sınıf,19,17740,cosmos_llama3,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,20,5006,trendyol_mistral,yok,ESOGÜ,10
+Metehan Ersarı,5. Sınıf,20,5006,sambalingo_llama2,yok,ESOGÜ,1
+Metehan Ersarı,5. Sınıf,20,5006,meta_llama3,yok,ESOGÜ,7
+Metehan Ersarı,5. Sınıf,20,5006,cosmos_llama3,yok,ESOGÜ,0
+Hülya Durmuş,Uzman,1,27012,trendyol_mistral,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,1,27012,sambalingo_llama2,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,1,27012,meta_llama3,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,1,27012,cosmos_llama3,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,2,7057,trendyol_mistral,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,2,7057,sambalingo_llama2,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,2,7057,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,2,7057,cosmos_llama3,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,3,3190,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,3,3190,sambalingo_llama2,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,3,3190,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,3,3190,cosmos_llama3,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,4,4432,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,4,4432,sambalingo_llama2,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,4,4432,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,4,4432,cosmos_llama3,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,5,3175,trendyol_mistral,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,5,3175,sambalingo_llama2,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,5,3175,meta_llama3,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,5,3175,cosmos_llama3,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,6,18466,trendyol_mistral,dahiliye,ERÜ,-5
+Hülya Durmuş,Uzman,6,18466,sambalingo_llama2,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,6,18466,meta_llama3,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,6,18466,cosmos_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,7,31196,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,7,31196,sambalingo_llama2,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,7,31196,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,7,31196,cosmos_llama3,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,8,10410,trendyol_mistral,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,8,10410,sambalingo_llama2,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,8,10410,meta_llama3,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,8,10410,cosmos_llama3,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,9,24456,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,9,24456,sambalingo_llama2,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,9,24456,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,9,24456,cosmos_llama3,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,10,32027,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,10,32027,sambalingo_llama2,dahiliye,ERÜ,-5
+Hülya Durmuş,Uzman,10,32027,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,10,32027,cosmos_llama3,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,11,31918,trendyol_mistral,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,11,31918,sambalingo_llama2,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,11,31918,meta_llama3,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,11,31918,cosmos_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,12,4858,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,12,4858,sambalingo_llama2,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,12,4858,meta_llama3,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,12,4858,cosmos_llama3,dahiliye,ERÜ,-8
+Hülya Durmuş,Uzman,13,22412,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,13,22412,sambalingo_llama2,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,13,22412,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,13,22412,cosmos_llama3,dahiliye,ERÜ,1
+Hülya Durmuş,Uzman,14,30396,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,14,30396,sambalingo_llama2,dahiliye,ERÜ,1
+Hülya Durmuş,Uzman,14,30396,meta_llama3,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,14,30396,cosmos_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,15,25067,trendyol_mistral,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,15,25067,sambalingo_llama2,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,15,25067,meta_llama3,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,15,25067,cosmos_llama3,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,16,27027,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,16,27027,sambalingo_llama2,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,16,27027,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,16,27027,cosmos_llama3,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,17,7307,trendyol_mistral,dahiliye,ERÜ,2
+Hülya Durmuş,Uzman,17,7307,sambalingo_llama2,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,17,7307,meta_llama3,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,17,7307,cosmos_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,18,20361,trendyol_mistral,dahiliye,ERÜ,2
+Hülya Durmuş,Uzman,18,20361,sambalingo_llama2,dahiliye,ERÜ,3
+Hülya Durmuş,Uzman,18,20361,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,18,20361,cosmos_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,19,17740,trendyol_mistral,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,19,17740,sambalingo_llama2,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,19,17740,meta_llama3,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,19,17740,cosmos_llama3,dahiliye,ERÜ,-5
+Hülya Durmuş,Uzman,20,5006,trendyol_mistral,dahiliye,ERÜ,0
+Hülya Durmuş,Uzman,20,5006,sambalingo_llama2,dahiliye,ERÜ,5
+Hülya Durmuş,Uzman,20,5006,meta_llama3,dahiliye,ERÜ,8
+Hülya Durmuş,Uzman,20,5006,cosmos_llama3,dahiliye,ERÜ,-8
+Ahsen Doğan,Uzman,1,27012,trendyol_mistral,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,1,27012,sambalingo_llama2,aile hekimi,KOÜ,3
+Ahsen Doğan,Uzman,1,27012,meta_llama3,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,1,27012,cosmos_llama3,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,2,7057,trendyol_mistral,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,2,7057,sambalingo_llama2,aile hekimi,KOÜ,-10
+Ahsen Doğan,Uzman,2,7057,meta_llama3,aile hekimi,KOÜ,-10
+Ahsen Doğan,Uzman,2,7057,cosmos_llama3,aile hekimi,KOÜ,-8
+Ahsen Doğan,Uzman,3,3190,trendyol_mistral,aile hekimi,KOÜ,9
+Ahsen Doğan,Uzman,3,3190,sambalingo_llama2,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,3,3190,meta_llama3,aile hekimi,KOÜ,4
+Ahsen Doğan,Uzman,3,3190,cosmos_llama3,aile hekimi,KOÜ,-7
+Ahsen Doğan,Uzman,4,4432,trendyol_mistral,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,4,4432,sambalingo_llama2,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,4,4432,meta_llama3,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,4,4432,cosmos_llama3,aile hekimi,KOÜ,-5
+Ahsen Doğan,Uzman,5,3175,trendyol_mistral,aile hekimi,KOÜ,-7
+Ahsen Doğan,Uzman,5,3175,sambalingo_llama2,aile hekimi,KOÜ,-5
+Ahsen Doğan,Uzman,5,3175,meta_llama3,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,5,3175,cosmos_llama3,aile hekimi,KOÜ,-8
+Ahsen Doğan,Uzman,6,18466,trendyol_mistral,aile hekimi,KOÜ,-8
+Ahsen Doğan,Uzman,6,18466,sambalingo_llama2,aile hekimi,KOÜ,-5
+Ahsen Doğan,Uzman,6,18466,meta_llama3,aile hekimi,KOÜ,-9
+Ahsen Doğan,Uzman,6,18466,cosmos_llama3,aile hekimi,KOÜ,0
+Ahsen Doğan,Uzman,7,31196,trendyol_mistral,aile hekimi,KOÜ,4
+Ahsen Doğan,Uzman,7,31196,sambalingo_llama2,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,7,31196,meta_llama3,aile hekimi,KOÜ,-5
+Ahsen Doğan,Uzman,7,31196,cosmos_llama3,aile hekimi,KOÜ,3
+Ahsen Doğan,Uzman,8,10410,trendyol_mistral,aile hekimi,KOÜ,4
+Ahsen Doğan,Uzman,8,10410,sambalingo_llama2,aile hekimi,KOÜ,2
+Ahsen Doğan,Uzman,8,10410,meta_llama3,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,8,10410,cosmos_llama3,aile hekimi,KOÜ,-10
+Ahsen Doğan,Uzman,9,24456,trendyol_mistral,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,9,24456,sambalingo_llama2,aile hekimi,KOÜ,9
+Ahsen Doğan,Uzman,9,24456,meta_llama3,aile hekimi,KOÜ,10
+Ahsen Doğan,Uzman,9,24456,cosmos_llama3,aile hekimi,KOÜ,-3
+Ahsen Doğan,Uzman,10,32027,trendyol_mistral,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,10,32027,sambalingo_llama2,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,10,32027,meta_llama3,aile hekimi,KOÜ,0
+Ahsen Doğan,Uzman,10,32027,cosmos_llama3,aile hekimi,KOÜ,4
+Ahsen Doğan,Uzman,11,31918,trendyol_mistral,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,11,31918,sambalingo_llama2,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,11,31918,meta_llama3,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,11,31918,cosmos_llama3,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,12,4858,trendyol_mistral,aile hekimi,KOÜ,3
+Ahsen Doğan,Uzman,12,4858,sambalingo_llama2,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,12,4858,meta_llama3,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,12,4858,cosmos_llama3,aile hekimi,KOÜ,-10
+Ahsen Doğan,Uzman,13,22412,trendyol_mistral,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,13,22412,sambalingo_llama2,aile hekimi,KOÜ,-10
+Ahsen Doğan,Uzman,13,22412,meta_llama3,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,13,22412,cosmos_llama3,aile hekimi,KOÜ,3
+Ahsen Doğan,Uzman,14,30396,trendyol_mistral,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,14,30396,sambalingo_llama2,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,14,30396,meta_llama3,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,14,30396,cosmos_llama3,aile hekimi,KOÜ,-2
+Ahsen Doğan,Uzman,15,25067,trendyol_mistral,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,15,25067,sambalingo_llama2,aile hekimi,KOÜ,10
+Ahsen Doğan,Uzman,15,25067,meta_llama3,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,15,25067,cosmos_llama3,aile hekimi,KOÜ,10
+Ahsen Doğan,Uzman,16,27027,trendyol_mistral,aile hekimi,KOÜ,10
+Ahsen Doğan,Uzman,16,27027,sambalingo_llama2,aile hekimi,KOÜ,10
+Ahsen Doğan,Uzman,16,27027,meta_llama3,aile hekimi,KOÜ,9
+Ahsen Doğan,Uzman,16,27027,cosmos_llama3,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,17,7307,trendyol_mistral,aile hekimi,KOÜ,3
+Ahsen Doğan,Uzman,17,7307,sambalingo_llama2,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,17,7307,meta_llama3,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,17,7307,cosmos_llama3,aile hekimi,KOÜ,2
+Ahsen Doğan,Uzman,18,20361,trendyol_mistral,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,18,20361,sambalingo_llama2,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,18,20361,meta_llama3,aile hekimi,KOÜ,3
+Ahsen Doğan,Uzman,18,20361,cosmos_llama3,aile hekimi,KOÜ,4
+Ahsen Doğan,Uzman,19,17740,trendyol_mistral,aile hekimi,KOÜ,5
+Ahsen Doğan,Uzman,19,17740,sambalingo_llama2,aile hekimi,KOÜ,4
+Ahsen Doğan,Uzman,19,17740,meta_llama3,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,19,17740,cosmos_llama3,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,20,5006,trendyol_mistral,aile hekimi,KOÜ,8
+Ahsen Doğan,Uzman,20,5006,sambalingo_llama2,aile hekimi,KOÜ,7
+Ahsen Doğan,Uzman,20,5006,meta_llama3,aile hekimi,KOÜ,6
+Ahsen Doğan,Uzman,20,5006,cosmos_llama3,aile hekimi,KOÜ,-8
+Berkem Aydın,5. Sınıf,1,27012,trendyol_mistral,yok,ESOGÜ,7
+Berkem Aydın,5. Sınıf,1,27012,sambalingo_llama2,yok,ESOGÜ,3
+Berkem Aydın,5. Sınıf,1,27012,meta_llama3,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,1,27012,cosmos_llama3,yok,ESOGÜ,-10
+Berkem Aydın,5. Sınıf,2,7057,trendyol_mistral,yok,ESOGÜ,-10
+Berkem Aydın,5. Sınıf,2,7057,sambalingo_llama2,yok,ESOGÜ,1
+Berkem Aydın,5. Sınıf,2,7057,meta_llama3,yok,ESOGÜ,-10
+Berkem Aydın,5. Sınıf,2,7057,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,3,3190,trendyol_mistral,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,3,3190,sambalingo_llama2,yok,ESOGÜ,-8
+Berkem Aydın,5. Sınıf,3,3190,meta_llama3,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,3,3190,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,4,4432,trendyol_mistral,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,4,4432,sambalingo_llama2,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,4,4432,meta_llama3,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,4,4432,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,5,3175,trendyol_mistral,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,5,3175,sambalingo_llama2,yok,ESOGÜ,-3
+Berkem Aydın,5. Sınıf,5,3175,meta_llama3,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,5,3175,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,6,18466,trendyol_mistral,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,6,18466,sambalingo_llama2,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,6,18466,meta_llama3,yok,ESOGÜ,-7
+Berkem Aydın,5. Sınıf,6,18466,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,7,31196,trendyol_mistral,yok,ESOGÜ,1
+Berkem Aydın,5. Sınıf,7,31196,sambalingo_llama2,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,7,31196,meta_llama3,yok,ESOGÜ,-10
+Berkem Aydın,5. Sınıf,7,31196,cosmos_llama3,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,8,10410,trendyol_mistral,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,8,10410,sambalingo_llama2,yok,ESOGÜ,-3
+Berkem Aydın,5. Sınıf,8,10410,meta_llama3,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,8,10410,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,9,24456,trendyol_mistral,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,9,24456,sambalingo_llama2,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,9,24456,meta_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,9,24456,cosmos_llama3,yok,ESOGÜ,-10
+Berkem Aydın,5. Sınıf,10,32027,trendyol_mistral,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,10,32027,sambalingo_llama2,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,10,32027,meta_llama3,yok,ESOGÜ,1
+Berkem Aydın,5. Sınıf,10,32027,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,11,31918,trendyol_mistral,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,11,31918,sambalingo_llama2,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,11,31918,meta_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,11,31918,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,12,4858,trendyol_mistral,yok,ESOGÜ,1
+Berkem Aydın,5. Sınıf,12,4858,sambalingo_llama2,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,12,4858,meta_llama3,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,12,4858,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,13,22412,trendyol_mistral,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,13,22412,sambalingo_llama2,yok,ESOGÜ,-3
+Berkem Aydın,5. Sınıf,13,22412,meta_llama3,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,13,22412,cosmos_llama3,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,14,30396,trendyol_mistral,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,14,30396,sambalingo_llama2,yok,ESOGÜ,-8
+Berkem Aydın,5. Sınıf,14,30396,meta_llama3,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,14,30396,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,15,25067,trendyol_mistral,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,15,25067,sambalingo_llama2,yok,ESOGÜ,8
+Berkem Aydın,5. Sınıf,15,25067,meta_llama3,yok,ESOGÜ,3
+Berkem Aydın,5. Sınıf,15,25067,cosmos_llama3,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,16,27027,trendyol_mistral,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,16,27027,sambalingo_llama2,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,16,27027,meta_llama3,yok,ESOGÜ,9
+Berkem Aydın,5. Sınıf,16,27027,cosmos_llama3,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,17,7307,trendyol_mistral,yok,ESOGÜ,-10
+Berkem Aydın,5. Sınıf,17,7307,sambalingo_llama2,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,17,7307,meta_llama3,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,17,7307,cosmos_llama3,yok,ESOGÜ,0
+Berkem Aydın,5. Sınıf,18,20361,trendyol_mistral,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,18,20361,sambalingo_llama2,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,18,20361,meta_llama3,yok,ESOGÜ,3
+Berkem Aydın,5. Sınıf,18,20361,cosmos_llama3,yok,ESOGÜ,-8
+Berkem Aydın,5. Sınıf,19,17740,trendyol_mistral,yok,ESOGÜ,2
+Berkem Aydın,5. Sınıf,19,17740,sambalingo_llama2,yok,ESOGÜ,-7
+Berkem Aydın,5. Sınıf,19,17740,meta_llama3,yok,ESOGÜ,-5
+Berkem Aydın,5. Sınıf,19,17740,cosmos_llama3,yok,ESOGÜ,5
+Berkem Aydın,5. Sınıf,20,5006,trendyol_mistral,yok,ESOGÜ,10
+Berkem Aydın,5. Sınıf,20,5006,sambalingo_llama2,yok,ESOGÜ,7
+Berkem Aydın,5. Sınıf,20,5006,meta_llama3,yok,ESOGÜ,2
+Berkem Aydın,5. Sınıf,20,5006,cosmos_llama3,yok,ESOGÜ,0
+Hasret Çakıl,İntern,1,27012,trendyol_mistral,yok,KSÜ,4
+Hasret Çakıl,İntern,1,27012,sambalingo_llama2,yok,KSÜ,-8
+Hasret Çakıl,İntern,1,27012,meta_llama3,yok,KSÜ,7
+Hasret Çakıl,İntern,1,27012,cosmos_llama3,yok,KSÜ,-9
+Hasret Çakıl,İntern,2,7057,trendyol_mistral,yok,KSÜ,5
+Hasret Çakıl,İntern,2,7057,sambalingo_llama2,yok,KSÜ,-10
+Hasret Çakıl,İntern,2,7057,meta_llama3,yok,KSÜ,0
+Hasret Çakıl,İntern,2,7057,cosmos_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,3,3190,trendyol_mistral,yok,KSÜ,0
+Hasret Çakıl,İntern,3,3190,sambalingo_llama2,yok,KSÜ,8
+Hasret Çakıl,İntern,3,3190,meta_llama3,yok,KSÜ,-7
+Hasret Çakıl,İntern,3,3190,cosmos_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,4,4432,trendyol_mistral,yok,KSÜ,-5
+Hasret Çakıl,İntern,4,4432,sambalingo_llama2,yok,KSÜ,5
+Hasret Çakıl,İntern,4,4432,meta_llama3,yok,KSÜ,4
+Hasret Çakıl,İntern,4,4432,cosmos_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,5,3175,trendyol_mistral,yok,KSÜ,-10
+Hasret Çakıl,İntern,5,3175,sambalingo_llama2,yok,KSÜ,0
+Hasret Çakıl,İntern,5,3175,meta_llama3,yok,KSÜ,1
+Hasret Çakıl,İntern,5,3175,cosmos_llama3,yok,KSÜ,-5
+Hasret Çakıl,İntern,6,18466,trendyol_mistral,yok,KSÜ,-10
+Hasret Çakıl,İntern,6,18466,sambalingo_llama2,yok,KSÜ,-10
+Hasret Çakıl,İntern,6,18466,meta_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,6,18466,cosmos_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,7,31196,trendyol_mistral,yok,KSÜ,-7
+Hasret Çakıl,İntern,7,31196,sambalingo_llama2,yok,KSÜ,4
+Hasret Çakıl,İntern,7,31196,meta_llama3,yok,KSÜ,-8
+Hasret Çakıl,İntern,7,31196,cosmos_llama3,yok,KSÜ,4
+Hasret Çakıl,İntern,8,10410,trendyol_mistral,yok,KSÜ,-10
+Hasret Çakıl,İntern,8,10410,sambalingo_llama2,yok,KSÜ,-9
+Hasret Çakıl,İntern,8,10410,meta_llama3,yok,KSÜ,4
+Hasret Çakıl,İntern,8,10410,cosmos_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,9,24456,trendyol_mistral,yok,KSÜ,1
+Hasret Çakıl,İntern,9,24456,sambalingo_llama2,yok,KSÜ,4
+Hasret Çakıl,İntern,9,24456,meta_llama3,yok,KSÜ,0
+Hasret Çakıl,İntern,9,24456,cosmos_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,10,32027,trendyol_mistral,yok,KSÜ,7
+Hasret Çakıl,İntern,10,32027,sambalingo_llama2,yok,KSÜ,4
+Hasret Çakıl,İntern,10,32027,meta_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,10,32027,cosmos_llama3,yok,KSÜ,3
+Hasret Çakıl,İntern,11,31918,trendyol_mistral,yok,KSÜ,6
+Hasret Çakıl,İntern,11,31918,sambalingo_llama2,yok,KSÜ,2
+Hasret Çakıl,İntern,11,31918,meta_llama3,yok,KSÜ,-4
+Hasret Çakıl,İntern,11,31918,cosmos_llama3,yok,KSÜ,0
+Hasret Çakıl,İntern,12,4858,trendyol_mistral,yok,KSÜ,-10
+Hasret Çakıl,İntern,12,4858,sambalingo_llama2,yok,KSÜ,5
+Hasret Çakıl,İntern,12,4858,meta_llama3,yok,KSÜ,5
+Hasret Çakıl,İntern,12,4858,cosmos_llama3,yok,KSÜ,-10
+Hasret Çakıl,İntern,13,22412,trendyol_mistral,yok,KSÜ,3
+Hasret Çakıl,İntern,13,22412,sambalingo_llama2,yok,KSÜ,4
+Hasret Çakıl,İntern,13,22412,meta_llama3,yok,KSÜ,0
+Hasret Çakıl,İntern,13,22412,cosmos_llama3,yok,KSÜ,-5
+Hasret Çakıl,İntern,14,30396,trendyol_mistral,yok,KSÜ,-2
+Hasret Çakıl,İntern,14,30396,sambalingo_llama2,yok,KSÜ,4
+Hasret Çakıl,İntern,14,30396,meta_llama3,yok,KSÜ,3
+Hasret Çakıl,İntern,14,30396,cosmos_llama3,yok,KSÜ,-4
+Hasret Çakıl,İntern,15,25067,trendyol_mistral,yok,KSÜ,6
+Hasret Çakıl,İntern,15,25067,sambalingo_llama2,yok,KSÜ,8
+Hasret Çakıl,İntern,15,25067,meta_llama3,yok,KSÜ,3
+Hasret Çakıl,İntern,15,25067,cosmos_llama3,yok,KSÜ,9
+Hasret Çakıl,İntern,16,27027,trendyol_mistral,yok,KSÜ,10
+Hasret Çakıl,İntern,16,27027,sambalingo_llama2,yok,KSÜ,10
+Hasret Çakıl,İntern,16,27027,meta_llama3,yok,KSÜ,9
+Hasret Çakıl,İntern,16,27027,cosmos_llama3,yok,KSÜ,7
+Hasret Çakıl,İntern,17,7307,trendyol_mistral,yok,KSÜ,3
+Hasret Çakıl,İntern,17,7307,sambalingo_llama2,yok,KSÜ,6
+Hasret Çakıl,İntern,17,7307,meta_llama3,yok,KSÜ,4
+Hasret Çakıl,İntern,17,7307,cosmos_llama3,yok,KSÜ,7
+Hasret Çakıl,İntern,18,20361,trendyol_mistral,yok,KSÜ,4
+Hasret Çakıl,İntern,18,20361,sambalingo_llama2,yok,KSÜ,6
+Hasret Çakıl,İntern,18,20361,meta_llama3,yok,KSÜ,-1
+Hasret Çakıl,İntern,18,20361,cosmos_llama3,yok,KSÜ,5
+Hasret Çakıl,İntern,19,17740,trendyol_mistral,yok,KSÜ,5
+Hasret Çakıl,İntern,19,17740,sambalingo_llama2,yok,KSÜ,2
+Hasret Çakıl,İntern,19,17740,meta_llama3,yok,KSÜ,-1
+Hasret Çakıl,İntern,19,17740,cosmos_llama3,yok,KSÜ,3
+Hasret Çakıl,İntern,20,5006,trendyol_mistral,yok,KSÜ,4
+Hasret Çakıl,İntern,20,5006,sambalingo_llama2,yok,KSÜ,1
+Hasret Çakıl,İntern,20,5006,meta_llama3,yok,KSÜ,3
+Hasret Çakıl,İntern,20,5006,cosmos_llama3,yok,KSÜ,-10
+Büşra Büyük,İntern,1,27012,trendyol_mistral,yok,KSÜ,4
+Büşra Büyük,İntern,1,27012,sambalingo_llama2,yok,KSÜ,5
+Büşra Büyük,İntern,1,27012,meta_llama3,yok,KSÜ,10
+Büşra Büyük,İntern,1,27012,cosmos_llama3,yok,KSÜ,5
+Büşra Büyük,İntern,2,7057,trendyol_mistral,yok,KSÜ,8
+Büşra Büyük,İntern,2,7057,sambalingo_llama2,yok,KSÜ,0
+Büşra Büyük,İntern,2,7057,meta_llama3,yok,KSÜ,7
+Büşra Büyük,İntern,2,7057,cosmos_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,3,3190,trendyol_mistral,yok,KSÜ,5
+Büşra Büyük,İntern,3,3190,sambalingo_llama2,yok,KSÜ,5
+Büşra Büyük,İntern,3,3190,meta_llama3,yok,KSÜ,5
+Büşra Büyük,İntern,3,3190,cosmos_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,4,4432,trendyol_mistral,yok,KSÜ,8
+Büşra Büyük,İntern,4,4432,sambalingo_llama2,yok,KSÜ,4
+Büşra Büyük,İntern,4,4432,meta_llama3,yok,KSÜ,8
+Büşra Büyük,İntern,4,4432,cosmos_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,5,3175,trendyol_mistral,yok,KSÜ,-10
+Büşra Büyük,İntern,5,3175,sambalingo_llama2,yok,KSÜ,-5
+Büşra Büyük,İntern,5,3175,meta_llama3,yok,KSÜ,-8
+Büşra Büyük,İntern,5,3175,cosmos_llama3,yok,KSÜ,3
+Büşra Büyük,İntern,6,18466,trendyol_mistral,yok,KSÜ,-6
+Büşra Büyük,İntern,6,18466,sambalingo_llama2,yok,KSÜ,0
+Büşra Büyük,İntern,6,18466,meta_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,6,18466,cosmos_llama3,yok,KSÜ,-5
+Büşra Büyük,İntern,7,31196,trendyol_mistral,yok,KSÜ,-6
+Büşra Büyük,İntern,7,31196,sambalingo_llama2,yok,KSÜ,10
+Büşra Büyük,İntern,7,31196,meta_llama3,yok,KSÜ,-5
+Büşra Büyük,İntern,7,31196,cosmos_llama3,yok,KSÜ,5
+Büşra Büyük,İntern,8,10410,trendyol_mistral,yok,KSÜ,0
+Büşra Büyük,İntern,8,10410,sambalingo_llama2,yok,KSÜ,-10
+Büşra Büyük,İntern,8,10410,meta_llama3,yok,KSÜ,9
+Büşra Büyük,İntern,8,10410,cosmos_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,9,24456,trendyol_mistral,yok,KSÜ,5
+Büşra Büyük,İntern,9,24456,sambalingo_llama2,yok,KSÜ,10
+Büşra Büyük,İntern,9,24456,meta_llama3,yok,KSÜ,5
+Büşra Büyük,İntern,9,24456,cosmos_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,10,32027,trendyol_mistral,yok,KSÜ,9
+Büşra Büyük,İntern,10,32027,sambalingo_llama2,yok,KSÜ,-5
+Büşra Büyük,İntern,10,32027,meta_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,10,32027,cosmos_llama3,yok,KSÜ,8
+Büşra Büyük,İntern,11,31918,trendyol_mistral,yok,KSÜ,-10
+Büşra Büyük,İntern,11,31918,sambalingo_llama2,yok,KSÜ,5
+Büşra Büyük,İntern,11,31918,meta_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,11,31918,cosmos_llama3,yok,KSÜ,5
+Büşra Büyük,İntern,12,4858,trendyol_mistral,yok,KSÜ,5
+Büşra Büyük,İntern,12,4858,sambalingo_llama2,yok,KSÜ,-5
+Büşra Büyük,İntern,12,4858,meta_llama3,yok,KSÜ,-5
+Büşra Büyük,İntern,12,4858,cosmos_llama3,yok,KSÜ,1
+Büşra Büyük,İntern,13,22412,trendyol_mistral,yok,KSÜ,5
+Büşra Büyük,İntern,13,22412,sambalingo_llama2,yok,KSÜ,8
+Büşra Büyük,İntern,13,22412,meta_llama3,yok,KSÜ,0
+Büşra Büyük,İntern,13,22412,cosmos_llama3,yok,KSÜ,10
+Büşra Büyük,İntern,14,30396,trendyol_mistral,yok,KSÜ,-5
+Büşra Büyük,İntern,14,30396,sambalingo_llama2,yok,KSÜ,-10
+Büşra Büyük,İntern,14,30396,meta_llama3,yok,KSÜ,9
+Büşra Büyük,İntern,14,30396,cosmos_llama3,yok,KSÜ,-5
+Büşra Büyük,İntern,15,25067,trendyol_mistral,yok,KSÜ,8
+Büşra Büyük,İntern,15,25067,sambalingo_llama2,yok,KSÜ,10
+Büşra Büyük,İntern,15,25067,meta_llama3,yok,KSÜ,2
+Büşra Büyük,İntern,15,25067,cosmos_llama3,yok,KSÜ,9
+Büşra Büyük,İntern,16,27027,trendyol_mistral,yok,KSÜ,5
+Büşra Büyük,İntern,16,27027,sambalingo_llama2,yok,KSÜ,10
+Büşra Büyük,İntern,16,27027,meta_llama3,yok,KSÜ,9
+Büşra Büyük,İntern,16,27027,cosmos_llama3,yok,KSÜ,8
+Büşra Büyük,İntern,17,7307,trendyol_mistral,yok,KSÜ,5
+Büşra Büyük,İntern,17,7307,sambalingo_llama2,yok,KSÜ,8
+Büşra Büyük,İntern,17,7307,meta_llama3,yok,KSÜ,5
+Büşra Büyük,İntern,17,7307,cosmos_llama3,yok,KSÜ,6
+Büşra Büyük,İntern,18,20361,trendyol_mistral,yok,KSÜ,5
+Büşra Büyük,İntern,18,20361,sambalingo_llama2,yok,KSÜ,8
+Büşra Büyük,İntern,18,20361,meta_llama3,yok,KSÜ,0
+Büşra Büyük,İntern,18,20361,cosmos_llama3,yok,KSÜ,-5
+Büşra Büyük,İntern,20,5006,trendyol_mistral,yok,KSÜ,8
+Büşra Büyük,İntern,20,5006,sambalingo_llama2,yok,KSÜ,2
+Büşra Büyük,İntern,20,5006,meta_llama3,yok,KSÜ,4
+Büşra Büyük,İntern,20,5006,cosmos_llama3,yok,KSÜ,1
+Emirhan Ova,İntern,1,27012,trendyol_mistral,yok,KSÜ,2
+Emirhan Ova,İntern,1,27012,sambalingo_llama2,yok,KSÜ,4
+Emirhan Ova,İntern,1,27012,meta_llama3,yok,KSÜ,10
+Emirhan Ova,İntern,1,27012,cosmos_llama3,yok,KSÜ,3
+Emirhan Ova,İntern,2,7057,trendyol_mistral,yok,KSÜ,7
+Emirhan Ova,İntern,2,7057,sambalingo_llama2,yok,KSÜ,-10
+Emirhan Ova,İntern,2,7057,meta_llama3,yok,KSÜ,2
+Emirhan Ova,İntern,2,7057,cosmos_llama3,yok,KSÜ,-10
+Emirhan Ova,İntern,3,3190,trendyol_mistral,yok,KSÜ,3
+Emirhan Ova,İntern,3,3190,sambalingo_llama2,yok,KSÜ,-5
+Emirhan Ova,İntern,3,3190,meta_llama3,yok,KSÜ,0
+Emirhan Ova,İntern,3,3190,cosmos_llama3,yok,KSÜ,-10
+Emirhan Ova,İntern,4,4432,trendyol_mistral,yok,KSÜ,10
+Emirhan Ova,İntern,4,4432,sambalingo_llama2,yok,KSÜ,10
+Emirhan Ova,İntern,4,4432,meta_llama3,yok,KSÜ,10
+Emirhan Ova,İntern,4,4432,cosmos_llama3,yok,KSÜ,-10
+Emirhan Ova,İntern,5,3175,trendyol_mistral,yok,KSÜ,-10
+Emirhan Ova,İntern,5,3175,sambalingo_llama2,yok,KSÜ,5
+Emirhan Ova,İntern,5,3175,meta_llama3,yok,KSÜ,5
+Emirhan Ova,İntern,5,3175,cosmos_llama3,yok,KSÜ,-8
+Emirhan Ova,İntern,6,18466,trendyol_mistral,yok,KSÜ,-10
+Emirhan Ova,İntern,6,18466,sambalingo_llama2,yok,KSÜ,-10
+Emirhan Ova,İntern,6,18466,meta_llama3,yok,KSÜ,-10
+Emirhan Ova,İntern,6,18466,cosmos_llama3,yok,KSÜ,-10
+Emirhan Ova,İntern,7,31196,trendyol_mistral,yok,KSÜ,0
+Emirhan Ova,İntern,7,31196,sambalingo_llama2,yok,KSÜ,5
+Emirhan Ova,İntern,7,31196,meta_llama3,yok,KSÜ,-8
+Emirhan Ova,İntern,7,31196,cosmos_llama3,yok,KSÜ,3
+Emirhan Ova,İntern,8,10410,trendyol_mistral,yok,KSÜ,7
+Emirhan Ova,İntern,8,10410,sambalingo_llama2,yok,KSÜ,5
+Emirhan Ova,İntern,8,10410,meta_llama3,yok,KSÜ,9
+Emirhan Ova,İntern,8,10410,cosmos_llama3,yok,KSÜ,-10
+Emirhan Ova,İntern,9,24456,trendyol_mistral,yok,KSÜ,9
+Emirhan Ova,İntern,9,24456,sambalingo_llama2,yok,KSÜ,8
+Emirhan Ova,İntern,9,24456,meta_llama3,yok,KSÜ,3
+Emirhan Ova,İntern,9,24456,cosmos_llama3,yok,KSÜ,-5
+Emirhan Ova,İntern,10,32027,trendyol_mistral,yok,KSÜ,9
+Emirhan Ova,İntern,10,32027,sambalingo_llama2,yok,KSÜ,8
+Emirhan Ova,İntern,10,32027,meta_llama3,yok,KSÜ,2
+Emirhan Ova,İntern,10,32027,cosmos_llama3,yok,KSÜ,7
+Emirhan Ova,İntern,11,31918,trendyol_mistral,yok,KSÜ,1
+Emirhan Ova,İntern,11,31918,sambalingo_llama2,yok,KSÜ,8
+Emirhan Ova,İntern,11,31918,meta_llama3,yok,KSÜ,5
+Emirhan Ova,İntern,11,31918,cosmos_llama3,yok,KSÜ,2
+Emirhan Ova,İntern,12,4858,trendyol_mistral,yok,KSÜ,-10
+Emirhan Ova,İntern,12,4858,sambalingo_llama2,yok,KSÜ,10
+Emirhan Ova,İntern,12,4858,meta_llama3,yok,KSÜ,4
+Emirhan Ova,İntern,12,4858,cosmos_llama3,yok,KSÜ,-10
+Emirhan Ova,İntern,13,22412,trendyol_mistral,yok,KSÜ,9
+Emirhan Ova,İntern,13,22412,sambalingo_llama2,yok,KSÜ,-10
+Emirhan Ova,İntern,13,22412,meta_llama3,yok,KSÜ,3
+Emirhan Ova,İntern,13,22412,cosmos_llama3,yok,KSÜ,9
+Emirhan Ova,İntern,14,30396,trendyol_mistral,yok,KSÜ,0
+Emirhan Ova,İntern,14,30396,sambalingo_llama2,yok,KSÜ,6
+Emirhan Ova,İntern,14,30396,meta_llama3,yok,KSÜ,6
+Emirhan Ova,İntern,14,30396,cosmos_llama3,yok,KSÜ,-5
+Emirhan Ova,İntern,15,25067,trendyol_mistral,yok,KSÜ,5
+Emirhan Ova,İntern,15,25067,sambalingo_llama2,yok,KSÜ,7
+Emirhan Ova,İntern,15,25067,meta_llama3,yok,KSÜ,2
+Emirhan Ova,İntern,15,25067,cosmos_llama3,yok,KSÜ,6
+Emirhan Ova,İntern,16,27027,trendyol_mistral,yok,KSÜ,10
+Emirhan Ova,İntern,16,27027,sambalingo_llama2,yok,KSÜ,8
+Emirhan Ova,İntern,16,27027,meta_llama3,yok,KSÜ,8
+Emirhan Ova,İntern,16,27027,cosmos_llama3,yok,KSÜ,5
+Emirhan Ova,İntern,17,7307,trendyol_mistral,yok,KSÜ,5
+Emirhan Ova,İntern,17,7307,sambalingo_llama2,yok,KSÜ,5
+Emirhan Ova,İntern,17,7307,meta_llama3,yok,KSÜ,5
+Emirhan Ova,İntern,17,7307,cosmos_llama3,yok,KSÜ,7
+Emirhan Ova,İntern,18,20361,trendyol_mistral,yok,KSÜ,5
+Emirhan Ova,İntern,18,20361,sambalingo_llama2,yok,KSÜ,8
+Emirhan Ova,İntern,18,20361,meta_llama3,yok,KSÜ,7
+Emirhan Ova,İntern,18,20361,cosmos_llama3,yok,KSÜ,4
+Emirhan Ova,İntern,19,17740,trendyol_mistral,yok,KSÜ,8
+Emirhan Ova,İntern,19,17740,sambalingo_llama2,yok,KSÜ,1
+Emirhan Ova,İntern,19,17740,meta_llama3,yok,KSÜ,-5
+Emirhan Ova,İntern,19,17740,cosmos_llama3,yok,KSÜ,7
+Emirhan Ova,İntern,20,5006,trendyol_mistral,yok,KSÜ,10
+Emirhan Ova,İntern,20,5006,sambalingo_llama2,yok,KSÜ,8
+Emirhan Ova,İntern,20,5006,meta_llama3,yok,KSÜ,0
+Emirhan Ova,İntern,20,5006,cosmos_llama3,yok,KSÜ,-10
+Özge Kurt,İntern,1,27012,trendyol_mistral,yok,KSÜ,5
+Özge Kurt,İntern,1,27012,sambalingo_llama2,yok,KSÜ,5
+Özge Kurt,İntern,1,27012,meta_llama3,yok,KSÜ,10
+Özge Kurt,İntern,1,27012,cosmos_llama3,yok,KSÜ,8
+Özge Kurt,İntern,2,7057,trendyol_mistral,yok,KSÜ,10
+Özge Kurt,İntern,2,7057,sambalingo_llama2,yok,KSÜ,1
+Özge Kurt,İntern,2,7057,meta_llama3,yok,KSÜ,7
+Özge Kurt,İntern,2,7057,cosmos_llama3,yok,KSÜ,-5
+Özge Kurt,İntern,3,3190,trendyol_mistral,yok,KSÜ,10
+Özge Kurt,İntern,3,3190,sambalingo_llama2,yok,KSÜ,5
+Özge Kurt,İntern,3,3190,meta_llama3,yok,KSÜ,5
+Özge Kurt,İntern,3,3190,cosmos_llama3,yok,KSÜ,1
+Özge Kurt,İntern,4,4432,trendyol_mistral,yok,KSÜ,10
+Özge Kurt,İntern,4,4432,sambalingo_llama2,yok,KSÜ,5
+Özge Kurt,İntern,4,4432,meta_llama3,yok,KSÜ,8
+Özge Kurt,İntern,4,4432,cosmos_llama3,yok,KSÜ,0
+Özge Kurt,İntern,5,3175,trendyol_mistral,yok,KSÜ,-10
+Özge Kurt,İntern,5,3175,sambalingo_llama2,yok,KSÜ,0
+Özge Kurt,İntern,5,3175,meta_llama3,yok,KSÜ,-5
+Özge Kurt,İntern,5,3175,cosmos_llama3,yok,KSÜ,5
+Özge Kurt,İntern,6,18466,trendyol_mistral,yok,KSÜ,1
+Özge Kurt,İntern,6,18466,sambalingo_llama2,yok,KSÜ,0
+Özge Kurt,İntern,6,18466,meta_llama3,yok,KSÜ,0
+Özge Kurt,İntern,6,18466,cosmos_llama3,yok,KSÜ,-1
+Özge Kurt,İntern,7,31196,trendyol_mistral,yok,KSÜ,-5
+Özge Kurt,İntern,7,31196,sambalingo_llama2,yok,KSÜ,10
+Özge Kurt,İntern,7,31196,meta_llama3,yok,KSÜ,-6
+Özge Kurt,İntern,7,31196,cosmos_llama3,yok,KSÜ,5
+Özge Kurt,İntern,8,10410,trendyol_mistral,yok,KSÜ,1
+Özge Kurt,İntern,8,10410,sambalingo_llama2,yok,KSÜ,-10
+Özge Kurt,İntern,8,10410,meta_llama3,yok,KSÜ,10
+Özge Kurt,İntern,8,10410,cosmos_llama3,yok,KSÜ,1
+Özge Kurt,İntern,9,24456,trendyol_mistral,yok,KSÜ,8
+Özge Kurt,İntern,9,24456,sambalingo_llama2,yok,KSÜ,-2
+Özge Kurt,İntern,9,24456,meta_llama3,yok,KSÜ,10
+Özge Kurt,İntern,9,24456,cosmos_llama3,yok,KSÜ,0
+Özge Kurt,İntern,10,32027,trendyol_mistral,yok,KSÜ,8
+Özge Kurt,İntern,10,32027,sambalingo_llama2,yok,KSÜ,-10
+Özge Kurt,İntern,10,32027,meta_llama3,yok,KSÜ,-2
+Özge Kurt,İntern,10,32027,cosmos_llama3,yok,KSÜ,8
+Özge Kurt,İntern,11,31918,trendyol_mistral,yok,KSÜ,-9
+Özge Kurt,İntern,11,31918,sambalingo_llama2,yok,KSÜ,1
+Özge Kurt,İntern,11,31918,meta_llama3,yok,KSÜ,5
+Özge Kurt,İntern,11,31918,cosmos_llama3,yok,KSÜ,10
+Özge Kurt,İntern,12,4858,trendyol_mistral,yok,KSÜ,4
+Özge Kurt,İntern,12,4858,sambalingo_llama2,yok,KSÜ,-2
+Özge Kurt,İntern,12,4858,meta_llama3,yok,KSÜ,-3
+Özge Kurt,İntern,12,4858,cosmos_llama3,yok,KSÜ,1
+Özge Kurt,İntern,13,22412,trendyol_mistral,yok,KSÜ,8
+Özge Kurt,İntern,13,22412,sambalingo_llama2,yok,KSÜ,0
+Özge Kurt,İntern,13,22412,meta_llama3,yok,KSÜ,-9
+Özge Kurt,İntern,13,22412,cosmos_llama3,yok,KSÜ,10
+Özge Kurt,İntern,14,30396,trendyol_mistral,yok,KSÜ,-5
+Özge Kurt,İntern,14,30396,sambalingo_llama2,yok,KSÜ,-10
+Özge Kurt,İntern,14,30396,meta_llama3,yok,KSÜ,10
+Özge Kurt,İntern,14,30396,cosmos_llama3,yok,KSÜ,-6
+Özge Kurt,İntern,15,25067,trendyol_mistral,yok,KSÜ,-1
+Özge Kurt,İntern,15,25067,sambalingo_llama2,yok,KSÜ,10
+Özge Kurt,İntern,15,25067,meta_llama3,yok,KSÜ,2
+Özge Kurt,İntern,15,25067,cosmos_llama3,yok,KSÜ,8
+Özge Kurt,İntern,16,27027,trendyol_mistral,yok,KSÜ,9
+Özge Kurt,İntern,16,27027,sambalingo_llama2,yok,KSÜ,8
+Özge Kurt,İntern,16,27027,meta_llama3,yok,KSÜ,10
+Özge Kurt,İntern,16,27027,cosmos_llama3,yok,KSÜ,6
+Özge Kurt,İntern,17,7307,trendyol_mistral,yok,KSÜ,10
+Özge Kurt,İntern,17,7307,sambalingo_llama2,yok,KSÜ,5
+Özge Kurt,İntern,17,7307,meta_llama3,yok,KSÜ,-3
+Özge Kurt,İntern,17,7307,cosmos_llama3,yok,KSÜ,10
+Özge Kurt,İntern,18,20361,trendyol_mistral,yok,KSÜ,-2
+Özge Kurt,İntern,18,20361,sambalingo_llama2,yok,KSÜ,10
+Özge Kurt,İntern,18,20361,meta_llama3,yok,KSÜ,5
+Özge Kurt,İntern,18,20361,cosmos_llama3,yok,KSÜ,-5
+Özge Kurt,İntern,19,17740,trendyol_mistral,yok,KSÜ,6
+Özge Kurt,İntern,19,17740,sambalingo_llama2,yok,KSÜ,-2
+Özge Kurt,İntern,19,17740,meta_llama3,yok,KSÜ,4
+Özge Kurt,İntern,19,17740,cosmos_llama3,yok,KSÜ,1
+Özge Kurt,İntern,20,5006,trendyol_mistral,yok,KSÜ,8
+Özge Kurt,İntern,20,5006,sambalingo_llama2,yok,KSÜ,1
+Özge Kurt,İntern,20,5006,meta_llama3,yok,KSÜ,4
+Özge Kurt,İntern,20,5006,cosmos_llama3,yok,KSÜ,1

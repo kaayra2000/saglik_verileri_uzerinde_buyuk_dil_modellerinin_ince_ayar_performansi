@@ -1,8 +1,28 @@
 import os
 import csv
 import json
-from collections import defaultdict
+from collections import defaultdict, Counter, OrderedDict
 import argparse
+import statistics
+
+
+def calculate_statistics(scores):
+    score_counts = Counter(scores)
+    return {
+        "average": statistics.mean(scores),
+        "median": statistics.median(scores),
+        "std_dev": statistics.stdev(scores) if len(scores) > 1 else 0,
+        "min": min(scores),
+        "max": max(scores),
+        "zero_count": score_counts[0],
+        "positive_count": sum(
+            count for score, count in score_counts.items() if score > 0
+        ),
+        "negative_count": sum(
+            count for score, count in score_counts.items() if score < 0
+        ),
+        "score_distribution": OrderedDict(sorted(score_counts.items())),
+    }
 
 
 def process_csv_files(root_folder):
@@ -10,6 +30,11 @@ def process_csv_files(root_folder):
     skipped_rows = defaultdict(list)
     title_person_count = defaultdict(set)
     person_question_count = defaultdict(int)
+    expert_question_count = 0
+    non_expert_question_count = 0
+    institution_question_count = defaultdict(int)
+    expert_count = 0
+    non_expert_count = 0
 
     for root, dirs, files in os.walk(root_folder):
         for file in files:
@@ -23,6 +48,11 @@ def process_csv_files(root_folder):
                             merged_data.append(row)
                             title_person_count[row["unvan"]].add(row["isim"])
                             person_question_count[row["isim"]] += 1
+                            institution_question_count[row["kurum"]] += 1
+                            if row["uzmanlık"].lower() != "yok":
+                                expert_count += 1
+                            else:
+                                non_expert_count += 1
                             if consecutive_skipped:
                                 skipped_rows[file_path].extend(
                                     format_consecutive(consecutive_skipped)
@@ -38,7 +68,16 @@ def process_csv_files(root_folder):
     # Write merged data to a new CSV file
     output_file = os.path.join(root_folder, "merged_sonuclar.csv")
     with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
-        fieldnames = ["isim", "unvan", "soru", "indis", "model_adi", "puan"]
+        fieldnames = [
+            "isim",
+            "unvan",
+            "soru",
+            "indis",
+            "model_adi",
+            "uzmanlık",
+            "kurum",
+            "puan",
+        ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(merged_data)
@@ -46,34 +85,43 @@ def process_csv_files(root_folder):
     # Generate statistics
     total_elements = len(merged_data)
     unique_titles = defaultdict(int)
-    unique_name_title_pairs = defaultdict(int)
     model_scores = defaultdict(list)
+    title_model_scores = defaultdict(lambda: defaultdict(list))
 
     for row in merged_data:
         unique_titles[row["unvan"]] += 1
         name_title_pair = (row["isim"], row["unvan"])
-        unique_name_title_pairs[name_title_pair] += 1
         model_scores[row["model_adi"]].append(float(row["puan"]))
+        title_model_scores[row["unvan"]][row["model_adi"]].append(float(row["puan"]))
 
     model_averages = {
-        model: sum(scores) / len(scores) for model, scores in model_scores.items()
+        "overall_average": {
+            model: calculate_statistics(scores)
+            for model, scores in model_scores.items()
+        },
+        "specific_averages": {
+            title: {
+                model: calculate_statistics(scores)
+                for model, scores in model_scores.items()
+            }
+            for title, model_scores in title_model_scores.items()
+        },
     }
 
     # Create JSON output
     json_output = {
-        "total_elements": total_elements,
-        "unique_titles": dict(unique_titles),
-        "unique_name_title_pairs": {
-            f"{name}-{title}": count
-            for (name, title), count in unique_name_title_pairs.items()
-        },
-        "total_unique_name_title_pairs": len(unique_name_title_pairs),
-        "model_averages": model_averages,
-        "skipped_rows": {k: v for k, v in skipped_rows.items() if v},
-        "title_person_count": {
+        "Toplam Cevap Sayısı": total_elements,
+        "Ünvanlara Göre Cevap Sayısı": dict(unique_titles),
+        "Ünvan-İnsan Sayısı": {
             title: len(persons) for title, persons in title_person_count.items()
         },
-        "person_question_count": person_question_count,
+        "İnsan-Cevap Sayısı": person_question_count,
+        "Uzmanlık Olan Doktor Sayısı": expert_count,
+        "Uzman Olmayan Doktor Sayısı": non_expert_count,
+        "Kurum - Cevap Sayısı": institution_question_count,
+        "Farklı Kurum Sayısı": len(institution_question_count),
+        "Model Sonuçları": model_averages,
+        "skipped_rows": {k: v for k, v in skipped_rows.items() if v},
     }
 
     # Write JSON output

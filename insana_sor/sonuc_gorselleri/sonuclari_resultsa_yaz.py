@@ -23,12 +23,11 @@ def update_result_files(root_folder, statistics_file):
                     existing_data = json.load(f)
 
                 # Yeni veriyi en başa ekle
-                updated_data = {"insan_sonuclari": stats}
-                updated_data.update(existing_data)
+                existing_data["insan_sonuclari"] = stats
 
                 # Dosyayı güncelle
                 with open(file_path, "w", encoding="utf-8") as f:
-                    json.dump(updated_data, f, ensure_ascii=False, indent=2)
+                    json.dump(existing_data, f, ensure_ascii=False, indent=2)
 
                 print(f"Updated {file_path}")
             else:

@@ -21,9 +21,14 @@ def update_result_files(root_folder, statistics_file):
                 # Mevcut dosyayı oku
                 with open(file_path, "r", encoding="utf-8") as f:
                     existing_data = json.load(f)
-
-                # Yeni veriyi en başa ekle
-                existing_data["insan_sonuclari"] = stats
+                # Ana anahtarı bul (dosyadan dosyaya değişiyor)
+                main_key = next(iter(existing_data))
+                if filename == "result_averaged.json":
+                    # Yeni veriyi en başa ekle
+                    existing_data[main_key]["insan_sonuclari"] = stats
+                else:
+                    # Yeni veriyi en başa ekle
+                    existing_data["insan_sonuclari"] = stats
 
                 # Dosyayı güncelle
                 with open(file_path, "w", encoding="utf-8") as f:

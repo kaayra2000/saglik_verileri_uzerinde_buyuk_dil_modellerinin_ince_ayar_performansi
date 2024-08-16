@@ -30,8 +30,6 @@ def process_csv_files(root_folder):
     skipped_rows = defaultdict(list)
     title_person_count = defaultdict(set)
     person_question_count = defaultdict(int)
-    expert_question_count = 0
-    non_expert_question_count = 0
     institution_question_count = defaultdict(int)
     expert_count = 0
     non_expert_count = 0
@@ -40,16 +38,24 @@ def process_csv_files(root_folder):
         for file in files:
             if file.endswith(".csv") and file != "merged_sonuclar.csv":
                 file_path = os.path.join(root, file)
+                print(f"Processing: {file_path}")
                 with open(file_path, "r", encoding="utf-8") as csvfile:
                     reader = csv.DictReader(csvfile)
                     consecutive_skipped = []
                     for row_num, row in enumerate(reader, start=1):
-                        if all(row.values()):
+                        if all(
+                            value for key, value in row.items() if key != "uzmanlık"
+                        ):
                             merged_data.append(row)
                             title_person_count[row["unvan"]].add(row["isim"])
                             person_question_count[row["isim"]] += 1
                             institution_question_count[row["kurum"]] += 1
-                            if row["uzmanlık"].lower() != "yok":
+                            if (
+                                row
+                                and "uzmanlık" in row
+                                and row["uzmanlık"]
+                                and row["uzmanlık"].lower() != "yok"
+                            ):
                                 expert_count += 1
                             else:
                                 non_expert_count += 1

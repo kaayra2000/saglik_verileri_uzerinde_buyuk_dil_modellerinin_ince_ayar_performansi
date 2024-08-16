@@ -25,3 +25,8 @@ cd ..
 python3 sonuclari_birlestir.py .
 
 python3 sonuclari_resultsa_yaz.py
+
+cd ../../sonuclar/gorsel_sonuclar || exit 1
+python3 gorsel_sonuclari_olustur.py
+
+echo "Sonuçlar güncellendi!"

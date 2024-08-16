@@ -1,4 +1,4 @@
 Mistral Trendyol -> Trendyol/Trendyol-LLM-7b-chat-v1.8 (https://huggingface.co/Trendyol/Trendyol-LLM-7b-chat-v1.8)
 Llama3 Cosmos -> ytu-ce-cosmos/Turkish-Llama-8b-v0.1 (https://huggingface.co/ytu-ce-cosmos/Turkish-Llama-8b-v0.1)
-Daredevil-7B Novus -> NovusResearch/Novus-7b-tr_v1 (https://huggingface.co/NovusResearch/Novus-7b-tr_v1)
+Meta LLama3 -> meta-llama/Meta-Llama-3-8B (https://huggingface.co/meta-llama/Meta-Llama-3-8B)
 LLama2 sambanovasystems -> sambanovasystems/SambaLingo-Turkish-Chat (https://huggingface.co/sambanovasystems/SambaLingo-Turkish-Chat)

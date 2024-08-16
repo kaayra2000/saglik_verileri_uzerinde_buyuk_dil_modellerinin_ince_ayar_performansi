@@ -44,15 +44,343 @@
     "KSÜ": 316,
     "İzmir Şehir Hastanesi ": 79,
     "Eyüp devlet hastanesi": 80,
-    "-": 80,
+    "bilinmiyor": 152,
     "SBÜ": 79,
-    "Ankara yıldırım beyazıt üni": 80,
-    "Aybü ": 40,
-    "Gazi Üniversitesi": 80,
-    "Yyu": 75,
-    "bilinmiyor": 72
+    "AYBÜ": 120,
+    "GÜ": 80,
+    "YYÜ": 75
   },
-  "Farklı Kurum Sayısı": 13,
+  "Farklı Kurum Sayısı": 11,
+  "Model-Soru Çiftleri Standart Sapma": {
+    "trendyol_mistral": {
+      "1": {
+        "standart_sapma": 4.1061288481545555,
+        "sayı": 17
+      },
+      "2": {
+        "standart_sapma": 5.555204237257803,
+        "sayı": 17
+      },
+      "3": {
+        "standart_sapma": 4.464676173400859,
+        "sayı": 16
+      },
+      "4": {
+        "standart_sapma": 5.093248125762993,
+        "sayı": 17
+      },
+      "5": {
+        "standart_sapma": 6.635447736714281,
+        "sayı": 16
+      },
+      "6": {
+        "standart_sapma": 4.014556845614054,
+        "sayı": 16
+      },
+      "7": {
+        "standart_sapma": 3.4288996691615914,
+        "sayı": 17
+      },
+      "8": {
+        "standart_sapma": 4.55521678957215,
+        "sayı": 17
+      },
+      "9": {
+        "standart_sapma": 2.596660751585299,
+        "sayı": 17
+      },
+      "10": {
+        "standart_sapma": 2.785202495542554,
+        "sayı": 17
+      },
+      "11": {
+        "standart_sapma": 6.011892975000232,
+        "sayı": 15
+      },
+      "12": {
+        "standart_sapma": 5.830321351248448,
+        "sayı": 17
+      },
+      "13": {
+        "standart_sapma": 2.619637379485947,
+        "sayı": 16
+      },
+      "14": {
+        "standart_sapma": 3.9644251369734134,
+        "sayı": 16
+      },
+      "15": {
+        "standart_sapma": 4.4304815389150045,
+        "sayı": 16
+      },
+      "16": {
+        "standart_sapma": 3.0550504633038935,
+        "sayı": 16
+      },
+      "17": {
+        "standart_sapma": 4.964876634922564,
+        "sayı": 16
+      },
+      "18": {
+        "standart_sapma": 2.4689741459426693,
+        "sayı": 16
+      },
+      "19": {
+        "standart_sapma": 3.3094381626464866,
+        "sayı": 15
+      },
+      "20": {
+        "standart_sapma": 3.628015986734347,
+        "sayı": 16
+      }
+    },
+    "sambalingo_llama2": {
+      "1": {
+        "standart_sapma": 3.8261868593095323,
+        "sayı": 17
+      },
+      "2": {
+        "standart_sapma": 4.755801410784888,
+        "sayı": 17
+      },
+      "3": {
+        "standart_sapma": 6.04979338490167,
+        "sayı": 16
+      },
+      "4": {
+        "standart_sapma": 3.7495097718784205,
+        "sayı": 17
+      },
+      "5": {
+        "standart_sapma": 4.964876634922564,
+        "sayı": 16
+      },
+      "6": {
+        "standart_sapma": 6.947121706145647,
+        "sayı": 16
+      },
+      "7": {
+        "standart_sapma": 2.90537028114976,
+        "sayı": 17
+      },
+      "8": {
+        "standart_sapma": 5.784678037713076,
+        "sayı": 16
+      },
+      "9": {
+        "standart_sapma": 3.6551736097820386,
+        "sayı": 17
+      },
+      "10": {
+        "standart_sapma": 6.012853878542691,
+        "sayı": 17
+      },
+      "11": {
+        "standart_sapma": 3.2469766156929962,
+        "sayı": 15
+      },
+      "12": {
+        "standart_sapma": 4.2857492995768585,
+        "sayı": 17
+      },
+      "13": {
+        "standart_sapma": 5.66715684154468,
+        "sayı": 16
+      },
+      "14": {
+        "standart_sapma": 6.804104153621793,
+        "sayı": 16
+      },
+      "15": {
+        "standart_sapma": 3.5118845842842465,
+        "sayı": 16
+      },
+      "16": {
+        "standart_sapma": 1.857417562100671,
+        "sayı": 16
+      },
+      "17": {
+        "standart_sapma": 2.9657770201640803,
+        "sayı": 16
+      },
+      "18": {
+        "standart_sapma": 2.151549828999242,
+        "sayı": 16
+      },
+      "19": {
+        "standart_sapma": 4.700557211144026,
+        "sayı": 15
+      },
+      "20": {
+        "standart_sapma": 3.8622100754188224,
+        "sayı": 16
+      }
+    },
+    "meta_llama3": {
+      "1": {
+        "standart_sapma": 2.8748401490088002,
+        "sayı": 17
+      },
+      "2": {
+        "standart_sapma": 5.656204297832914,
+        "sayı": 17
+      },
+      "3": {
+        "standart_sapma": 4.653430107426766,
+        "sayı": 17
+      },
+      "4": {
+        "standart_sapma": 4.093574592110967,
+        "sayı": 17
+      },
+      "5": {
+        "standart_sapma": 5.009574166866216,
+        "sayı": 16
+      },
+      "6": {
+        "standart_sapma": 4.614740873909751,
+        "sayı": 16
+      },
+      "7": {
+        "standart_sapma": 4.58979046042281,
+        "sayı": 17
+      },
+      "8": {
+        "standart_sapma": 3.275540667838924,
+        "sayı": 16
+      },
+      "9": {
+        "standart_sapma": 4.138236339311712,
+        "sayı": 17
+      },
+      "10": {
+        "standart_sapma": 4.543094307006288,
+        "sayı": 17
+      },
+      "11": {
+        "standart_sapma": 4.126568965687043,
+        "sayı": 15
+      },
+      "12": {
+        "standart_sapma": 4.048420171172076,
+        "sayı": 17
+      },
+      "13": {
+        "standart_sapma": 4.596647328941678,
+        "sayı": 16
+      },
+      "14": {
+        "standart_sapma": 3.021451086260816,
+        "sayı": 16
+      },
+      "15": {
+        "standart_sapma": 1.9397164741270823,
+        "sayı": 16
+      },
+      "16": {
+        "standart_sapma": 3.5,
+        "sayı": 16
+      },
+      "17": {
+        "standart_sapma": 3.685557397915997,
+        "sayı": 16
+      },
+      "18": {
+        "standart_sapma": 2.756053942384534,
+        "sayı": 16
+      },
+      "19": {
+        "standart_sapma": 4.47213595499958,
+        "sayı": 15
+      },
+      "20": {
+        "standart_sapma": 2.6832815729997477,
+        "sayı": 16
+      }
+    },
+    "cosmos_llama3": {
+      "1": {
+        "standart_sapma": 5.966203837893415,
+        "sayı": 17
+      },
+      "2": {
+        "standart_sapma": 4.567307096927801,
+        "sayı": 17
+      },
+      "3": {
+        "standart_sapma": 5.778382635509087,
+        "sayı": 17
+      },
+      "4": {
+        "standart_sapma": 5.432067096527478,
+        "sayı": 17
+      },
+      "5": {
+        "standart_sapma": 5.378971401051816,
+        "sayı": 16
+      },
+      "6": {
+        "standart_sapma": 4.989572459974235,
+        "sayı": 16
+      },
+      "7": {
+        "standart_sapma": 3.985266984930429,
+        "sayı": 17
+      },
+      "9": {
+        "standart_sapma": 5.270617778278546,
+        "sayı": 17
+      },
+      "10": {
+        "standart_sapma": 3.355964838909967,
+        "sayı": 16
+      },
+      "11": {
+        "standart_sapma": 3.7032803990902057,
+        "sayı": 15
+      },
+      "12": {
+        "standart_sapma": 5.289927535735564,
+        "sayı": 16
+      },
+      "13": {
+        "standart_sapma": 4.303099657998484,
+        "sayı": 16
+      },
+      "14": {
+        "standart_sapma": 3.594970031002974,
+        "sayı": 15
+      },
+      "15": {
+        "standart_sapma": 3.3466401061363023,
+        "sayı": 16
+      },
+      "16": {
+        "standart_sapma": 5.186119294167203,
+        "sayı": 16
+      },
+      "17": {
+        "standart_sapma": 4.162831568375865,
+        "sayı": 16
+      },
+      "18": {
+        "standart_sapma": 4.323867867238005,
+        "sayı": 16
+      },
+      "19": {
+        "standart_sapma": 6.288311151879903,
+        "sayı": 15
+      },
+      "20": {
+        "standart_sapma": 5.512107884769068,
+        "sayı": 16
+      },
+      "8": {
+        "standart_sapma": 5.748912940721924,
+        "sayı": 16
+      }
+    }
+  },
   "Model Sonuçları": {
     "overall_average": {
       "trendyol_mistral": {

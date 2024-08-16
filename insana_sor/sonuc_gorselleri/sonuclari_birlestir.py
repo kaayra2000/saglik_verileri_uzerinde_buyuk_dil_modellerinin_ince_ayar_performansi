@@ -25,12 +25,31 @@ def calculate_statistics(scores):
     }
 
 
+def calculate_question_statistics(scores):
+    if len(scores) > 1:
+        return {"standart_sapma": statistics.stdev(scores), "sayı": len(scores)}
+    else:
+        return {"standart_sapma": 0, "sayı": len(scores)}
+
+
+def calculate_model_question_stats(model_question_scores):
+    model_question_stats = {}
+    for model, questions in model_question_scores.items():
+        model_question_stats[model] = {}
+        for question, scores in questions.items():
+            model_question_stats[model][question] = calculate_question_statistics(
+                scores
+            )
+    return model_question_stats
+
+
 def process_csv_files(root_folder):
     merged_data = []
     skipped_rows = defaultdict(list)
     title_person_count = defaultdict(set)
     person_question_count = defaultdict(int)
     institution_question_count = defaultdict(int)
+    model_question_scores = defaultdict(lambda: defaultdict(list))
     expert_count = 0
     non_expert_count = 0
 
@@ -95,11 +114,13 @@ def process_csv_files(root_folder):
     title_model_scores = defaultdict(lambda: defaultdict(list))
 
     for row in merged_data:
+        model_question_scores[row["model_adi"]][row["soru"]].append(float(row["puan"]))
         unique_titles[row["unvan"]] += 1
         name_title_pair = (row["isim"], row["unvan"])
         model_scores[row["model_adi"]].append(float(row["puan"]))
         title_model_scores[row["unvan"]][row["model_adi"]].append(float(row["puan"]))
-
+    # Model-soru çiftlerinin istatistiklerini hesapla
+    model_question_stats = calculate_model_question_stats(model_question_scores)
     model_averages = {
         "overall_average": {
             model: calculate_statistics(scores)
@@ -126,6 +147,7 @@ def process_csv_files(root_folder):
         "Uzman Olmayan Doktor Sayısı": non_expert_count,
         "Kurum - Cevap Sayısı": institution_question_count,
         "Farklı Kurum Sayısı": len(institution_question_count),
+        "Model-Soru Çiftleri Standart Sapma": model_question_stats,
         "Model Sonuçları": model_averages,
         "skipped_rows": {k: v for k, v in skipped_rows.items() if v},
     }

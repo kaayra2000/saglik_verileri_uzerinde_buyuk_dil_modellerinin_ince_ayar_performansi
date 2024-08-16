@@ -19,41 +19,18 @@ def plot_custom_bar_chart(
     fig_size=(12, 8),
     x_label_rotation=45,
     x_label_fontsize=10,
-    y_label_fontsize=10,  # y ekseni etiketi yazı tipi boyutu
-    title_fontsize=12,  # Başlık yazı tipi boyutu
+    y_label_fontsize=10,
+    title_fontsize=12,
     x_title_fontsize=12,
     subplots_adjust_top=0.95,
     subplots_adjust_bottom=0.2,
     subplots_adjust_left=0.2,
     subplots_adjust_right=0.8,
-    value_fontsize=10,  # Bar üstündeki sayıların yazı tipi boyutu
-    y_tick_label_fontsize=10,  # Y ekseni etiketlerinin yazı tipi boyutu
+    value_fontsize=10,
+    y_tick_label_fontsize=10,
     float_len=3,
+    y_axis_start=None,
 ):
-    """
-    Özelleştirilebilir bar chart çizen ve SVG olarak kaydeden fonksiyon.
-
-    Parametreler:
-    - matrix: Matris verisi (satır sayısı model sayısı kadar, sütun sayısı veri türü kadar).
-    - x_labels: X ekseni başlıkları (satır sayısı kadar).
-    - colors: Renk listesi (satır sayısı kadar).
-    - data_labels: Veri türü başlıkları (sütun sayısı kadar).
-    - title: Grafik başlığı (varsayılan: 'Başlık').
-    - x_axis_label: X ekseni başlığı (varsayılan: 'X Ekseni').
-    - y_axis_label: Y ekseni başlığı (varsayılan: 'Y Ekseni').
-    - legend_location: Sağ üstteki açıklamanın konumu (varsayılan: 'center left').
-    - bar_width: Barların kalınlığı (varsayılan: 0.2).
-    - show_values: Barların üstünde sayısal değerleri gösterme (varsayılan: True).
-    - file_path: SVG dosyasının kaydedileceği dosya yolu (varsayılan: 'chart.svg').
-    - fig_size: Grafik boyutu (varsayılan: (12, 8)).
-    - x_label_rotation: X ekseni etiketlerinin dönüş açısı (varsayılan: 45 derece).
-    - x_label_fontsize: X ekseni etiketlerinin yazı tipi boyutu (varsayılan: 10).
-    - y_label_fontsize: Y ekseni etiketlerinin yazı tipi boyutu (varsayılan: 10).
-    - title_fontsize: Başlık yazı tipi boyutu (varsayılan: 12).
-    - value_fontsize: Bar üstündeki sayıların yazı tipi boyutu (varsayılan: 10).
-    - y_tick_label_fontsize: Y ekseni etiketlerinin yazı tipi boyutu (varsayılan: 10).
-    """
-
     x = np.arange(len(x_labels))
 
     fig, ax = plt.subplots(figsize=fig_size)
@@ -61,20 +38,35 @@ def plot_custom_bar_chart(
     # Her bir veri türü için barları çiz
     for i, (data_label, color) in enumerate(zip(data_labels, colors)):
         scores = [row[i] for row in matrix]
+
+        # Y ekseninin başlangıç değeri belirtilmişse, barların yüksekliğini ayarla
+        if y_axis_start is not None:
+            bar_heights = [score - y_axis_start for score in scores]
+        else:
+            bar_heights = scores
+
         bars = ax.bar(
-            x + i * bar_width, scores, bar_width, label=data_label, color=color
+            x + i * bar_width,
+            bar_heights,
+            bar_width,
+            label=data_label,
+            color=color,
+            bottom=y_axis_start,
         )
 
         # Her barın üstüne sayısal değerleri yaz
         if show_values:
-            for bar in bars:
+            for bar, score in zip(bars, scores):
                 height = bar.get_height()
                 ax.annotate(
                     "{}".format(
-                        round(height, float_len) if float_len > 0 else int(height)
+                        round(score, float_len) if float_len > 0 else int(score)
                     ),
-                    xy=(bar.get_x() + bar.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 points vertical offset
+                    xy=(
+                        bar.get_x() + bar.get_width() / 2,
+                        height + y_axis_start if y_axis_start is not None else height,
+                    ),
+                    xytext=(0, 3),
                     textcoords="offset points",
                     ha="center",
                     va="bottom",
@@ -91,8 +83,11 @@ def plot_custom_bar_chart(
     )
     ax.tick_params(axis="y", labelsize=y_tick_label_fontsize)
 
+    # Y ekseni başlangıç değerini ayarla
+    if y_axis_start is not None:
+        ax.set_ylim(bottom=y_axis_start)
+
     if show_data_lables:
-        # Legend'i sağa ve dışa taşı
         ax.legend(
             data_labels,
             loc=legend_location,
@@ -638,7 +633,7 @@ plot_custom_bar_chart(
     title="Farklı Modellerin ELO Skor Performans Değerleri",
     x_axis_label="Model",
     y_axis_label="ELO Skor Değerleri",
-    legend_location="upper left",
+    legend_location="upper right",
     bar_width=0.15,
     show_values=True,
     file_path=elo_general_model_file_path,
@@ -679,7 +674,7 @@ plot_custom_bar_chart(
     subplots_adjust_bottom=0.25,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
-    subplots_adjust_right=0.9,
+    subplots_adjust_right=0.78,
     value_fontsize=10,
     y_tick_label_fontsize=15,
     float_len=0,
@@ -731,7 +726,7 @@ plot_custom_bar_chart(
     title="Farklı Modellerin WinPct Skor Performans Değerleri",
     x_axis_label="Model",
     y_axis_label="WinPct Skor Değerleri",
-    legend_location="upper left",
+    legend_location="upper right",
     bar_width=0.15,
     show_values=True,
     file_path=winpct_general_model_file_path,
@@ -760,9 +755,9 @@ plot_custom_bar_chart(
     title="Farklı Modellerin WinPct Skor Performans Değerleri",
     x_axis_label="Model",
     y_axis_label="WinPct Skor Değerleri",
-    legend_location="upper left",
+    legend_location="upper right",
     bar_width=0.2,
-    show_values=True,
+    show_values=False,
     file_path=winpct_general_file_path,
     fig_size=(16, 11),
     x_label_fontsize=15,
@@ -777,4 +772,51 @@ plot_custom_bar_chart(
     value_fontsize=13,
     y_tick_label_fontsize=15,
     float_len=1,
+)
+
+"""
+İnsan sonuçları kısmı
+"""
+insan_ortalamalari_general_matrix = []
+insan_ortalamalari_label = ["İnsan Ortalamaları"]
+insan_ortalamalari_general_file_path = "insan_ortalamalari_general_chart.svg"
+for model_name in model_names:
+    for content in json_contents:
+        if model_name in content:
+            model_content = content[model_name]
+            insan_ortalamalari_general_matrix.append(
+                [
+                    model_content["insan_sonuclari"]["average"],
+                ]
+            )
+            break
+
+
+plot_custom_bar_chart(
+    insan_ortalamalari_general_matrix,
+    model_names,
+    colors,
+    insan_ortalamalari_label,
+    show_data_lables=False,
+    title="Doktor Değerlendirmeleri",
+    x_axis_label="Model",
+    y_axis_label="Ortalama Puan",
+    legend_location="upper left",
+    bar_width=0.4,
+    show_values=True,
+    file_path=insan_ortalamalari_general_file_path,
+    fig_size=(16, 11),
+    x_label_fontsize=15,
+    x_label_rotation=25,
+    y_label_fontsize=25,
+    title_fontsize=28,
+    x_title_fontsize=25,
+    subplots_adjust_bottom=0.25,
+    subplots_adjust_top=0.95,
+    subplots_adjust_left=0.08,
+    subplots_adjust_right=0.9,
+    value_fontsize=15,
+    y_tick_label_fontsize=15,
+    float_len=2,
+    y_axis_start=-10,
 )

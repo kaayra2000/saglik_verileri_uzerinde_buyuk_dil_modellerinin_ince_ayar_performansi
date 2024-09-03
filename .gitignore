@@ -7,3 +7,4 @@ api_key.txt
 çeviri/batched/batch*info.txt
 çeviri/*batch.jsonl
 **/output_chat.jsonl/**
+venv/**

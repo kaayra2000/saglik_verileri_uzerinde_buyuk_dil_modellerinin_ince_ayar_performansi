@@ -103,7 +103,27 @@ def plot_custom_bar_chart(
 
     # Grafik SVG olarak kaydedilmesi
     plt.savefig(file_path, format="svg")
-
+def plot_losses(training_losses, validation_losses, model_names):
+    plt.figure(figsize=(12, 8))
+    
+    for i, model_name in enumerate(model_names):
+        # Eğitim kayıpları
+        epochs, losses, _, _ = zip(*training_losses[i])
+        plt.plot(epochs, losses, label=f'{model_name} Training', marker='o')
+        
+        # Doğrulama kayıpları
+        if validation_losses[i]:  # Eğer doğrulama kaybı varsa
+            val_epochs, val_losses = zip(*validation_losses[i])
+            plt.plot(val_epochs, val_losses, label=f'{model_name} Validation', linestyle='--', marker='s')
+    
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.title('Training and Validation Losses')
+    plt.legend()
+    plt.grid(True)
+    
+    plt.savefig('loss_comparison.svg')
+    plt.close()
 
 def list_and_read_json_files(base_dir=".."):
     """
@@ -126,10 +146,18 @@ def list_and_read_json_files(base_dir=".."):
                     with open(full_path, "r") as json_file:
                         try:
                             json_contents.append(json.load(json_file))
+                            full_dir = os.path.dirname(full_path)
+                            training_log_path = os.path.join(full_dir, "training_log.json")
+                            with open(training_log_path, "r") as training_log_file:
+                                training_log = json.load(training_log_file)
+                                last_item = json_contents[-1]
+                                last_key = list(last_item.keys())[0]
+                                last_item[last_key]["training_log"] = training_log
                         except json.JSONDecodeError as e:
                             print(f"Error reading {full_path}: {e}")
 
     return all_files, json_contents
+
 
 
 # İşlevi çalıştır ve sonuçları yazdır
@@ -139,10 +167,10 @@ all_files, json_contents = list_and_read_json_files()
 colors = ["#000080", "#0000ff", "#4682b4", "#1e90ff", "#87ceeb"]
 
 model_names = [
-    "doktor-meta-llama-3-8b",
-    "doktor-LLama2-sambanovasystems-7b",
-    "doktor-Mistral-trendyol-7b",
-    "doktor-llama-3-cosmos-8b",
+    "Meta-Llama-3-8B",
+    "SambaLingo-Turkish-Chat",
+    "Trendyol-LLM-7b-chat-v1.8",
+    "Turkish-Llama-8b-v0.1",
 ]
 
 """"
@@ -820,3 +848,24 @@ plot_custom_bar_chart(
     float_len=2,
     y_axis_start=-10,
 )
+
+
+"""
+Eğitim sonuçları kısmı
+"""
+
+training_losses = []
+validation_losses = []
+for model_name in model_names:
+    for content in json_contents:
+        if model_name in content:
+            training_log_content = content[model_name]["training_log"]
+            training_losses.append([])
+            validation_losses.append([])
+            for entry in training_log_content:
+                if "loss" in entry:
+                    training_losses[-1].append((entry["epoch"], entry["loss"], entry["grad_norm"], entry["learning_rate"]))
+                elif "eval_loss" in entry:
+                    validation_losses[-1].append((entry["epoch"], entry["eval_loss"]))
+            break
+plot_losses(training_losses, validation_losses, model_names)

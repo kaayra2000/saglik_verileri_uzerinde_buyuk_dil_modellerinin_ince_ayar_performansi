@@ -103,27 +103,72 @@ def plot_custom_bar_chart(
 
     # Grafik SVG olarak kaydedilmesi
     plt.savefig(file_path, format="svg")
-def plot_losses(training_losses, validation_losses, model_names):
+def plot_training_losses(training_losses, model_names, colors):
     plt.figure(figsize=(12, 8))
     
     for i, model_name in enumerate(model_names):
-        # Eğitim kayıpları
         epochs, losses, _, _ = zip(*training_losses[i])
-        plt.plot(epochs, losses, label=f'{model_name} Training', marker='o')
-        
-        # Doğrulama kayıpları
-        if validation_losses[i]:  # Eğer doğrulama kaybı varsa
-            val_epochs, val_losses = zip(*validation_losses[i])
-            plt.plot(val_epochs, val_losses, label=f'{model_name} Validation', linestyle='--', marker='s')
+        plt.plot(epochs, losses, label=model_name, color=colors[i], marker='o')
     
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss')
-    plt.title('Training and Validation Losses')
+    plt.xlabel('Döngü')
+    plt.ylabel('Eğitim Kayıp Değeri')
     plt.legend()
     plt.grid(True)
     
-    plt.savefig('loss_comparison.svg')
+    plt.savefig('training_loss_comparison.svg')
     plt.close()
+
+def plot_validation_losses(validation_losses, model_names, colors):
+    plt.figure(figsize=(12, 8))
+    
+    for i, model_name in enumerate(model_names):
+        if validation_losses[i]:  # Eğer doğrulama kaybı varsa
+            epochs, losses = zip(*validation_losses[i])
+            plt.plot(epochs, losses, label=model_name, color=colors[i], marker='s')
+    
+    plt.xlabel('Döngü')
+    plt.ylabel('Validasyon Kayıp Değeri')
+    plt.legend()
+    plt.grid(True)
+    
+    plt.savefig('validation_loss_comparison.svg')
+    plt.close()
+
+def plot_grad_norm(training_losses, model_names, colors):
+    plt.figure(figsize=(12, 8))
+    
+    for i, model_name in enumerate(model_names):
+        epochs, _, grad_norms, _ = zip(*training_losses[i])
+        plt.plot(epochs, grad_norms, label=model_name, color=colors[i], marker='o')
+    
+    plt.xlabel('Döngü')
+    plt.ylabel('Gradient Norm Değeri')
+    plt.legend()
+    plt.grid(True)
+    
+    plt.savefig('grad_norm_comparison.svg')
+    plt.close()
+
+def plot_learning_rate(training_losses, model_names, colors):
+    plt.figure(figsize=(12, 8))
+    min_lr = float('inf')
+    for i, model_name in enumerate(model_names):
+        epochs, _, _, learning_rates = zip(*training_losses[i])
+        plt.plot(epochs, learning_rates, label=model_name, color=colors[i], marker='o')
+        min_lr = min(min_lr, min(learning_rates))
+    plt.xlabel('Döngü')
+    plt.ylabel('Öğrenme Oranı')
+    plt.legend()
+    plt.grid(True)
+    
+    # Y eksenini en düşük öğrenme oranının biraz altından başlat
+    plt.ylim(bottom=min_lr * 0.9)
+    
+    plt.savefig('learning_rate_comparison.svg')
+    plt.close()
+
+
+
 
 def list_and_read_json_files(base_dir=".."):
     """
@@ -868,4 +913,7 @@ for model_name in model_names:
                 elif "eval_loss" in entry:
                     validation_losses[-1].append((entry["epoch"], entry["eval_loss"]))
             break
-plot_losses(training_losses, validation_losses, model_names)
+plot_training_losses(training_losses, model_names, colors)
+plot_validation_losses(validation_losses, model_names, colors)
+plot_grad_norm(training_losses, model_names, colors)
+plot_learning_rate(training_losses, model_names, colors)

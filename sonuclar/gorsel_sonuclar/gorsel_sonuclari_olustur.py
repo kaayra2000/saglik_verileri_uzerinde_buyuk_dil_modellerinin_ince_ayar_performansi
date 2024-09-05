@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import json, os
 
-
+show_titles = False
+show_x_labels = False
 def plot_custom_bar_chart(
     matrix,
     x_labels,
@@ -74,9 +75,11 @@ def plot_custom_bar_chart(
                 )
 
     # Eksen ve etiket ayarları
-    ax.set_xlabel(x_axis_label, fontsize=x_title_fontsize)
+    if show_x_labels:
+        ax.set_xlabel(x_axis_label, fontsize=x_title_fontsize)
     ax.set_ylabel(y_axis_label, fontsize=y_label_fontsize)
-    ax.set_title(title, fontsize=title_fontsize)
+    if show_titles:
+        ax.set_title(title, fontsize=title_fontsize)
     ax.set_xticks(x + bar_width)
     ax.set_xticklabels(
         x_labels, rotation=x_label_rotation, ha="right", fontsize=x_label_fontsize
@@ -502,9 +505,9 @@ plot_custom_bar_chart(
     y_label_fontsize=25,
     title_fontsize=28,
     x_title_fontsize=25,
-    subplots_adjust_bottom=0.2,
+    subplots_adjust_bottom=0.17,
     subplots_adjust_top=0.95,
-    subplots_adjust_left=0.15,
+    subplots_adjust_left=0.12,
     subplots_adjust_right=0.95,
     value_fontsize=8,
     y_tick_label_fontsize=15,
@@ -531,9 +534,9 @@ plot_custom_bar_chart(
     y_label_fontsize=25,
     title_fontsize=28,
     x_title_fontsize=25,
-    subplots_adjust_bottom=0.2,
+    subplots_adjust_bottom=0.15,
     subplots_adjust_top=0.95,
-    subplots_adjust_left=0.15,
+    subplots_adjust_left=0.11,
     subplots_adjust_right=0.95,
     value_fontsize=15,
     y_tick_label_fontsize=15,
@@ -606,9 +609,9 @@ plot_custom_bar_chart(
     y_label_fontsize=25,
     title_fontsize=28,
     x_title_fontsize=25,
-    subplots_adjust_bottom=0.2,
+    subplots_adjust_bottom=0.15,
     subplots_adjust_top=0.95,
-    subplots_adjust_left=0.15,
+    subplots_adjust_left=0.11,
     subplots_adjust_right=0.95,
     value_fontsize=15,
     y_tick_label_fontsize=15,
@@ -809,10 +812,10 @@ plot_custom_bar_chart(
     y_label_fontsize=25,
     title_fontsize=28,
     x_title_fontsize=25,
-    subplots_adjust_bottom=0.25,
+    subplots_adjust_bottom=0.17,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
-    subplots_adjust_right=0.9,
+    subplots_adjust_right=0.96,
     value_fontsize=11.5,
     y_tick_label_fontsize=15,
     float_len=2,
@@ -838,10 +841,10 @@ plot_custom_bar_chart(
     y_label_fontsize=25,
     title_fontsize=28,
     x_title_fontsize=25,
-    subplots_adjust_bottom=0.25,
+    subplots_adjust_bottom=0.17,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
-    subplots_adjust_right=0.9,
+    subplots_adjust_right=0.96,
     value_fontsize=13,
     y_tick_label_fontsize=15,
     float_len=1,
@@ -873,7 +876,7 @@ plot_custom_bar_chart(
     show_data_lables=False,
     title="Doktor Değerlendirmeleri",
     x_axis_label="Model",
-    y_axis_label="Ortalama Puan",
+    y_axis_label="Ortalama Doktor Puanı",
     legend_location="upper left",
     bar_width=0.4,
     show_values=True,
@@ -884,7 +887,7 @@ plot_custom_bar_chart(
     y_label_fontsize=25,
     title_fontsize=28,
     x_title_fontsize=25,
-    subplots_adjust_bottom=0.25,
+    subplots_adjust_bottom=0.17,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,

@@ -212,7 +212,13 @@ def list_and_read_json_files(base_dir=".."):
 all_files, json_contents = list_and_read_json_files()
 
 
-colors = ["#000080", "#0000ff", "#4682b4", "#1e90ff", "#87ceeb"]
+colors = [
+    "#2C3E50",
+    "#E74C3C", 
+    "#3498DB", 
+    "#2ECC71",  
+    "#9B59B6"   
+]
 
 model_names = [
     "Meta-Llama-3-8B",

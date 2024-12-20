@@ -32,3 +32,7 @@
 * Test verisi boyutu -> 633
 * [işlenmiş link kaggle](https://www.kaggle.com/datasets/kaayra2000/patient-doctor-q-and-a-translated-from-id-to-tr)
 * [işlenmiş link huggingface](https://huggingface.co/datasets/kayrab/patient-doctor-qa-tr-5695)
+
+# Hocanın sunum hakkında yorumları
+1. Çok fazla kafa karıştırıcı görsel var
+1. Yapılan çalışmayı anlatman lazım, sen genel kavramları anlatıyorsun.

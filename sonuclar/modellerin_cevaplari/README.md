@@ -1,0 +1,1 @@
+Bu dosya modellerin sorulara olan cevaplarını içerir. Bu cevaplar hem bir arada hem de veri kümesi bazında ayrı ayrı dosyalarda bulunmaktadır. 

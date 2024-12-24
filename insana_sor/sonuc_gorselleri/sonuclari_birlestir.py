@@ -4,7 +4,9 @@ import json
 from collections import defaultdict, Counter, OrderedDict
 import argparse
 import statistics
-
+import pandas as pd
+from scipy.stats import f_oneway
+from pingouin import cronbach_alpha
 
 def calculate_statistics(scores):
     score_counts = Counter(scores)
@@ -41,7 +43,67 @@ def calculate_model_question_stats(model_question_scores):
                 scores
             )
     return model_question_stats
+# ANOVA ve Cronbach's Alpha hesaplamaları için fonksiyonlar
+def calculate_anova(data, group_col, value_col):
+    """
+    ANOVA hesaplaması yapar.
+    """
+    groups = data.groupby(group_col)[value_col].apply(list)
+    return f_oneway(*groups)
 
+def calculate_cronbach_alpha(data):
+    """
+    Cronbach's Alpha hesaplaması yapar.
+    """
+    return cronbach_alpha(data)
+
+def process_data(file_path):
+    """
+    Verileri işler ve hem soru hem de doktor bazında ANOVA ve Cronbach's Alpha hesaplamalarını yapar.
+    """
+    # Veriyi yükle
+    df = pd.read_csv(file_path)
+
+    # Soru bazında ANOVA hesaplaması
+    anova_results_by_question = {}
+    for question in df['soru'].unique():
+        question_data = df[df['soru'] == question]
+        anova_result = calculate_anova(question_data, 'isim', 'puan')
+        anova_results_by_question[int(question)] = {
+            'F-statistic': float(anova_result.statistic),
+            'p-value': float(anova_result.pvalue)
+        }
+
+    # Doktor bazında ANOVA hesaplaması
+    anova_results_by_doctor = {}
+    for doctor in df['isim'].unique():
+        doctor_data = df[df['isim'] == doctor]
+        anova_result = calculate_anova(doctor_data, 'soru', 'puan')
+        anova_results_by_doctor[doctor] = {
+            'F-statistic': float(anova_result.statistic),
+            'p-value': float(anova_result.pvalue)
+        }
+
+    # Soru bazında Cronbach's Alpha hesaplaması
+    cronbach_results_by_question = {}
+    for question in df['soru'].unique():
+        question_data = df[df['soru'] == question].pivot(index='isim', columns='model_adi', values='puan')
+        alpha, _ = calculate_cronbach_alpha(question_data)
+        cronbach_results_by_question[int(question)] = float(alpha)
+
+    # Doktor bazında Cronbach's Alpha hesaplaması
+    cronbach_results_by_doctor = {}
+    for doctor in df['isim'].unique():
+        doctor_data = df[df['isim'] == doctor].pivot(index='soru', columns='model_adi', values='puan')
+        alpha, _ = calculate_cronbach_alpha(doctor_data)
+        cronbach_results_by_doctor[doctor] = float(alpha)
+
+    return {
+        'anova_by_question': anova_results_by_question,
+        'anova_by_doctor': anova_results_by_doctor,
+        'cronbach_by_question': cronbach_results_by_question,
+        'cronbach_by_doctor': cronbach_results_by_doctor
+    }
 
 def process_csv_files(root_folder):
     merged_data = []
@@ -112,7 +174,7 @@ def process_csv_files(root_folder):
     unique_titles = defaultdict(int)
     model_scores = defaultdict(list)
     title_model_scores = defaultdict(lambda: defaultdict(list))
-
+    anova_and_cronbach_results = process_data("merged_sonuclar.csv")
     for row in merged_data:
         model_question_scores[row["model_adi"]][row["soru"]].append(float(row["puan"]))
         unique_titles[row["unvan"]] += 1
@@ -151,7 +213,7 @@ def process_csv_files(root_folder):
         "Model Sonuçları": model_averages,
         "skipped_rows": {k: v for k, v in skipped_rows.items() if v},
     }
-
+    json_output.update(anova_and_cronbach_results)
     # Write JSON output
     json_file = os.path.join(root_folder, "statistics.json")
     with open(json_file, "w", encoding="utf-8") as jsonfile:

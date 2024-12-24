@@ -1,0 +1,1 @@
+veri kümesi özelinde modellerin başarılarını tutan json dosyasını ve çizdirme python dosyasını içerir

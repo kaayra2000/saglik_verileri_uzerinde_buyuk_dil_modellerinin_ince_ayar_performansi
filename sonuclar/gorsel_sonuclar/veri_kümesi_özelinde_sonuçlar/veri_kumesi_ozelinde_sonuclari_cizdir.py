@@ -41,7 +41,8 @@ def plot_metrics(data, output_dir):
         "cer": "Karakter Hata Oranı (CER)",
         "wer": "Kelime Hata Oranı (WER)"
     }
-
+    fontsize = 16
+    rotation = 25
     # BLEU doğruluklarını ayrı ayrı çizmek için özel bir döngü
     for i in range(4):  # BLEU-1, BLEU-2, BLEU-3, BLEU-4
         fig, ax = plt.subplots(figsize=(12, 6))
@@ -60,10 +61,10 @@ def plot_metrics(data, output_dir):
             # Barları çiz
             ax.bar(x + j * bar_width, metric_values, bar_width, label=dataset, color=colors[j % len(colors)])
 
-        ax.set_ylabel(f"BLEU-{i+1} Doğruluğu", fontsize=12)
+        ax.set_ylabel(f"BLEU-{i+1} Doğruluğu", fontsize=fontsize)
         ax.set_xticks(x + bar_width * (len(datasets) - 1) / 2)
-        ax.set_xticklabels(models, rotation=45, ha="right")
-        ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.15, 1.05))  # Sağ üst köşeye taşı
+        ax.set_xticklabels(models, rotation=rotation, ha="right", fontsize=fontsize)
+        ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.25, 1.05))  # Sağ üst köşeye taşı
         ax.grid(axis="y", linestyle="--", alpha=0.7)
 
         # SVG olarak kaydet
@@ -103,10 +104,10 @@ def plot_metrics(data, output_dir):
             # Barları çiz
             ax.bar(x + i * bar_width, metric_values, bar_width, label=dataset, color=colors[i % len(colors)])
 
-        ax.set_ylabel(label, fontsize=12)
+        ax.set_ylabel(label, fontsize=fontsize)
         ax.set_xticks(x + bar_width * (len(datasets) - 1) / 2)
-        ax.set_xticklabels(models, rotation=45, ha="right")
-        ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.15, 1.05))  # Sağ üst köşeye taşı
+        ax.set_xticklabels(models, rotation=rotation, ha="right", fontsize=fontsize)
+        ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.25, 1.05))  # Sağ üst köşeye taşı
         ax.grid(axis="y", linestyle="--", alpha=0.7)
 
         # SVG olarak kaydet

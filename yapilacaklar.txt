@@ -1,0 +1,2 @@
+Doktorların puanlamalarının soru ve doktor bazında ANOVA ve Cronbach’s Alpha hesaplayacağım
+veri kümesi özelinde başarı hesaplayacağım

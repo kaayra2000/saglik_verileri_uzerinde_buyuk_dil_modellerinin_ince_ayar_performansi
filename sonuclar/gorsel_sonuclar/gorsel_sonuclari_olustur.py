@@ -213,11 +213,11 @@ all_files, json_contents = list_and_read_json_files()
 
 
 colors = [
-    "#2C3E50",
-    "#E74C3C", 
-    "#3498DB", 
-    "#2ECC71",  
-    "#9B59B6"   
+    "#1ABC9C",  # Turkuaz
+    "#F39C12",  # Sıcak turuncu
+    "#8E44AD",  # Koyu mor
+    "#34495E",  # Koyu gri-mavi
+    "#D35400"   # Koyu turuncu
 ]
 
 model_names = [

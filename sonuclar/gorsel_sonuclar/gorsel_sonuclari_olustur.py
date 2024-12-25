@@ -221,10 +221,10 @@ colors = [
 ]
 
 model_names = [
-    "Meta-Llama-3-8B",
-    "SambaLingo-Turkish-Chat",
-    "Trendyol-LLM-7b-chat-v1.8",
-    "Turkish-Llama-8b-v0.1",
+    "doktor-meta-llama-3-8b",
+    "doktor-LLama2-sambanovasystems-7b",
+    "doktor-Mistral-trendyol-7b",
+    "doktor-llama-3-cosmos-8b",
 ]
 
 """"

@@ -1,6 +1,6 @@
 {
     "patient-doctor-qa-tr-5695":{        
-        "Meta-Llama-3-8B":{
+        "doktor-meta-llama-3-8b":{
             "bleu": {
                 "bleu": 0.008325145953646154,
                 "precisions": [
@@ -31,7 +31,7 @@
             "cer": 1.123317449631616,
             "wer": 1.3300018062496237
         },
-        "SambaLingo-Turkish-Chat":{
+        "doktor-LLama2-sambanovasystems-7b":{
             "bleu": {
                 "bleu": 0.018025517818188796,
                 "precisions": [
@@ -62,7 +62,7 @@
             "cer": 0.8243641191315239,
             "wer": 1.0606899873562525
         },
-        "Trendyol-LLM-7b-chat-v1.8":{
+        "doktor-Mistral-trendyol-7b":{
             "bleu": {
                 "bleu": 0.015469932018868033,
                 "precisions": [
@@ -93,7 +93,7 @@
             "cer": 0.8214794784328917,
             "wer": 1.0430790535251973
         },
-        "Turkish-Llama-8b-v0.1":{
+        "doktor-llama-3-cosmos-8b":{
             "bleu": {
                 "bleu": 0.010267583842971913,
                 "precisions": [
@@ -126,7 +126,7 @@
         }
     },
     "patient-doctor-qa-tr-19583":{      
-        "Meta-Llama-3-8B":{
+        "doktor-meta-llama-3-8b":{
             "bleu": {
                 "bleu": 0.006383711616161417,
                 "precisions": [
@@ -157,7 +157,7 @@
             "cer": 0.9776979378074985,
             "wer": 1.178461863472702
         },
-        "SambaLingo-Turkish-Chat":{
+        "doktor-LLama2-sambanovasystems-7b":{
             "bleu": {
                 "bleu": 0.01849597705931215,
                 "precisions": [
@@ -188,7 +188,7 @@
             "cer": 0.9111214587740365,
             "wer": 1.1435217503122934
         },
-        "Trendyol-LLM-7b-chat-v1.8":{
+        "doktor-Mistral-trendyol-7b":{
             "bleu": {
                 "bleu": 0.014105175161840075,
                 "precisions": [
@@ -219,7 +219,7 @@
             "cer": 0.9121004457312114,
             "wer": 1.1256475494158278
         },
-        "Turkish-Llama-8b-v0.1":{
+        "doktor-llama-3-cosmos-8b":{
             "bleu": {
                 "bleu": 0.00901211664995251,
                 "precisions": [
@@ -252,7 +252,7 @@
         }
     },
     "patient-doctor-qa-tr-95588":{      
-        "Meta-Llama-3-8B":{
+        "doktor-meta-llama-3-8b":{
             "bleu": {
                 "bleu": 0.006962052818680578,
                 "precisions": [
@@ -283,7 +283,7 @@
             "cer": 0.9764085527544404,
             "wer": 1.200997083729155
         },
-        "SambaLingo-Turkish-Chat":{
+        "doktor-LLama2-sambanovasystems-7b":{
             "bleu": {
                 "bleu": 0.02670479146606127,
                 "precisions": [
@@ -314,7 +314,7 @@
             "cer": 0.8360481844602694,
             "wer": 1.0707203974179336
         },
-        "Trendyol-LLM-7b-chat-v1.8":{
+        "doktor-Mistral-trendyol-7b":{
             "bleu": {
                 "bleu": 0.01593394921510138,
                 "precisions": [
@@ -345,7 +345,7 @@
             "cer": 0.8207160444919475,
             "wer": 1.0542037098680987
         },
-        "Turkish-Llama-8b-v0.1":{
+        "doktor-llama-3-cosmos-8b":{
             "bleu": {
                 "bleu": 0.00860727973960856,
                 "precisions": [
@@ -378,7 +378,7 @@
         }
     },
     "patient-doctor-qa-tr-167732":{      
-        "Meta-Llama-3-8B":{
+        "doktor-meta-llama-3-8b":{
             "bleu": {
                 "bleu": 0.0015176551888463215,
                 "precisions": [
@@ -409,7 +409,7 @@
             "cer": 0.9759802059473144,
             "wer": 1.1743966664990588
         },
-        "SambaLingo-Turkish-Chat":{
+        "doktor-LLama2-sambanovasystems-7b":{
             "bleu": {
                 "bleu": 0.023347834005088625,
                 "precisions": [
@@ -440,7 +440,7 @@
             "cer": 1.096641869129967,
             "wer": 1.3433912600537365
         },
-        "Trendyol-LLM-7b-chat-v1.8":{
+        "doktor-Mistral-trendyol-7b":{
             "bleu": {
                 "bleu": 0.004350892353522348,
                 "precisions": [
@@ -471,7 +471,7 @@
             "cer": 0.9091204020681168,
             "wer": 1.0834402744104394
         },
-        "Turkish-Llama-8b-v0.1":{
+        "doktor-llama-3-cosmos-8b":{
             "bleu": {
                 "bleu": 0.002358728575694429,
                 "precisions": [

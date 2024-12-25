@@ -30,6 +30,7 @@ def plot_metrics(data, output_dir):
         "bleu2": "BLEU-2 Doğruluğu",
         "bleu3": "BLEU-3 Doğruluğu",
         "bleu4": "BLEU-4 Doğruluğu",
+        "bleu": "Genel BLEU Doğruluğu",  # Genel BLEU skoru etiketi
         "rouge1": "ROUGE-1 Skoru",
         "rouge2": "ROUGE-2 Skoru",
         "rougeL": "ROUGE-L Skoru",
@@ -43,6 +44,7 @@ def plot_metrics(data, output_dir):
     }
     fontsize = 16
     rotation = 25
+
     # BLEU doğruluklarını ayrı ayrı çizmek için özel bir döngü
     for i in range(4):  # BLEU-1, BLEU-2, BLEU-3, BLEU-4
         fig, ax = plt.subplots(figsize=(12, 6))
@@ -72,6 +74,39 @@ def plot_metrics(data, output_dir):
         plt.tight_layout()
         plt.savefig(output_path, format="svg")
         plt.close()
+
+    # Genel BLEU skorunu çizmek için ekleme
+    fig, ax = plt.subplots(figsize=(12, 6))
+    bar_width = 0.2  # Bar genişliği
+    x = np.arange(len(models))  # Model sayısına göre x ekseni
+
+    for j, dataset in enumerate(datasets):
+        metric_values = []
+        for model in models:
+            # Genel BLEU skorunu hesapla (geometrik ortalama)
+            model_data = data[dataset].get(model, {})
+            precisions = model_data.get("bleu", {}).get("precisions", [0, 0, 0, 0])
+            if precisions:
+                # Geometrik ortalama hesaplama
+                bleu_score = np.prod([p for p in precisions if p > 0]) ** (1 / len(precisions))
+            else:
+                bleu_score = 0
+            metric_values.append(bleu_score)
+
+        # Barları çiz
+        ax.bar(x + j * bar_width, metric_values, bar_width, label=dataset, color=colors[j % len(colors)])
+
+    ax.set_ylabel("Genel BLEU Doğruluğu", fontsize=fontsize)
+    ax.set_xticks(x + bar_width * (len(datasets) - 1) / 2)
+    ax.set_xticklabels(models, rotation=rotation, ha="right", fontsize=fontsize)
+    ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.25, 1.05))  # Sağ üst köşeye taşı
+    ax.grid(axis="y", linestyle="--", alpha=0.7)
+
+    # SVG olarak kaydet
+    output_path = os.path.join(output_dir, "genel_bleu_dogruluklari.svg")
+    plt.tight_layout()
+    plt.savefig(output_path, format="svg")
+    plt.close()
 
     for metric, label in metrics.items():
         if metric.startswith("bleu"):  # BLEU doğrulukları zaten çizildi

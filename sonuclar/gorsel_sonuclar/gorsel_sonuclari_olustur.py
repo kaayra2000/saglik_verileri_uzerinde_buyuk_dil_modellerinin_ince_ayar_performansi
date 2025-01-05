@@ -18,77 +18,75 @@ def plot_custom_bar_chart(
     show_values=True,
     file_path="chart.svg",
     fig_size=(12, 8),
-    x_label_rotation=45,
+    y_label_rotation=0,
     x_label_fontsize=10,
     y_label_fontsize=10,
     title_fontsize=12,
-    x_title_fontsize=12,
+    y_title_fontsize=12,
     subplots_adjust_top=0.95,
     subplots_adjust_bottom=0.2,
-    subplots_adjust_left=0.2,
+    subplots_adjust_left=0.3,
     subplots_adjust_right=0.8,
     value_fontsize=10,
-    y_tick_label_fontsize=10,
+    x_tick_label_fontsize=10,
     float_len=3,
-    y_axis_start=None,
+    x_axis_start=None,
 ):
-    x = np.arange(len(x_labels))
+    y = np.arange(len(x_labels))
 
     fig, ax = plt.subplots(figsize=fig_size)
 
-    # Her bir veri türü için barları çiz
+    # Her bir veri türü için çubukları çiz
     for i, (data_label, color) in enumerate(zip(data_labels, colors)):
         scores = [row[i] for row in matrix]
 
-        # Y ekseninin başlangıç değeri belirtilmişse, barların yüksekliğini ayarla
-        if y_axis_start is not None:
-            bar_heights = [score - y_axis_start for score in scores]
+        # X ekseninin başlangıç değeri belirtilmişse, çubukların genişliğini ayarla
+        if x_axis_start is not None:
+            bar_lengths = [score - x_axis_start for score in scores]
         else:
-            bar_heights = scores
+            bar_lengths = scores
 
-        bars = ax.bar(
-            x + i * bar_width,
-            bar_heights,
+        bars = ax.barh(
+            y + i * bar_width,
+            bar_lengths,
             bar_width,
             label=data_label,
             color=color,
-            bottom=y_axis_start,
+            left=x_axis_start,
         )
 
-        # Her barın üstüne sayısal değerleri yaz
+        # Her çubuğun üzerine sayısal değerleri yaz
         if show_values:
             for bar, score in zip(bars, scores):
-                height = bar.get_height()
+                width = bar.get_width()
                 ax.annotate(
                     "{}".format(
                         round(score, float_len) if float_len > 0 else int(score)
                     ),
                     xy=(
-                        bar.get_x() + bar.get_width() / 2,
-                        height + y_axis_start if y_axis_start is not None else height,
+                        width + x_axis_start if x_axis_start is not None else width,
+                        bar.get_y() + bar.get_height() / 2,
                     ),
-                    xytext=(0, 3),
+                    xytext=(3, 0),
                     textcoords="offset points",
-                    ha="center",
-                    va="bottom",
+                    ha="left",
+                    va="center",
                     fontsize=value_fontsize,
                 )
 
     # Eksen ve etiket ayarları
-    if show_x_labels:
-        ax.set_xlabel(x_axis_label, fontsize=x_title_fontsize)
-    ax.set_ylabel(y_axis_label, fontsize=y_label_fontsize)
-    if show_titles:
+    if show_data_lables:
+        ax.set_ylabel(y_axis_label, fontsize=y_title_fontsize)
+    ax.set_xlabel(x_axis_label, fontsize=x_label_fontsize)
+    if title:
         ax.set_title(title, fontsize=title_fontsize)
-    ax.set_xticks(x + bar_width)
-    ax.set_xticklabels(
-        x_labels, rotation=x_label_rotation, ha="right", fontsize=x_label_fontsize
-    )
-    ax.tick_params(axis="y", labelsize=y_tick_label_fontsize)
+    ax.set_yticks(y + bar_width / 2)
+    ax.set_yticklabels(x_labels, rotation=y_label_rotation, fontsize=y_label_fontsize)
+    ax.tick_params(axis="x", labelsize=x_tick_label_fontsize)
 
-    # Y ekseni başlangıç değerini ayarla
-    if y_axis_start is not None:
-        ax.set_ylim(bottom=y_axis_start)
+    # X ekseni başlangıç değerini ayarla
+    if x_axis_start is not None:
+        ax.set_xlim(left=x_axis_start)
 
     if show_data_lables:
         ax.legend(
@@ -106,6 +104,7 @@ def plot_custom_bar_chart(
 
     # Grafik SVG olarak kaydedilmesi
     plt.savefig(file_path, format="svg")
+
 def plot_training_losses(training_losses, model_names, colors):
     plt.figure(figsize=(12, 8))
     
@@ -277,16 +276,16 @@ plot_custom_bar_chart(
     file_path=bert_spesific_model_file_path,
     fig_size=(12, 15),
     x_label_fontsize=17,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.2,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.15,
     subplots_adjust_right=0.95,
     value_fontsize=12,
-    y_tick_label_fontsize=17,
+    x_tick_label_fontsize=17,
 )
 
 plot_custom_bar_chart(
@@ -295,25 +294,25 @@ plot_custom_bar_chart(
     colors,
     [bert_labels[2]],
     show_data_lables=False,
-    title="Modellerin BERTScore F1 Değerleri",
-    x_axis_label="Model",
-    y_axis_label="BERTScore F1 Değerleri",
+    title="BERT Skor F1 Değerleri",
+    x_axis_label=None,
+    y_axis_label=None,
     legend_location="upper right",
-    bar_width=0.5,
+    bar_width=0.2,
     show_values=True,
     file_path=bert_general_file_path,
-    fig_size=(12, 15),
+    fig_size=(12, 1.3),
     x_label_fontsize=17,
-    x_label_rotation=25,
-    y_label_fontsize=25,
-    title_fontsize=28,
-    x_title_fontsize=25,
-    subplots_adjust_bottom=0.2,
-    subplots_adjust_top=0.95,
-    subplots_adjust_left=0.1,
+    y_label_rotation=0,
+    y_label_fontsize=15,
+    title_fontsize=11,
+    y_title_fontsize=25,
+    subplots_adjust_bottom=0.0,
+    subplots_adjust_top=0.82,
+    subplots_adjust_left=0.35,
     subplots_adjust_right=0.95,
-    value_fontsize=14,
-    y_tick_label_fontsize=17,
+    value_fontsize=11,
+    x_tick_label_fontsize=17,
 )
 
 plot_custom_bar_chart(
@@ -331,15 +330,15 @@ plot_custom_bar_chart(
     file_path=bert_specific_file_path,
     fig_size=(16, 10),
     x_label_fontsize=17,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.17,
     subplots_adjust_top=0.9,
     subplots_adjust_left=0.1,
     subplots_adjust_right=0.78,
-    y_tick_label_fontsize=18,
+    x_tick_label_fontsize=18,
     value_fontsize=12,
 )
 
@@ -377,25 +376,25 @@ plot_custom_bar_chart(
     colors,
     bleu_labels,
     show_data_lables=True,
-    title="Farklı Modellerin BLEU Skor Performans Değerleri",
-    x_axis_label="Model",
-    y_axis_label="BLEU Skor Değerleri",
+    title="BLEU Skor Değerleri",
+    x_axis_label=None,
+    y_axis_label=None,
     legend_location="upper right",
-    bar_width=0.23,
+    bar_width=0.15,
     show_values=True,
     file_path=bleu_spesific_model_file_path,
     fig_size=(12, 10),
     x_label_fontsize=12,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.2,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.15,
     subplots_adjust_right=0.95,
     value_fontsize=8,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=5,
 )
 
@@ -406,26 +405,26 @@ plot_custom_bar_chart(
     colors,
     bleu_general_label,
     show_data_lables=False,
-    title="Farklı Modellerin Genel BLEU Skor Performans Değerleri",
-    x_axis_label="Model",
-    y_axis_label="Genel BLEU Skor Değerleri",
+    title="BLEU Skor Değerleri",
+    x_axis_label=None,
+    y_axis_label=None,
     legend_location="upper right",
-    bar_width=0.4,
+    bar_width=0.2,
     show_values=True,
     file_path=bleu_general_file_path,
-    fig_size=(14, 10),
+    fig_size=(14, 2),
     x_label_fontsize=12.2,
-    x_label_rotation=25,
-    y_label_fontsize=25,
-    title_fontsize=28,
-    x_title_fontsize=25,
-    subplots_adjust_bottom=0.2,
-    subplots_adjust_top=0.95,
-    subplots_adjust_left=0.15,
-    subplots_adjust_right=0.95,
-    value_fontsize=15,
-    y_tick_label_fontsize=15,
-    float_len=5,
+    y_label_rotation=0,
+    y_label_fontsize=15,
+    title_fontsize=12,
+    y_title_fontsize=25,
+    subplots_adjust_bottom=0.0,
+    subplots_adjust_top=0.87,
+    subplots_adjust_left=0.30,
+    subplots_adjust_right=1,
+    value_fontsize=10,
+    x_tick_label_fontsize=15,
+    float_len=3,
 )
 
 
@@ -444,16 +443,16 @@ plot_custom_bar_chart(
     file_path=bleu_specific_file_path,
     fig_size=(12, 10),
     x_label_fontsize=12,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.14,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.15,
     subplots_adjust_right=0.95,
     value_fontsize=8,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=5,
 )
 
@@ -507,16 +506,16 @@ plot_custom_bar_chart(
     file_path=rouge_spesific_model_file_path,
     fig_size=(12, 10),
     x_label_fontsize=20,
-    x_label_rotation=35,
+    y_label_rotation=35,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.25,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.12,
     subplots_adjust_right=0.95,
     value_fontsize=8,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=4,
 )
 
@@ -536,16 +535,16 @@ plot_custom_bar_chart(
     file_path=rouge_general_file_path,
     fig_size=(14, 11),
     x_label_fontsize=13,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.15,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.11,
     subplots_adjust_right=0.95,
     value_fontsize=15,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=4,
 )
 
@@ -565,16 +564,16 @@ plot_custom_bar_chart(
     file_path=rouge_specific_file_path,
     fig_size=(12, 10),
     x_label_fontsize=12,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.14,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.15,
     subplots_adjust_right=0.95,
     value_fontsize=8,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=4,
 )
 
@@ -611,16 +610,16 @@ plot_custom_bar_chart(
     file_path=meteor_general_file_path,
     fig_size=(14, 11),
     x_label_fontsize=13,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.15,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.11,
     subplots_adjust_right=0.95,
     value_fontsize=15,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=4,
 )
 
@@ -657,16 +656,16 @@ plot_custom_bar_chart(
     file_path=cer_wer_general_file_path,
     fig_size=(16, 11),
     x_label_fontsize=15,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.25,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.9,
     value_fontsize=15,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=2,
 )
 
@@ -721,16 +720,16 @@ plot_custom_bar_chart(
     file_path=elo_general_model_file_path,
     fig_size=(16, 11),
     x_label_fontsize=25,
-    x_label_rotation=35,
+    y_label_rotation=35,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.30,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.1,
     subplots_adjust_right=0.95,
     value_fontsize=9,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=0,
 )
 
@@ -749,16 +748,16 @@ plot_custom_bar_chart(
     file_path=elo_general_file_path,
     fig_size=(16, 11),
     x_label_fontsize=15,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.25,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.78,
     value_fontsize=10,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=0,
 )
 
@@ -805,25 +804,25 @@ plot_custom_bar_chart(
     colors,
     winpct_wer_general_label,
     show_data_lables=True,
-    title="Farklı Modellerin WinPct Skor Performans Değerleri",
-    x_axis_label="Model",
-    y_axis_label="WinPct Skor Değerleri",
+    title="WinPct Skor Değerleri",
+    x_axis_label=None,
+    y_axis_label=None,
     legend_location="upper right",
     bar_width=0.15,
     show_values=True,
     file_path=winpct_general_model_file_path,
-    fig_size=(16, 11),
+    fig_size=(16, 9),
     x_label_fontsize=23,
-    x_label_rotation=35,
-    y_label_fontsize=25,
-    title_fontsize=28,
-    x_title_fontsize=25,
-    subplots_adjust_bottom=0.25,
+    y_label_rotation=0,
+    y_label_fontsize=15,
+    title_fontsize=14,
+    y_title_fontsize=25,
+    subplots_adjust_bottom=0.0,
     subplots_adjust_top=0.95,
-    subplots_adjust_left=0.1,
+    subplots_adjust_left=0.27,
     subplots_adjust_right=0.96,
     value_fontsize=11.5,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=2,
 )
 
@@ -843,16 +842,16 @@ plot_custom_bar_chart(
     file_path=winpct_general_file_path,
     fig_size=(16, 11),
     x_label_fontsize=15,
-    x_label_rotation=25,
+    y_label_rotation=25,
     y_label_fontsize=25,
     title_fontsize=28,
-    x_title_fontsize=25,
+    y_title_fontsize=25,
     subplots_adjust_bottom=0.17,
     subplots_adjust_top=0.95,
     subplots_adjust_left=0.08,
     subplots_adjust_right=0.96,
     value_fontsize=13,
-    y_tick_label_fontsize=15,
+    x_tick_label_fontsize=15,
     float_len=1,
 )
 
@@ -880,27 +879,27 @@ plot_custom_bar_chart(
     colors,
     insan_ortalamalari_label,
     show_data_lables=False,
-    title="Doktor Değerlendirmeleri",
-    x_axis_label="Model",
-    y_axis_label="Ortalama Doktor Puanı",
+    title="Ortalama Doktor Puanı",
+    x_axis_label=None,
+    y_axis_label=None,
     legend_location="upper left",
-    bar_width=0.4,
+    bar_width=0.2,
     show_values=True,
     file_path=insan_ortalamalari_general_file_path,
-    fig_size=(16, 11),
+    fig_size=(16, 2),
     x_label_fontsize=25,
-    x_label_rotation=35,
-    y_label_fontsize=25,
-    title_fontsize=28,
-    x_title_fontsize=25,
-    subplots_adjust_bottom=0.27,
-    subplots_adjust_top=0.95,
-    subplots_adjust_left=0.1,
-    subplots_adjust_right=0.95,
-    value_fontsize=15,
-    y_tick_label_fontsize=15,
+    y_label_rotation=0,
+    y_label_fontsize=15,
+    title_fontsize=14,
+    y_title_fontsize=25,
+    subplots_adjust_bottom=0.0,
+    subplots_adjust_top=0.77,
+    subplots_adjust_left=0.27,
+    subplots_adjust_right=0.97,
+    value_fontsize=14,
+    x_tick_label_fontsize=15,
     float_len=2,
-    y_axis_start=-10,
+    x_axis_start=-10,
 )
 
 

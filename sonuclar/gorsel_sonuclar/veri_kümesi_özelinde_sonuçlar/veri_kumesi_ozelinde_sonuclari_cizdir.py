@@ -36,20 +36,19 @@ def plot_metrics(data, output_dir):
         "rougeL": "ROUGE-L Skoru",
         "rougeLsum": "ROUGE-Lsum Skoru",
         "meteor": "METEOR Skoru",
-        "bertscore-avg_precision": "BERTScore Ortalama Doğruluk",
-        "bertscore-avg_recall": "BERTScore Ortalama Geri Çağırma",
-        "bertscore-avg_f1": "BERTScore Ortalama F1",
+        "bertscore-avg_precision": "BERT Skor Ortalama Doğruluk",
+        "bertscore-avg_recall": "BERT Skor Ortalama Geri Çağırma",
+        "bertscore-avg_f1": "BERT Skor Ortalama F1",
         "cer": "Karakter Hata Oranı (CER)",
         "wer": "Kelime Hata Oranı (WER)"
     }
-    fontsize = 16
-    rotation = 25
+    fontsize = 10
 
     # BLEU doğruluklarını ayrı ayrı çizmek için özel bir döngü
     for i in range(4):  # BLEU-1, BLEU-2, BLEU-3, BLEU-4
-        fig, ax = plt.subplots(figsize=(12, 6))
-        bar_width = 0.2  # Bar genişliği
-        x = np.arange(len(models))  # Model sayısına göre x ekseni
+        fig, ax = plt.subplots(figsize=(8, 10))
+        bar_height = 0.2  # Bar yüksekliği
+        y = np.arange(len(models))  # Model sayısına göre y ekseni
 
         for j, dataset in enumerate(datasets):
             metric_values = []
@@ -61,24 +60,24 @@ def plot_metrics(data, output_dir):
                 metric_values.append(value)
 
             # Barları çiz
-            ax.bar(x + j * bar_width, metric_values, bar_width, label=dataset, color=colors[j % len(colors)])
+            ax.barh(y + j * bar_height, metric_values, bar_height, label=dataset, color=colors[j % len(colors)])
 
-        ax.set_ylabel(f"BLEU-{i+1} Doğruluğu", fontsize=fontsize)
-        ax.set_xticks(x + bar_width * (len(datasets) - 1) / 2)
-        ax.set_xticklabels(models, rotation=rotation, ha="right", fontsize=fontsize)
-        ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.25, 1.05))  # Sağ üst köşeye taşı
-        ax.grid(axis="y", linestyle="--", alpha=0.7)
+        ax.set_xlabel(f"BLEU-{i+1} Doğruluğu", fontsize=fontsize)
+        ax.set_yticks(y + bar_height * (len(datasets) - 1) / 2)
+        ax.set_yticklabels(models, fontsize=fontsize)
+        ax.legend(title="Veri Kümeleri", loc="lower right", bbox_to_anchor=(1, 0))
+        ax.grid(axis="x", linestyle="--", alpha=0.7)
 
         # SVG olarak kaydet
-        output_path = os.path.join(output_dir, f"bleu{i+1}_dogruluklari.svg")
+        output_path = os.path.join(output_dir, f"bleu{i+1}_dogruluklari_yatay.svg")
         plt.tight_layout()
         plt.savefig(output_path, format="svg")
         plt.close()
 
     # Genel BLEU skorunu çizmek için ekleme
-    fig, ax = plt.subplots(figsize=(12, 6))
-    bar_width = 0.2  # Bar genişliği
-    x = np.arange(len(models))  # Model sayısına göre x ekseni
+    fig, ax = plt.subplots(figsize=(8, 2))
+    bar_height = 0.15  # Bar yüksekliği
+    y = np.arange(len(models))  # Model sayısına göre y ekseni
 
     for j, dataset in enumerate(datasets):
         metric_values = []
@@ -94,17 +93,23 @@ def plot_metrics(data, output_dir):
             metric_values.append(bleu_score)
 
         # Barları çiz
-        ax.bar(x + j * bar_width, metric_values, bar_width, label=dataset, color=colors[j % len(colors)])
+        ax.barh(y + j * bar_height, metric_values, bar_height, label=dataset, color=colors[j % len(colors)])
 
-    ax.set_ylabel("Genel BLEU Doğruluğu", fontsize=fontsize)
-    ax.set_xticks(x + bar_width * (len(datasets) - 1) / 2)
-    ax.set_xticklabels(models, rotation=rotation, ha="right", fontsize=fontsize)
-    ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.25, 1.05))  # Sağ üst köşeye taşı
-    ax.grid(axis="y", linestyle="--", alpha=0.7)
+    ax.set_title("Genel BLEU Doğruluğu", fontsize=10)
+    ax.set_yticks(y + bar_height * (len(datasets) - 1) / 2)
+    ax.set_yticklabels(models, fontsize=10)
+    ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.66, 1.08))
+    ax.grid(axis="x", linestyle="--", alpha=0.7)
 
     # SVG olarak kaydet
-    output_path = os.path.join(output_dir, "genel_bleu_dogruluklari.svg")
+    output_path = os.path.join(output_dir, "genel_bleu_dogruluklari_yatay.svg")
     plt.tight_layout()
+    plt.subplots_adjust(
+            top=0.9,
+            bottom=0.0,
+            right=0.75,
+            left=0.36
+    )
     plt.savefig(output_path, format="svg")
     plt.close()
 
@@ -112,9 +117,9 @@ def plot_metrics(data, output_dir):
         if metric.startswith("bleu"):  # BLEU doğrulukları zaten çizildi
             continue
 
-        fig, ax = plt.subplots(figsize=(12, 6))
-        bar_width = 0.2  # Bar genişliği
-        x = np.arange(len(models))  # Model sayısına göre x ekseni
+        fig, ax = plt.subplots(figsize=(8, 2))
+        bar_height = 0.14  # Bar yüksekliği
+        y = np.arange(len(models))  # Model sayısına göre y ekseni
 
         for i, dataset in enumerate(datasets):
             metric_values = []
@@ -137,19 +142,33 @@ def plot_metrics(data, output_dir):
                 metric_values.append(value)
 
             # Barları çiz
-            ax.bar(x + i * bar_width, metric_values, bar_width, label=dataset, color=colors[i % len(colors)])
+            ax.barh(y + i * bar_height, metric_values, bar_height, label=dataset, color=colors[i % len(colors)])
 
-        ax.set_ylabel(label, fontsize=fontsize)
-        ax.set_xticks(x + bar_width * (len(datasets) - 1) / 2)
-        ax.set_xticklabels(models, rotation=rotation, ha="right", fontsize=fontsize)
-        ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.25, 1.05))  # Sağ üst köşeye taşı
-        ax.grid(axis="y", linestyle="--", alpha=0.7)
+        # Üst başlık ayarı
+        ax.set_title(label, fontsize=fontsize)
+
+        # Y ekseni ayarları
+        ax.set_yticks(y + bar_height * (len(datasets) - 1) / 2)
+        ax.set_yticklabels(models, fontsize=10)
+
+        # Legend ayarı (sağ üstte ve biraz boşluk ile)
+        ax.legend(title="Veri Kümeleri", loc="upper right", bbox_to_anchor=(1.85, 1.08))
+
+        # Izgara çizgileri
+        ax.grid(axis="x", linestyle="--", alpha=0.7)
 
         # SVG olarak kaydet
-        output_path = os.path.join(output_dir, f"{metric}_skorlari.svg")
+        output_path = os.path.join(output_dir, f"{metric}_skorlari_yatay.svg")
         plt.tight_layout()
+        plt.subplots_adjust(
+            top=0.88,
+            bottom=0.0,
+            right=0.73,
+            left=0.37
+        )
         plt.savefig(output_path, format="svg")
         plt.close()
+
 
 # Ana fonksiyon
 def main():
@@ -163,7 +182,7 @@ def main():
         return
 
     plot_metrics(data, output_dir)
-    print(f"Tüm görselleştirmeler '{output_dir}' klasörüne kaydedildi.")
+    print(f"Tüm görselleştirmeler '{output_dir}' klasörüné kaydedildi.")
 
 if __name__ == "__main__":
     main()

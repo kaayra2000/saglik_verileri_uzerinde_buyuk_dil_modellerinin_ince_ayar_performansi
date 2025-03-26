@@ -8,3 +8,4 @@ api_key.txt
 çeviri/*batch.jsonl
 **/output_chat.jsonl/**
 venv/**
+.vscode
